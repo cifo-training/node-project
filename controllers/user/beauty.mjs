@@ -6,9 +6,9 @@ const setActive = async (request, response, next, active) => {
 		const user = await userDAO.listOne (request.params.id);
 		if (user) {
 			const modifiedUser = await userDAO.update (request.params.id, {active: active});
-			response.status (200).send (modifiedUser);
+			response.status (200).json (modifiedUser);
 		} else {
-			response.status (400).send ({message: "User does not exist in DB"});
+			response.status (400).json ({message: "User does not exist in DB"});
 		}
 	} catch (error) {
 		return next (error);

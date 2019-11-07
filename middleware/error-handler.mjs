@@ -19,6 +19,6 @@ export default {
 		if (response.headersSent){
 			return next (error);
 		}
-		response.status (500).send ({"error": error.type});
+		response.status (500).json ({"error": error.type});
 	},
 };

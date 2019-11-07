@@ -1,6 +1,6 @@
 import express from 'express';
 
-import {authJwt} from './middleware/auth.mjs'
+//import {authJwt} from './middleware/auth.mjs'
 
 import ctrlUser from './controllers/user/index.mjs';
 //import ctrlStudent from './controllers/student/index.mjs';

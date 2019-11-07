@@ -13,13 +13,13 @@ const register = async (request, response, next) => {
 			missing_fields += "email ";
 		missing_fields = missing_fields.substring(0, missing_fields.length-1);
 		if (missing_fields !== "") {
-			response.status(400).send ({message: `Missing fields: ${missing_fields}`});
+			response.status(400).json ({message: `Missing fields: ${missing_fields}`});
 		} else {
 			if (await userDAO.checkUser ({name: request.body.user.name})){
-				response.status(400).send({message: "User already exists in BD"});
+				response.status(400).json({message: "User already exists in BD"});
 			} else {
 				const user = await userDAO.create(Object.assign({}, request.body.user));
-				response.status(200).send (user);
+				response.status(200).json (user);
 			}
 		}
 	} catch (error) {		
