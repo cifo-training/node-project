@@ -47,7 +47,7 @@ export const authLocal = async (request, response, next) => {
 				if (await bcrypt.compare (request.sender.pass, user.password)) {
 					return next();
 				} else {
-					response.status(400).json ({message : "Incorrect credentials"});
+					response.status(400).json ({message : "Bad credentials"});
 				}
 			} else {
 				response.status (400).json ({message: "User does not exist in DB"});
