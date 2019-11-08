@@ -1,9 +1,9 @@
 import express from 'express';
 
-//import {authJwt} from './middleware/auth.mjs'
+import {isAuthJwt, isActive} from './middleware/auth.mjs'
 
 import ctrlUser from './controllers/user/index.mjs';
-//import ctrlStudent from './controllers/student/index.mjs';
+import ctrlThesaurus from './controllers/thesaurus/index.mjs';
 
 import errorHandler from './middleware/error-handler.mjs';
 
@@ -13,7 +13,7 @@ app.use (express.urlencoded ({extended:true}));
 app.use (express.json());
 
 app.use('/user', ctrlUser);
-//app.use('/student',authJwt,ctrlStudent);
+app.use('/thesaurus', isAuthJwt, isActive, ctrlThesaurus);
 
 app.use (errorHandler.logError);
 app.use (errorHandler.clientErrorHandler);

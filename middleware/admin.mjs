@@ -10,7 +10,7 @@ const isAdmin = (request) => {
 
 export const checkIfAdmin = (request, response, next) => {
 	request.body.isAdmin = isAdmin (request);
-	next();
+	return next();
 };
 
 export const mustBeAdmin = (request, response, next) => {

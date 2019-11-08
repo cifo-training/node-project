@@ -4,7 +4,7 @@
   "description": "This API helps to manage the thesaurus creation.",
   "main": "app.mjs",
   "scripts": {
-    "start": "node --experimental-modules server.mjs",
+    "start": "nodemon --experimental-modules server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +30,10 @@
     "http-errors": "^1.7.3",
     "https": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }

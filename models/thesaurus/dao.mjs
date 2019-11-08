@@ -8,32 +8,28 @@ class thesaurusDAO {
 	}
 	
 	create(data){
-		const user = new User(data);
-		return user.save();
+		const thesaurus = new Thesaurus(data);
+		return thesaurus.save();
 	}
 	
 	list(){
-		return User.find().lean();
+		return Thesaurus.find().lean();
 	}
 	
 	listFind(data){
-		return User.find(data).exec();
-	}
-	
-	checkUser(data){
-		return User.findOne(data).exec();
+		return Thesaurus.find(data).exec();
 	}
 	
 	listOne(id){
-		return User.findById(id).exec();
+		return Thesaurus.findById(id).exec();
 	}
 	
 	update(id,data){
-		return User.findByIdAndUpdate(id,data, {new:true, useFindAndModify:false}).exec();
+		return Thesaurus.findByIdAndUpdate(id,data, {new:true, useFindAndModify:false}).exec();
 	}
 	
 	remove(id){
-		return User.findByIdAndRemove(id,{useFindAndModify:false}).exec();
+		return Thesaurus.findByIdAndRemove(id,{useFindAndModify:false}).exec();
 	}
 };
 
