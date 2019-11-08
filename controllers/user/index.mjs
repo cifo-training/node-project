@@ -1,22 +1,24 @@
 import Router from 'express';
 
+import showMe from './show.mjs';
 import login from './login.mjs';
 import register from './register.mjs';
-import {updateAsAdmin} from './update.mjs';
+import {updateAsAdmin, updateUser} from './update.mjs';
 import usersList from './list.mjs';
 import {activateUser, deactivateUser} from './beauty.mjs';
-import {removeUser} from './remove.mjs';
+import removeUser from './remove.mjs';
 
-import {authLocal} from '../../middleware/auth.mjs';
+import {authLocal, isAuthJwt, isActive} from '../../middleware/auth.mjs';
 import {checkIfAdmin, mustBeAdmin} from '../../middleware/admin.mjs';
 
 const router = Router();
 
 router.use(checkIfAdmin);
 
-router.post('/login', authLocal, login);
 router.post('/register', register);
-router.put('/:id', updateAsAdmin);
+router.post('/login', authLocal, login);
+router.get('/me', isAuthJwt, showMe);
+router.put('/:id', updateAsAdmin, isAuthJwt, isActive, updateUser);
 
 router.use(mustBeAdmin);
 router.get('/', usersList);

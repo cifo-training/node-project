@@ -1,35 +1,20 @@
 import Router from 'express';
 
-import thesaurusList from './list.mjs'
-
-/*
-import login from './login.mjs';
-import register from './register.mjs';
-import {updateAsAdmin} from './update.mjs';
-import usersList from './list.mjs';
-import {activateUser, deactivateUser} from './beauty.mjs';
-import {removeUser} from './remove.mjs'
-
-import {authLocal} from '../../middleware/auth.mjs';
-import {checkIfAdmin, mustBeAdmin} from '../../middleware/admin.mjs';
-*/
+import thesaurusList from './list.mjs';
+import thesaurusShow from './show.mjs';
+import thesaurusCreate from './create.mjs';
+import thesaurusUpdate from './update.mjs';
+import thesaurusRemove from './remove.mjs';
 
 const router = Router();
 
-router.get('/', thesaurusList);
+router.route('/')
+	.get(thesaurusList)
+	.post(thesaurusCreate);
 
-/*
-router.use(checkIfAdmin);
-
-router.post('/login', authLocal, login);
-router.post('/register', register);
-router.put('/:id', updateAsAdmin);
-
-router.use(mustBeAdmin);
-router.get('/', usersList);
-router.patch('/up/:id', activateUser);
-router.patch('/down/:id', deactivateUser);
-router.delete('/:id', removeUser);
-*/
+router.route('/:id')
+	.get(thesaurusShow)
+	.put(thesaurusUpdate)
+	.delete(thesaurusRemove);
 
 export default router;

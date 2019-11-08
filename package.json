@@ -1,7 +1,7 @@
 {
   "name": "thesaurus_api",
   "version": "1.0.0",
-  "description": "This API helps to manage the thesaurus creation.",
+  "description": "Lost Objects Database API",
   "main": "app.mjs",
   "scripts": {
     "start": "nodemon --experimental-modules server.mjs",

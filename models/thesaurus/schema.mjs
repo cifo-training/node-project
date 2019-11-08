@@ -17,10 +17,10 @@ const thesaurusSchema = new Schema ({
 		type: String,
 		required: true
 	},
-	weight: Decimal28,
-	height: Decimal128,
-	length: Decimal128,
-	width: Decimal128,
+	weight: mongoose.Decimal128,
+	height: mongoose.Decimal128,
+	length: mongoose.Decimal128,
+	width: mongoose.Decimal128,
 	contact: {
 		type: String,
 		required: true

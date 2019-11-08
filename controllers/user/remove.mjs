@@ -1,7 +1,7 @@
 import userDAO from '../../models/user/dao.mjs';
 import HTTPError from 'http-errors';
 
-export const removeUser = async (request, response, next) => {
+const remove = async (request, response, next) => {
 	try {
 		const user = await userDAO.listOne (request.params.id);
 		if (user) {
@@ -14,3 +14,5 @@ export const removeUser = async (request, response, next) => {
 		return next (error);
 	}
 };
+
+export default remove;
