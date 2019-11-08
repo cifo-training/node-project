@@ -16,7 +16,7 @@ export const updateAsAdmin = async (request, response, next) => {
 	try {
 		if (request.body.isAdmin) {
 			const modified = await saveNewUser(request);
-			response.status(200).json (modifiedUser);
+			response.status(200).json (modified);
 		} else {
 			return next();
 		}
@@ -28,7 +28,7 @@ export const updateAsAdmin = async (request, response, next) => {
 export const updateUser = async (request, response, next) => {
 	try {
 		const modified = await saveNewUser(request);
-		response.status(200).json (modifiedUser);
+		response.status(200).json (modified);
 	} catch (error) {
 		return next (error);
 	}
