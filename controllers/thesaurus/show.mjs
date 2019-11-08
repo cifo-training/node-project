@@ -5,6 +5,7 @@ const show = async (request, response, next) => {
 	try {
 		const object = await thesaurusDAO.listOne(request.params.id)
 		if (object) {
+			delete object.__v;
 			response.status(200).json (object);
 		} else {
 			response.status(404).json({message: "Object not found"})
