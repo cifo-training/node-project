@@ -42,7 +42,7 @@ class userDAO {
 	}
 	
 	cleanAll(users){
-		users.forEach(user => cleanOne(user));
+		users.forEach(user => this.cleanOne(user));
 	}
 };
 
