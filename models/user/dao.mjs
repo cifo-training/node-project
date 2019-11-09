@@ -39,10 +39,12 @@ class userDAO {
 	cleanOne(user){
 		delete user.password;
 		delete user.__v;
+		return user;
 	}
 	
 	cleanAll(users){
 		users.forEach(user => this.cleanOne(user));
+		return users;
 	}
 };
 
