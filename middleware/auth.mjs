@@ -92,7 +92,7 @@ export const isAuthJwt = async (request, response, next) => {
 				next();
 			})
 			.catch (error => {
-				response.status (error.status).json (error.message);
+				response.status (error.status).json ({message: error.message});
 			});
 	}
 };

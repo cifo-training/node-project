@@ -3,6 +3,16 @@ import bcrypt from 'bcrypt';
 
 const Schema = mongoose.Schema;
 
+const decimal2JSON = (v,i,prev) => {
+	if (v !== null && typeof v === 'object') {
+		if (v.constructor.name === 'Decimal128') {
+			prev[i] = v.toString();
+		} else {
+			Object.entries(v).forEach(([key,value]) => decimal2JSON(value, key, prev ? prev[i] : v));
+		}
+	}
+}
+
 const thesaurusSchema = new Schema ({
 	object: {
 		type: String,
@@ -24,6 +34,13 @@ const thesaurusSchema = new Schema ({
 	contact: {
 		type: String,
 		required: true
+	}
+});
+
+thesaurusSchema.set('toJSON', {
+	transform: (doc, ret) => {
+		decimal2JSON(ret);
+		return ret;
 	}
 });
 
