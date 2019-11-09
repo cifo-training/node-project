@@ -17,33 +17,38 @@ class userDAO {
 	}
 	
 	listFind(data){
-		return User.find(data).exec();
+		return User.find(data).lean();
 	}
 	
 	checkUser(data){
-		return User.findOne(data).exec();
+		return User.findOne(data).lean();
 	}
 	
 	listOne(id){
-		return User.findById(id).exec();
+		return User.findById(id).lean();
 	}
 	
 	update(id,data){
-		return User.findByIdAndUpdate(id,data, {new:true, useFindAndModify:false}).exec();
+		return User.findByIdAndUpdate(id,data, {new:true, useFindAndModify:false}).lean();
 	}
 	
 	remove(id){
-		return User.findByIdAndRemove(id,{useFindAndModify:false}).exec();
+		return User.findByIdAndRemove(id,{useFindAndModify:false}).lean();
 	}
 	
 	cleanOne(user){
+		try {
+			JSON.parse(user);
+		} catch (error) {
+			user = JSON.parse(JSON.stringify(user));
+		}
 		delete user.password;
 		delete user.__v;
 		return user;
 	}
 	
 	cleanAll(users){
-		users.forEach(user => this.cleanOne(user));
+		users.forEach((user,i,arr) => arr[i] = this.cleanOne(user));
 		return users;
 	}
 };
