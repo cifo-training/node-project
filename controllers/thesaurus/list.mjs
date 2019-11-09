@@ -4,8 +4,7 @@ import HTTPError from 'http-errors';
 const list = async (request, response, next) => {
 	try {
 		const objects_list = await thesaurusDAO.list();
-		objects_list.forEach (object => {delete object.__v});
-		response.status(200).json (objects_list);
+		response.status(200).json (thesaurusDAO.cleanAll(objects_list));
 	} catch (error) {
 		return next (error);
 	}

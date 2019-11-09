@@ -23,7 +23,7 @@ const update = async (request, response, next) => {
 		if (request.body.object.contact)
 			object.contact = request.body.object.contact;
 		const modifiedObject = await thesaurusDAO.update (request.params.id, object);
-		response.status(200).json (modifiedObject);
+		response.status(200).json (thesaurusDAO.cleanOne(modifiedObject));
 	} catch (error) {
 		return next (error);
 	}

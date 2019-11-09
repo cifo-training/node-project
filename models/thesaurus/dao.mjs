@@ -31,6 +31,21 @@ class thesaurusDAO {
 	remove(id){
 		return Thesaurus.findByIdAndRemove(id,{useFindAndModify:false}).exec();
 	}
+	
+	cleanOne(obj){
+		try {
+			JSON.parse(obj);
+		} catch (error) {
+			obj = JSON.parse(JSON.stringify(obj));
+		}
+		delete obj.__v;
+		return obj;
+	}
+	
+	cleanAll(objs){
+		objs.forEach((obj,i,arr) => arr[i] = this.cleanOne(obj));
+		return objs;
+	}
 };
 
 export default new thesaurusDAO();

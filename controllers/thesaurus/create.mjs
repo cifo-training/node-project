@@ -5,7 +5,7 @@ const create = async (request, response, next) => {
 	try {
 		if (request.body.thesaurus) {
 			const object = await thesaurusDAO.create(Object.assign({}, request.body.thesaurus));
-			response.status(200).json (object);
+			response.status(200).json (thesaurusDAO.cleanOne(object));
 		} else {
 			response.status(400).json ({message: "Missing data"});
 		}
