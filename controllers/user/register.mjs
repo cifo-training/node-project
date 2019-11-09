@@ -19,7 +19,7 @@ const register = async (request, response, next) => {
 				response.status(400).json({message: "User already exists in BD"});
 			} else {
 				const user = await userDAO.create(Object.assign({}, request.body.user));
-				response.status(200).json (user);
+				response.status(200).json (cleanOne(user));
 			}
 		}
 	} catch (error) {		

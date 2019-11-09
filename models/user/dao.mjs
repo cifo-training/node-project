@@ -35,6 +35,15 @@ class userDAO {
 	remove(id){
 		return User.findByIdAndRemove(id,{useFindAndModify:false}).exec();
 	}
+	
+	cleanOne(user){
+		delete user.password;
+		delete user.__v;
+	}
+	
+	cleanAll(users){
+		users.forEach(user => cleanOne(user));
+	}
 };
 
 export default new userDAO();
