@@ -4,19 +4,27 @@ import bcrypt from 'bcrypt';
 
 const saveNewUser = async (request) => {
 	let user = await userDAO.listOne(request.params.id);
-	if (request.body.user.email)
-		user.email = request.body.user.email;
-	if (request.body.user.password) {
-		user.password = await bcrypt.hash (request.body.user.password, 10);
+	if (user) {
+		if (request.body.user.email)
+			user.email = request.body.user.email;
+		if (request.body.user.password) {
+			user.password = await bcrypt.hash (request.body.user.password, 10);
+		}
+		return await userDAO.update (request.params.id, user);
+	} else {
+		return "";
 	}
-	return await userDAO.update (request.params.id, user);
 };
 
 export const updateAsAdmin = async (request, response, next) => {
 	try {
 		if (request.body.isAdmin) {
 			const modified = await saveNewUser(request);
-			response.status(200).json (userDAO.cleanOne(modified));
+			if (modified) {
+				response.status(200).json (userDAO.cleanOne(modified));
+			} else {
+				response.status(404).json ({message: "User not found"});
+			}
 		} else {
 			return next();
 		}
@@ -28,7 +36,11 @@ export const updateAsAdmin = async (request, response, next) => {
 export const updateUser = async (request, response, next) => {
 	try {
 		const modified = await saveNewUser(request);
-		response.status(200).json (modified);
+		if (modified) {
+			response.status(200).json (modified);
+		} else {
+			response.status(404).json ({message: "User not found"});
+		}
 	} catch (error) {
 		return next (error);
 	}
