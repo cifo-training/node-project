@@ -8,7 +8,7 @@ const remove = async (request, response, next) => {
 			await userDAO.remove (request.params.id);
 			response.status (200).json ({message: `User successfully deleted: ${user.name}`});
 		} else {
-			response.status (404).json ({message: "User identifier does not exist"});
+			response.status (404).json ({message: "User not found"});
 		}
 	} catch (error) {
 		return next (error);

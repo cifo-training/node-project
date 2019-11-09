@@ -21,4 +21,12 @@ export default {
 		}
 		response.status (500).json ({"error": error.type});
 	},
+	
+	noMore(request, response) {
+		response.end();
+	},
+	
+	unRoute (request, response) {
+		response.status(404).json ({message: "Unknown route"});
+	},
 };

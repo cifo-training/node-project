@@ -12,11 +12,13 @@ const app = express();
 app.use (express.urlencoded ({extended:true}));
 app.use (express.json());
 
-app.use('/user', ctrlUser);
-app.use('/thesaurus', isAuthJwt, isActive, ctrlThesaurus);
+app.use('/user', ctrlUser, errorHandler.noMore);
+app.use('/thesaurus', isAuthJwt, isActive, ctrlThesaurus, errorHandler.noMore);
 
 app.use (errorHandler.logError);
 app.use (errorHandler.clientErrorHandler);
 app.use (errorHandler.errorHandler);
+
+app.use ('*', errorHandler.unRoute);
 
 export default app;
