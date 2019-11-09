@@ -16,7 +16,7 @@ export const updateAsAdmin = async (request, response, next) => {
 	try {
 		if (request.body.isAdmin) {
 			const modified = await saveNewUser(request);
-			response.status(200).json (cleanOne(modified));
+			response.status(200).json (userDAO.cleanOne(modified));
 		} else {
 			return next();
 		}

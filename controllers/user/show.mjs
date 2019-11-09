@@ -6,7 +6,7 @@ const show = async (request, response, next) => {
 		if (!request.body.isAdmin) {
 			const user = await userDAO.listOne(request.user);
 			if (user) {
-				response.status (200).json (cleanOne(user));
+				response.status (200).json (userDAO.cleanOne(user));
 			} else {
 				response.status (404).json ({message:"User not found"});
 			}
