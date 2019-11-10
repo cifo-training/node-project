@@ -4,7 +4,7 @@
 1. [Introducción](#Introducción)
 2. [Primera iteración](#Primera_iteración)
 3. [Índices](#Índices)
-3. [Test Postman](#Postman)
+3. [Test _Postman_](#Postman)
 
 ## <a id="Introducción"></a>Introducción ##
 
@@ -167,7 +167,7 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 ]
 ```
 
-## <a id="Postman"></a>Test - Postman ##
+## <a id="Postman"></a>Test - _Postman_ ##
 
 - [POST Signup](#POST_Signup)
 
