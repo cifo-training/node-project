@@ -101,16 +101,16 @@
       </div>
     </div>
     <div id="actionButtons" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <button class="execBtn" id="erase-btn" mat-raised-button color="primary"
+          (click)='deleteCustomer(customerData._id)'>Delete</button>
+      </div>
       <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
         <button class="execBtn" id="edit-btn" mat-raised-button color="primary"
           (click)='postCustomer(customerData)'>Save</button>
-        <button class="execBtn" id="cancel-btn"  mat-raised-button color="primary"
-         (click)='goBack()'>Cancel</button>
+        <button class="execBtn" id="cancel-btn" mat-raised-button color="primary" (click)='goBack()'>Cancel</button>
       </div>
-      <div>
-        <button class="execBtn" id="erase-btn" mat-raised-button  color="primary"
-          (click)='deleteCustomer(customerData._id)'>Delete</button>
-      </div>
+
     </div>
   </mat-card>
 </div>
