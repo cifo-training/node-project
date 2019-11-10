@@ -165,10 +165,7 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 
 ## Test - Postman
 
-
-### GitLab Orange Heading
-{: .gitlab-orange}
- Get usuarios
+## GET Get usuarios
 
 http://localhost:3000/customers
 
