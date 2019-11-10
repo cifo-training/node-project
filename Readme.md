@@ -1,3 +1,4 @@
+## <a id="Home"></a> ##
 ![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/favicon.ico)
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor® Admin Panel
 
@@ -173,6 +174,12 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 - [POST Login](#POST_Login)
 - [GET Get usuarios](#GET_Get_usuarios)
 - [GET Get usuarios inactivos](#GET_Get_usuarios_inactivos)
+- [POST Post usuario nuevo](#POST_Post_usuario_nuevo)
+- [GET Get usuario por `id`](#GET_Get_usuario_por_id)
+- [PUT Put usuario por `id`](#PUT_Put_usuario_por_id)
+
+[Volver a inicio](#Home)
+
 
 ## <a id="POST_Signup"></a>POST Signup ##
 
@@ -242,7 +249,7 @@ Example Response200 OK
 
 
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## <a id="POST_Login"></a>POST Login ##
 
@@ -293,7 +300,7 @@ Example Response200 OK
       },
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzE2ZTQ4YjZhZmRhMWJlYzE0MjM2MCIsImlhdCI6MTU3MzIwNjk1NywiZXhwIjoxNTc1Nzk4OTU3fQ.HvelhvYmrY75NRkTRupvfCuaFqPhu9LarUj2HeNuw0Y"
     }
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## <a id="GET_Get_usuarios"></a>GET Get usuarios ## 
 
@@ -348,7 +355,7 @@ req.write(postData);
 
 req.end();
 ```
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## <a id="GET_Get_usuarios_inactivos"></a>GET Get usuarios inactivos ##
 
@@ -484,9 +491,9 @@ Example Response200 OK
           {
 
           ...
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
-## POST Post usuario nuevo
+## <a id="POST_Post_usuario_nuevo"></a>POST Post usuario nuevo ##
 
 >http://localhost:3000/customers
 
@@ -622,9 +629,9 @@ Example Response    200 OK
       "packList": "DEFINITION / RUNNING",
       "__v": 0
     }
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
-## GET Get usuario por `id`
+## <a id="GET_Get_usuario_por_id"></a>GET Get usuario por `id` ##
 
 >http://localhost:3000/customers/5dc11a5903bf2803b71b7fe0
 
@@ -741,9 +748,9 @@ Example Response    200 OK
         "packList": "COMPETITION / BARS"
     }
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
-## PUT Put usuario por `id`
+## <a id="PUT_Put_usuario_por_id"></a>PUT Put usuario por `id` ##
 
 >http://localhost:3000/customers/5dc11a5903bf2803b71b7fe0
 
@@ -906,7 +913,7 @@ Example Response200 OK
         "packList": " / "
     }
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## DELETE Delete usuario
 
@@ -924,7 +931,7 @@ Elimina un usuario pasandole el id como parametro de busqueda y destruccion
 
 Example Request
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## GET Get usuario por Plan
 
@@ -1039,7 +1046,7 @@ Example Response    200 OK
         "name": {
     ...
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## DELETE Delete packs del usuario
 
@@ -1154,7 +1161,7 @@ Example response    200 OK
           "first": "Bettie",
     ...
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## DELETE Delete packs del usuario
 
@@ -1257,7 +1264,7 @@ Example Response    200 OK
         "packList": ""
     }
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## GET Get plans
 
@@ -1361,7 +1368,188 @@ Example Response    200 OK
     },
     ...
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
+
+## POST Post plans
+
+>http://localhost:3000/plans/
+
+Añade un nuevo dccumento a la coleccion plan
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+	{
+        "customers": [],
+        "name": "ONE",
+        "price": 10.95,
+        "index": 6,
+        "icon": "one.png",
+        "options": [
+            {
+                "_id": "5dc0b6ac63d6814c30992aa6",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "option": "Acceso a sesión completa",
+                "_id": "5dc0b72863d6814c30992aa7"
+            },
+            {
+                "option": "Acceso a sesión completa",
+                "_id": "5dc0b73663d6814c30992aa8"
+            }
+        ]
+    }
+
+Example Request Post plans
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'POST',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/plans/',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "\t{\n        \"customers\": [],\n        \"name\": \"ONE\",\n        \"price\": 10.95,\n        \"index\": 6,\n        \"icon\": \"one.png\",\n        \"options\": [\n            {\n                \"_id\": \"5dc0b6ac63d6814c30992aa6\",\n                \"option\": \"Acceso a sesión completa\"\n            },\n            {\n                \"option\": \"Acceso a sesión completa\",\n                \"_id\": \"5dc0b72863d6814c30992aa7\"\n            },\n            {\n                \"option\": \"Acceso a sesión completa\",\n                \"_id\": \"5dc0b73663d6814c30992aa8\"\n            }\n        ]\n    }";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response    200 OK
+
+    {
+        "customers": [],
+        "_id": "5dc6afe5d6c75309570eaec7",
+        "options": [
+            {
+                "_id": "5dc0b6ac63d6814c30992aa6",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "_id": "5dc0b72863d6814c30992aa7",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "_id": "5dc0b73663d6814c30992aa8",
+                "option": "Acceso a sesión completa"
+            }
+        ],
+        "name": "ONE",
+        "price": 10.95,
+        "index": 6,
+        "icon": "one.png",
+        "__v": 0
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## GET Get plans por id
+
+>http://localhost:3000/plans/5dc29ca21c9d4400007dd917
+
+Obtiene un documento filtrado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    { }
+
+Example Request Get plans por id
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'GET',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/plans/5dc29ca21c9d4400007dd917',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "    { }";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response    200 OK
+
+    {
+        "customers": [],
+        "_id": "5dc29ca21c9d4400007dd917",
+        "name": "VIP",
+        "price": 0,
+        "index": 0,
+        "icon": "vip.png",
+        "options": [
+            {
+                "_id": "5dc0b6ac63d6814c30992aa6",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "option": "Acceso a sesión completa",
+                "_id": "5dc0b72863d6814c30992aa7"
+            },
+            {
+                "option": "Acceso a sesión completa",
+                "_id": "5dc0b73663d6814c30992aa8"
+            }
+        ]
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
 
 ## GET Get packs
 
@@ -1487,7 +1675,7 @@ Get packs
     }
     ]
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## POST Post packs
 
@@ -1560,7 +1748,7 @@ Example Response    200 OK
         "__v": 0
     }
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 ## GET Get packs por id
 
@@ -1627,185 +1815,8 @@ Example Response    200 OK
         "__v": 0
     }
 
-[Subir a submenu Test _Postman_](#Postman)
+[Volver a submenu Test _Postman_](#Postman)
 
 
 
 
-
-## POST Post plans
-
->http://localhost:3000/plans/
-
-Añade un nuevo dccumento a la coleccion plan
-
-**Headers**
-
->Content-Type	application/json
-
-**Body**    raw (application/json)
-
-	{
-        "customers": [],
-        "name": "ONE",
-        "price": 10.95,
-        "index": 6,
-        "icon": "one.png",
-        "options": [
-            {
-                "_id": "5dc0b6ac63d6814c30992aa6",
-                "option": "Acceso a sesión completa"
-            },
-            {
-                "option": "Acceso a sesión completa",
-                "_id": "5dc0b72863d6814c30992aa7"
-            },
-            {
-                "option": "Acceso a sesión completa",
-                "_id": "5dc0b73663d6814c30992aa8"
-            }
-        ]
-    }
-
-Example Request Post plans
-
-    var http = require('follow-redirects').http;
-    var fs = require('fs');
-
-    var options = {
-    'method': 'POST',
-    'hostname': 'localhost',
-    'port': 3000,
-    'path': '/plans/',
-    'headers': {
-        'Content-Type': 'application/json'
-    },
-    'maxRedirects': 20
-    };
-
-    var req = http.request(options, function (res) {
-    var chunks = [];
-
-    res.on("data", function (chunk) {
-        chunks.push(chunk);
-    });
-
-    res.on("end", function (chunk) {
-        var body = Buffer.concat(chunks);
-        console.log(body.toString());
-    });
-
-    res.on("error", function (error) {
-        console.error(error);
-    });
-    });
-
-    var postData =  "\t{\n        \"customers\": [],\n        \"name\": \"ONE\",\n        \"price\": 10.95,\n        \"index\": 6,\n        \"icon\": \"one.png\",\n        \"options\": [\n            {\n                \"_id\": \"5dc0b6ac63d6814c30992aa6\",\n                \"option\": \"Acceso a sesión completa\"\n            },\n            {\n                \"option\": \"Acceso a sesión completa\",\n                \"_id\": \"5dc0b72863d6814c30992aa7\"\n            },\n            {\n                \"option\": \"Acceso a sesión completa\",\n                \"_id\": \"5dc0b73663d6814c30992aa8\"\n            }\n        ]\n    }";
-
-    req.write(postData);
-
-    req.end();
-
-Example Response    200 OK
-
-    {
-        "customers": [],
-        "_id": "5dc6afe5d6c75309570eaec7",
-        "options": [
-            {
-                "_id": "5dc0b6ac63d6814c30992aa6",
-                "option": "Acceso a sesión completa"
-            },
-            {
-                "_id": "5dc0b72863d6814c30992aa7",
-                "option": "Acceso a sesión completa"
-            },
-            {
-                "_id": "5dc0b73663d6814c30992aa8",
-                "option": "Acceso a sesión completa"
-            }
-        ],
-        "name": "ONE",
-        "price": 10.95,
-        "index": 6,
-        "icon": "one.png",
-        "__v": 0
-    }
-
-## GET Get plans por id
-
->http://localhost:3000/plans/5dc29ca21c9d4400007dd917
-
-Obtiene un documento filtrado por id
-
-**Headers**
-
->Content-Type	application/json
-
-**Body**    raw (application/json)
-
-    { }
-
-Example Request Get plans por id
-
-    var http = require('follow-redirects').http;
-    var fs = require('fs');
-
-    var options = {
-    'method': 'GET',
-    'hostname': 'localhost',
-    'port': 3000,
-    'path': '/plans/5dc29ca21c9d4400007dd917',
-    'headers': {
-        'Content-Type': 'application/json'
-    },
-    'maxRedirects': 20
-    };
-
-    var req = http.request(options, function (res) {
-    var chunks = [];
-
-    res.on("data", function (chunk) {
-        chunks.push(chunk);
-    });
-
-    res.on("end", function (chunk) {
-        var body = Buffer.concat(chunks);
-        console.log(body.toString());
-    });
-
-    res.on("error", function (error) {
-        console.error(error);
-    });
-    });
-
-    var postData =  "    { }";
-
-    req.write(postData);
-
-    req.end();
-
-Example Response    200 OK
-
-    {
-        "customers": [],
-        "_id": "5dc29ca21c9d4400007dd917",
-        "name": "VIP",
-        "price": 0,
-        "index": 0,
-        "icon": "vip.png",
-        "options": [
-            {
-                "_id": "5dc0b6ac63d6814c30992aa6",
-                "option": "Acceso a sesión completa"
-            },
-            {
-                "option": "Acceso a sesión completa",
-                "_id": "5dc0b72863d6814c30992aa7"
-            },
-            {
-                "option": "Acceso a sesión completa",
-                "_id": "5dc0b73663d6814c30992aa8"
-            }
-        ]
-    }
