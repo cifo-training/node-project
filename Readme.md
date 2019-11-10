@@ -111,7 +111,7 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Alta de cliente
 
-[![Alta de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Create-customer.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Create-customer.png)
+[![Alta de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/Create-customer.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Create-customer.png)
 
 [![Alta de cliente1](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer1.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer1.png)
 
@@ -140,3 +140,5 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
     - Gráficas
     - Informes
     - ...
+
+
