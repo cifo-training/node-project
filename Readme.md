@@ -1,4 +1,4 @@
-![Home](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/favicon.ico)
+![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/favicon.ico)
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor Admin Panel
 
 ## 1. Introducción
@@ -75,55 +75,55 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Pagina principal
 
-[![Home](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Home.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Home.png)
+[![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Home.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Home.png)
 
 ### Login Page
 
-[![login](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Login.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Login.png)
+[![login](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Login.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Login.png)
 
-[![loging](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Logging.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Logging.png)
+[![loging](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Logging.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Logging.png)
 ### Errors Validation Login Page
 
 #### Invalid Email
 
-[![login Invalid Email](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_Validation-Invalid-login1.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_Validation-Invalid-login1.png)
+[![login Invalid Email](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_Validation-Invalid-login1.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_Validation-Invalid-login1.png)
 
 #### Unauthorized
 
-[![login Unauthorized](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Validation-Unauthorized-login.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Validation-Unauthorized-login.png)
+[![login Unauthorized](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Validation-Unauthorized-login.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Validation-Unauthorized-login.png)
 
 ### Pagina principal Logged
 
-[![Home Logged](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-home-logged.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-home-logged.png)
+[![Home Logged](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-home-logged.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-home-logged.png)
 
 
 ### Listado de clientes
 
-[![Listado de clientes](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Customers.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Customers.png)
+[![Listado de clientes](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Customers.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Customers.png)
 
 ### Detalle de cliente
 
-[![Detalle de cliente](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Customer-detail.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Customer-detail.png)
+[![Detalle de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Customer-detail.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Customer-detail.png)
 
 ### Edición de cliente
 
-[![Edición de cliente](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_edit-customer.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_edit-customer.png)
+[![Edición de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_edit-customer.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_edit-customer.png)
 
 ### Alta de cliente
 
-[![Alta de cliente](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Create-customer.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Create-customer.png)
+[![Alta de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Create-customer.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Create-customer.png)
 
-[![Alta de cliente1](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer1.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer1.png)
+[![Alta de cliente1](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer1.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer1.png)
 
-[![Alta de cliente2](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer2.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer2.png)
+[![Alta de cliente2](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer2.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_creating-customer2.png)
 
 ### Listado de Planes
 
-[![Producto: Planes](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Products-Plans.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Products-Plans.png)
+[![Producto: Planes](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Products-Plans.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Products-Plans.png)
 
 ### Sección ToDo (Tareas desarrollo - estado)
 
-[![Demanda de stock](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Todo-section.png)](https://github.com/ArmandoRodGo/projecto-mongo/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Todo-section.png)
+[![Demanda de stock](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Todo-section.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)_Todo-section.png)
 
 
 ## Posteriores iteraciones
