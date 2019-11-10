@@ -1,4 +1,4 @@
-## <a id="Home"></a> ##
+<a id="Home"> </a>
 ![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/favicon.ico)
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor® Admin Panel
 
