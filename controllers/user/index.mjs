@@ -10,6 +10,7 @@ import removeUser from './remove.mjs';
 
 import {authLocal, isAuthJwt, isActive} from '../../middleware/auth.mjs';
 import {checkIfAdmin, mustBeAdmin} from '../../middleware/admin.mjs';
+import isValidId from '../../middleware/id.mjs';
 
 const router = Router();
 
@@ -18,12 +19,12 @@ router.use(checkIfAdmin);
 router.post('/register', register);
 router.post('/login', authLocal, login);
 router.get('/me', isAuthJwt, showMe);
-router.put('/:id', updateAsAdmin, isAuthJwt, isActive, updateUser);
+router.put('/:id', isValidId, updateAsAdmin, isAuthJwt, isActive, updateUser);
 
 router.use(mustBeAdmin);
 router.get('/', usersList);
-router.patch('/up/:id', activateUser);
-router.patch('/down/:id', deactivateUser);
-router.delete('/:id', removeUser);
+router.patch('/up/:id', isValidId, activateUser);
+router.patch('/down/:id', isValidId, deactivateUser);
+router.delete('/:id', isValidId, removeUser);
 
 export default router;

@@ -39,9 +39,8 @@ const thesaurusSchema = new Schema ({
 
 thesaurusSchema.set('toJSON', {
 	transform: (doc, ret) => {
-		decimal2JSON(ret);
-		return ret;
-	}
+		decimal2JSON(ret); 
+		return ret;}
 });
 
 export default thesaurusSchema;

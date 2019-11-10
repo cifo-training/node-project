@@ -6,6 +6,8 @@ import thesaurusCreate from './create.mjs';
 import thesaurusUpdate from './update.mjs';
 import thesaurusRemove from './remove.mjs';
 
+import isValidId from '../../middleware/id.mjs';
+
 const router = Router();
 
 router.route('/')
@@ -13,8 +15,8 @@ router.route('/')
 	.post(thesaurusCreate);
 
 router.route('/:id')
-	.get(thesaurusShow)
-	.put(thesaurusUpdate)
-	.delete(thesaurusRemove);
+	.get(isValidId, thesaurusShow)
+	.put(isValidId, thesaurusUpdate)
+	.delete(isValidId, thesaurusRemove);
 
 export default router;
