@@ -1,9 +1,9 @@
 ![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/favicon.ico)
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor® Admin Panel
 
-1. [Introducción](#Introducción)?
+1. [Introducción](#Introducción)
 
-## <a id="Introducción"></a>1. Introducción ##
+## <a id="Introducción"></a>Introducción ##
 
 ### Cliente: TheTraktor®
 
