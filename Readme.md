@@ -94,12 +94,12 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Pagina principal Logged
 
-[![Home Logged](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-home-logged.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-home-logged.png)
+[![Home Logged](https://github.com/neollob/node-project/blob/master/readme-imgs/home-logged.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/home-logged.png)
 
 
 ### Listado de clientes
 
-[![Listado de clientes](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Customers.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/admin.thetraktor.com_(iPad)-Customers.png)
+[![Listado de clientes](https://github.com/neollob/node-project/blob/master/readme-imgs/Customers.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Customers.png)
 
 ### Detalle de cliente
 
