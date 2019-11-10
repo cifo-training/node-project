@@ -242,7 +242,7 @@ Example Response200 OK
 
 
 
-[Test _Postman_](#Postman)
+[Subir a submenu Test _Postman_](#Postman)
 
 ## <a id="POST_Login"></a>POST Login ##
 
@@ -293,7 +293,7 @@ Example Response200 OK
       },
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzE2ZTQ4YjZhZmRhMWJlYzE0MjM2MCIsImlhdCI6MTU3MzIwNjk1NywiZXhwIjoxNTc1Nzk4OTU3fQ.HvelhvYmrY75NRkTRupvfCuaFqPhu9LarUj2HeNuw0Y"
     }
-[Test _Postman_](#Postman)
+[Subir a submenu Test _Postman_](#Postman)
 
 ## <a id="GET_Get_usuarios"></a>GET Get usuarios ## 
 
@@ -348,7 +348,7 @@ req.write(postData);
 
 req.end();
 ```
-[Test _Postman_](#Postman)
+[Subir a submenu Test _Postman_](#Postman)
 
 ## <a id="GET_Get_usuarios_inactivos"></a>GET Get usuarios inactivos ##
 
@@ -484,7 +484,7 @@ Example Response200 OK
           {
 
           ...
-[Test _Postman_](#Postman)
+[Subir a submenu Test _Postman_](#Postman)
 
 ## POST Post usuario nuevo
 
@@ -622,7 +622,7 @@ Example Response    200 OK
       "packList": "DEFINITION / RUNNING",
       "__v": 0
     }
-[Test _Postman_](#Postman)
+[Subir a submenu Test _Postman_](#Postman)
 
 ## GET Get usuario por `id`
 
@@ -740,6 +740,8 @@ Example Response    200 OK
         "registered": "2019-11-09T11:06:09.442Z",
         "packList": "COMPETITION / BARS"
     }
+
+[Subir a submenu Test _Postman_](#Postman)
 
 ## PUT Put usuario por `id`
 
@@ -904,6 +906,8 @@ Example Response200 OK
         "packList": " / "
     }
 
+[Subir a submenu Test _Postman_](#Postman)
+
 ## DELETE Delete usuario
 
 >http://localhost:3000/customers/5dc6a30ad55a507cc296e223
@@ -919,6 +923,8 @@ Elimina un usuario pasandole el id como parametro de busqueda y destruccion
     { }
 
 Example Request
+
+[Subir a submenu Test _Postman_](#Postman)
 
 ## GET Get usuario por Plan
 
@@ -1033,6 +1039,8 @@ Example Response    200 OK
         "name": {
     ...
 
+[Subir a submenu Test _Postman_](#Postman)
+
 ## DELETE Delete packs del usuario
 
 >http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs
@@ -1146,6 +1154,8 @@ Example response    200 OK
           "first": "Bettie",
     ...
 
+[Subir a submenu Test _Postman_](#Postman)
+
 ## DELETE Delete packs del usuario
 
 >http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs
@@ -1246,6 +1256,8 @@ Example Response    200 OK
         },
         "packList": ""
     }
+
+[Subir a submenu Test _Postman_](#Postman)
 
 ## GET Get plans
 
@@ -1348,7 +1360,9 @@ Example Response    200 OK
         ]
     },
     ...
-    
+
+[Subir a submenu Test _Postman_](#Postman)
+
 ## GET Get packs
 
 >http://localhost:3000/packs/
@@ -1473,6 +1487,8 @@ Get packs
     }
     ]
 
+[Subir a submenu Test _Postman_](#Postman)
+
 ## POST Post packs
 
 >http://localhost:3000/packs/
@@ -1544,6 +1560,8 @@ Example Response    200 OK
         "__v": 0
     }
 
+[Subir a submenu Test _Postman_](#Postman)
+
 ## GET Get packs por id
 
 >http://localhost:3000/packs/5dc6af79d6c75309570eaec6
@@ -1609,6 +1627,7 @@ Example Response    200 OK
         "__v": 0
     }
 
+[Subir a submenu Test _Postman_](#Postman)
 
 
 
