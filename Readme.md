@@ -167,7 +167,7 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 ]
 ```
 
-## <a id="Postman"></a>Test - _Postman_ ##
+## <a id="Postman"></a>**Test** - _Postman_ ##
 
 - [POST Signup](#POST_Signup)
 
