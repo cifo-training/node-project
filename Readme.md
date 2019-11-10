@@ -123,7 +123,7 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Sección ToDo (Tareas desarrollo - estado)
 
-    ![To-Do](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
+![To-Do](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
 
 [Volver a inicio](#Home)
 
