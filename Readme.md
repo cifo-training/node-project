@@ -171,7 +171,7 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 
 - [POST Signup](#POST_Signup)
 
-## <a id="POST_Signup"></a><b>POST</b> Signup ##
+## <a id="POST_Signup"></a>POST Signup ##
 
 
 >http://localhost:3000/user/signup
