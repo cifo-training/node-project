@@ -167,33 +167,61 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 
 ## GET Get usuarios
 
-http://localhost:3000/customers
+	http://localhost:3000/customers
 
 lista los usuarios activos
-Headers
+
+**Headers**
+```
 Content-Type	application/json
-Bodyraw (application/json)
+```
+Body raw (application/json)
 
-{
-
+	{
 		"name":"dani2",
 		"email":"dani@estudiosdwi.com",
-		"password":"12345678"
-	
-}
+		"password":"12345678"	
+	}
 
 Example RequestGet usuarios
+```
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var req = http.request(options, function (res) {
+  var chunks = [];
 
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res.on("end", function (chunk) {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+
+  res.on("error", function (error) {
+    console.error(error);
+  });
+});
+
+var postData =  "{\n\n\t\t\"name\":\"dani2\",\n\t\t\"email\":\"dani@estudiosdwi.com\",\n\t\t\"password\":\"12345678\"\n\t\n}";
+
+req.write(postData);
+
+req.end();
+```
 Example Response200 OK
 
 [
@@ -224,15 +252,21 @@ Bodyraw (application/json)
 
 Example RequestLogin
 
-curl --location --request POST "http://localhost:3000/user/login" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/user/login',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -263,15 +297,21 @@ Bodyraw (application/json)
 Example Request
 Login
 
-curl --location --request POST "http://localhost:3000/user/login" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/user/login',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -306,15 +346,21 @@ Bodyraw (application/json)
 Example Request
 Get usuarios
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -402,15 +448,21 @@ Bodyraw (application/json)
 Example Request
 Get usuarios
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -445,15 +497,21 @@ Bodyraw (application/json)
 Example Request
 Get usuarios
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -542,15 +600,21 @@ Bodyraw (application/json)
 Example Request
 Get usuario por `id`
 
-curl --location --request GET "http://localhost:3000/customers/5dc11a5903bf2803b71b7fe0" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers/5dc11a5903bf2803b71b7fe0',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -638,21 +702,21 @@ Bodyraw (application/json)
 Example Request
 Post usuario nuevo
 
-curl --location --request POST "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Elle\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -687,15 +751,21 @@ Bodyraw (application/json)
 Example Request
 Get usuario por `id`
 
-curl --location --request GET "http://localhost:3000/customers/5dc11a5903bf2803b71b7fe0" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers/5dc11a5903bf2803b71b7fe0',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -783,21 +853,21 @@ Bodyraw (application/json)
 Example Request
 Post usuario nuevo
 
-curl --location --request POST "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Elle\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -826,21 +896,21 @@ Bodyraw (application/json)
 Example Request
 Post usuario nuevo
 
-curl --location --request POST "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Elle\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -869,9 +939,21 @@ Bodyraw (application/json)
 Example Request
 Get plans
 
-curl --location --request GET "http://localhost:3000/plans/" \
---header "Content-Type: application/json" \
---data "    { }"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/plans/',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -906,21 +988,21 @@ Bodyraw (application/json)
 Example Request
 Delete packs del usuario
 
-curl --location --request DELETE "http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Jason\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'DELETE',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -969,9 +1051,21 @@ Bodyraw (application/json)
 Example Request
 Get plans
 
-curl --location --request GET "http://localhost:3000/plans/" \
---header "Content-Type: application/json" \
---data "    { }"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/plans/',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1000,9 +1094,21 @@ Bodyraw (application/json)
 Example Request
 Get packs
 
-curl --location --request GET "http://localhost:3000/packs/" \
---header "Content-Type: application/json" \
---data "    { }"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/packs/',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1031,15 +1137,21 @@ Bodyraw (application/json)
 Example Request
 Get usuarios
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1076,21 +1188,21 @@ Bodyraw (application/json)
 Example Request
 Delete packs del usuario
 
-curl --location --request DELETE "http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Jason\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'DELETE',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1140,21 +1252,21 @@ Bodyraw (application/json)
 Example Request
 Post usuario nuevo
 
-curl --location --request POST "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Elle\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1204,21 +1316,21 @@ Bodyraw (application/json)
 Example Request
 Delete packs del usuario
 
-curl --location --request DELETE "http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Jason\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'DELETE',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1255,15 +1367,21 @@ Bodyraw (application/json)
 Example Request
 Get usuarios
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1292,21 +1410,21 @@ Bodyraw (application/json)
 Example Request
 Post usuario nuevo
 
-curl --location --request POST "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "    {
-        \"name\": {
-            \"first\": \"Elle\",
-            \"last\": \"McPherson\"
-        },
-        \"packs\": [
-            {
-                \"customers\": [],
-                \"_id\": \"5dc0b3d3b73fc84c308441eb\",
-                \"name\": \"DEFINITION\",
-                \"image\": \"Pack-Definition.png\",
-                \"price\": 10.95,
-                \"description\": \"Lorem ipsum Dolor\"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1335,15 +1453,21 @@ Bodyraw (application/json)
 Example Request
 Get usuarios
 
-curl --location --request GET "http://localhost:3000/customers" \
---header "Content-Type: application/json" \
---data "{
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
-		\"name\":\"dani2\",
-		\"email\":\"dani@estudiosdwi.com\",
-		\"password\":\"12345678\"
-	
-}"
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1388,9 +1512,21 @@ Bodyraw (application/json)
 Example Request
 Get plans
 
-curl --location --request GET "http://localhost:3000/plans/" \
---header "Content-Type: application/json" \
---data "    { }"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/plans/',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1433,9 +1569,21 @@ Bodyraw (application/json)
 Example Request
 Get ToDoes
 
-curl --location --request GET "http://localhost:3000/todos/" \
---header "Content-Type: application/json" \
---data "{ }"
+var http = require('follow-redirects').http;
+var fs = require('fs');
+
+var options = {
+  'method': 'GET',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/todos/',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
+
+var req = http.request(options, function (res) {
 
 Example Response200 OK
 
@@ -1461,19 +1609,34 @@ Bodyraw (application/json)
 
 {}
 
-## Posteriores iteraciones
+Example Request
+Post usuario nuevo
 
-- Completar CRUD, productos Planes y Packs
-    - adicción
-    - edición
-    - eliminación
-		
-- Añadir funciones 
-		
-    - Notificaciones a clientes
-    - Estadísticas 
-    - Gráficas
-    - Informes
-    - ...
+var http = require('follow-redirects').http;
+var fs = require('fs');
 
+var options = {
+  'method': 'POST',
+  'hostname': 'localhost',
+  'port': 3000,
+  'path': '/customers',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  'maxRedirects': 20
+};
 
+var req = http.request(options, function (res) {
+
+Example Response200 OK
+
+{
+  "name": {
+    "first": "ELLE",
+    "last": "McPherson"
+  },
+  "packs": [
+    "5dc0b3d3b73fc84c308441eb",
+    "5dc0b37db73fc84c308441e8"
+  ],
+  "_id": "5dc698668fa790727db26774",
