@@ -170,7 +170,9 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 >http://localhost:3000/user/signup
 
 **Headers**
+
 >Content-Type	application/json
+
 **Body** raw (application/json)
 
     {
@@ -289,11 +291,7 @@ lista los usuarios activos
 
 Body raw (application/json)
 
-	{
-		"name":"dani2",
-		"email":"dani@estudiosdwi.com",
-		"password":"12345678"	
-	}
+	{ }
 
 Example RequestGet usuarios
 ```
@@ -328,7 +326,7 @@ var req = http.request(options, function (res) {
   });
 });
 
-var postData =  "{\n\n\t\t\"name\":\"dani2\",\n\t\t\"email\":\"dani@estudiosdwi.com\",\n\t\t\"password\":\"12345678\"\n\t\n}";
+var postData =  "    { }";
 
 req.write(postData);
 
@@ -347,13 +345,7 @@ Listar usuarios inactivos
 
 **Body** raw (application/json)
 
-    {
-
-		"name":"dani2",
-		"email":"dani@estudiosdwi.com",
-		"password":"12345678"
-	
-    }
+    { }
 
 Example Request Get usuarios inactivos
 
@@ -388,7 +380,7 @@ Example Request Get usuarios inactivos
       });
     });
 
-    var postData =  "{\n\n\t\t\"name\":\"dani2\",\n\t\t\"email\":\"dani@estudiosdwi.com\",\n\t\t\"password\":\"12345678\"\n\t\n}";
+    var postData =  "    { }";
 
     req.write(postData);
 
@@ -625,13 +617,7 @@ Obtiene un usuario pasandole el id como parametro de busqueda
 
 **Body**    raw (application/json)
 
-    {
-
-		"name":"dani2",
-		"email":"dani@estudiosdwi.com",
-		"password":"12345678"
-	
-    }
+    { }
 
 Example Request Get usuario por `id`
 
@@ -666,7 +652,7 @@ Example Request Get usuario por `id`
       });
     });
 
-    var postData =  "{\n\n\t\t\"name\":\"dani2\",\n\t\t\"email\":\"dani@estudiosdwi.com\",\n\t\t\"password\":\"12345678\"\n\t\n}";
+    var postData =  "    { }";
 
     req.write(postData);
 
@@ -927,11 +913,7 @@ Obtiene el listado de usuarios de un plan en concreto pasandole el parametro id 
 
 **Body**    raw (application/json)
 
-    {
-		"name":"dani2",
-		"email":"dani@estudiosdwi.com",
-		"password":"12345678"
-    }
+    { }
 
 Example Request Get usuario por `plan`
 
@@ -966,7 +948,7 @@ Example Request Get usuario por `plan`
       });
     });
 
-    var postData =  "{\n\n\t\t\"name\":\"dani2\",\n\t\t\"email\":\"dani@estudiosdwi.com\",\n\t\t\"password\":\"12345678\"\n\t\n}";
+    var postData =  "    { }";
 
     req.write(postData);
 
@@ -1078,7 +1060,7 @@ Get usuario por plan
       });
     });
 
-    var postData =  "{\n\n\t\t\"name\":\"dani2\",\n\t\t\"email\":\"dani@estudiosdwi.com\",\n\t\t\"password\":\"12345678\"\n\t\n}";
+    var postData =  "    { }";
 
     req.write(postData);
 
@@ -1157,66 +1139,7 @@ Elimina los packs del usuario pasandole el paramentro id como parametro de busqu
 
 **Body**    raw (application/json)
 
-    {
-        "name": {
-            "first": "Jason",
-            "last": "McPherson"
-        },
-        "packs": [
-            {
-                "customers": [],
-                "_id": "5dc0b3d3b73fc84c308441eb",
-                "name": "DEFINITION",
-                "image": "Pack-Definition.png",
-                "price": 10.95,
-                "description": "Lorem ipsum Dolor"
-            },
-            {
-                "customers": [],
-                "_id": "5dc0b37db73fc84c308441e8",
-                "name": "RUNNING",
-                "image": "Pack-running.png",
-                "price": 10.95,
-                "description": "Lorem ipsum Dolor"
-            }
-        ],
-        "user_id": "8f0eb26a-4603-4ecc-91bf-76b561078d97",
-        "index": 4,
-        "isActive": false,
-        "gender": "female",
-        "picture": "https://randomuser.me/api/portraits/med/women/52.jpg",
-        "birth": "2014-02-01T12:44:41 -01:00",
-        "email": "benitanavarro@centice.com",
-        "address": "Allentown",
-        "password": "5dc118008e8751b0d3b7c475",
-        "weight": 106.44,
-        "height": 198.52,
-        "registered": "2019-11-05T19:28:16.451Z",
-        "box": "Crossfit",
-        "plan": {
-            "customers": [],
-            "_id": "5dc0b75eb73fc84c308441ef",
-            "name": "ÉLITE",
-            "price": 10.95,
-            "index": 1,
-            "icon": "elite.svg",
-            "options": [
-                {
-                    "_id": "5dc0b6ac63d6814c30992aa6",
-                    "option": "Acceso a sesión completa"
-                },
-                {
-                    "option": "Acceso a sesión completa",
-                    "_id": "5dc0b72863d6814c30992aa7"
-                },
-                {
-                    "option": "Acceso a sesión completa",
-                    "_id": "5dc0b73663d6814c30992aa8"
-                }
-            ]
-        },
-        "packList": "DEFINITION / RUNNING"
-    }
+    { }
 
 Example Request Delete packs del usuario
 
@@ -1251,9 +1174,7 @@ Example Request Delete packs del usuario
       });
     });
 
-    var postData =  "    {\n        \"name\": {\n            \"first\": \"Jason\",\n            \"last\": \"McPherson\"\n        },\n        \"packs\": [\n            {\n                \"customers\": [],\n                \"_id\": \"5dc0b3d3b73fc84c308441eb\",\n                \"name\": \"DEFINITION\",\n                \"image\": \"Pack-Definition.png\",\n                \"price\": 10.95,\n                \"description\": \"Lorem ipsum Dolor\"\n            },\n            {\n                \"customers\": [],\n                \"_id\": \"5dc0b37db73fc84c308441e8\",\n                \"name\": \"RUNNING\",\n                \"image\": \"Pack-running.png\",\n                \"price\": 10.95,\n                \"description\": \"Lorem ipsum Dolor\"\n            }\n        ],\n        \"user_id\": \"8f0eb26a-4603-4ecc-91bf-76b561078d97\",\n        \"index\": 4,\n        \"isActive\": false,\n        \"gender\": \"female\",\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/52.jpg\",\n        \"birth\": \"2014-02-01T12:44:41 -01:00\",\n        \"email\": \"benitanavarro@centice.com\",\n        \"address\": \"Allentown\",\n        \"password\": \"5dc118008e8751b0d3b7c475\",\n        \"weight\": 106.44,\n        \"height\": 198.52,\n        \"registered\": \"2019-11-05T19:28:16.451Z\",\n        \"box\": \"Crossfit\",\n        \"plan\": {\n            \"customers\": [],\n            \"_id\": \"5dc0b75eb73fc84c308441ef\",\n            \"name\": \"ÉLITE\",\n            \"price\": 10.95,\n            \"index\": 1,\n            \"icon\": \"elite.svg\",\n            \"options\": [\n                {\n                    \"_id\": \"5dc0b6ac63d6814c30992aa6\",\n                    \"option\": \"Acceso a sesión completa\"\n                },\n                {\n                    \"option\": \"Acceso a sesión completa\",\n                    \"_id\": \"5dc0b72863d6814c30992aa7\"\n                },\n                {\n                    \"option\": \"Acceso a sesión completa\",\n                    \"_id\": \"5dc0b73663d6814c30992aa8\"\n                }\n            ]\n        },\n        \"packList\": \"DEFINITION / RUNNING\"\n    }";
-
-    req.setHeader('Content-Length', postData.length);
+    var postData =  "    { }";
 
     req.write(postData);
 
@@ -1307,7 +1228,7 @@ Example Response    200 OK
         "packList": ""
     }
 
-##GET Get plans
+## GET Get plans
 
 >http://localhost:3000/plans/
 
@@ -1360,791 +1281,283 @@ Example Request Get plans
 
     req.end();
 
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'POST',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
 Example Response    200 OK
 
-{
-  "name": {
-    "first": "ELLE",
-    "last": "McPherson"
-  },
-  "packs": [
-    "5dc0b3d3b73fc84c308441eb",
-    "5dc0b37db73fc84c308441e8"
-  ],
-  "_id": "5dc698668fa790727db26774",
+    [
+    {
+        "customers": [],
+        "_id": "5dc29ca21c9d4400007dd917",
+        "name": "VIP",
+        "price": 0,
+        "index": 0,
+        "icon": "vip.png",
+        "options": [
+        {
+            "_id": "5dc0b6ac63d6814c30992aa6",
+            "option": "Acceso a sesión completa"
+        },
+        {
+            "option": "Acceso a sesión completa",
+            "_id": "5dc0b72863d6814c30992aa7"
+        },
+        {
+            "option": "Acceso a sesión completa",
+            "_id": "5dc0b73663d6814c30992aa8"
+        }
+        ]
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b75eb73fc84c308441ef",
+        "name": "ÉLITE",
+        "price": 10.95,
+        "index": 1,
+        "icon": "elite.svg",
+        "options": [
+        {
+            "_id": "5dc0b6ac63d6814c30992aa6",
+            "option": "Acceso a sesión completa"
+        },
+        {
+            "option": "Acceso a sesión completa",
+            "_id": "5dc0b72863d6814c30992aa7"
+        },
+        {
+            "option": "Acceso a sesión completa",
+            "_id": "5dc0b73663d6814c30992aa8"
+        }
+        ]
+    },
+    ...
+    
+## GET Get packs
 
-GET Get plans
-(0)
-http://localhost:3000/plans/
-
-Lista los documentos de la coleccion planes
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-    { }
-
-Example Request
-Post usuario nuevo
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'POST',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response    200 OK
-
-{
-  "name": {
-    "first": "ELLE",
-    "last": "McPherson"
-  },
-  "packs": [
-    "5dc0b3d3b73fc84c308441eb",
-    "5dc0b37db73fc84c308441e8"
-  ],
-  "_id": "5dc698668fa790727db26774",
-
-GET Get packs
-(0)
-http://localhost:3000/packs/
+>http://localhost:3000/packs/
 
 Lista los documentos de la coleccion packs
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
 
     { }
 
-Example Request
-Get plans
+Example Request Get packs
 
-var http = require('follow-redirects').http;
-var fs = require('fs');
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
 
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/plans/',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
+    var options = {
+    'method': 'GET',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/packs/',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
 
-var req = http.request(options, function (res) {
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "    { }";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response 200 OK
+
+Get packs
+
+    [
+    {
+        "customers": [],
+        "_id": "5dc0b2f063d6814c30992aa3",
+        "name": "COMPETITION",
+        "image": "Pack-Competition.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b37db73fc84c308441e8",
+        "name": "RUNNING",
+        "image": "Pack-running.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b39cb73fc84c308441e9",
+        "name": "ENDURANCE",
+        "image": "Pack-endurance.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b3b3b73fc84c308441ea",
+        "name": "CROSSFIT",
+        "image": "Pack-Crossfit.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b3d3b73fc84c308441eb",
+        "name": "DEFINITION",
+        "image": "Pack-Definition.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b3eeb73fc84c308441ec",
+        "name": "ENDURANCEPLUS",
+        "image": "Pack-EndurancePlus.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b400b73fc84c308441ed",
+        "name": "RECUPERATION",
+        "image": "Pack-Recuperation.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    },
+    {
+        "customers": [],
+        "_id": "5dc0b416b73fc84c308441ee",
+        "name": "BARS",
+        "image": "Pack-Bars.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    }
+    ]
+
+## POST Post packs
+
+>http://localhost:3000/packs/
+
+Crea un nuevo dicumento en la coleccion packs
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    {
+        "customers": [],
+        "name": "FITNESS",
+        "image": "Pack-Fitness.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor"
+    }
+
+Example Request Delete packs del usuario
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'DELETE',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "    {\n        \"name\": {\n            \"first\": \"Jason\",\n            \"last\": \"McPherson\"\n        },\n        \"packs\": [\n            {\n                \"customers\": [],\n                \"_id\": \"5dc0b3d3b73fc84c308441eb\",\n                \"name\": \"DEFINITION\",\n                \"image\": \"Pack-Definition.png\",\n                \"price\": 10.95,\n                \"description\": \"Lorem ipsum Dolor\"\n            },\n            {\n                \"customers\": [],\n                \"_id\": \"5dc0b37db73fc84c308441e8\",\n                \"name\": \"RUNNING\",\n                \"image\": \"Pack-running.png\",\n                \"price\": 10.95,\n                \"description\": \"Lorem ipsum Dolor\"\n            }\n        ],\n        \"user_id\": \"8f0eb26a-4603-4ecc-91bf-76b561078d97\",\n        \"index\": 4,\n        \"isActive\": false,\n        \"gender\": \"female\",\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/52.jpg\",\n        \"birth\": \"2014-02-01T12:44:41 -01:00\",\n        \"email\": \"benitanavarro@centice.com\",\n        \"address\": \"Allentown\",\n        \"password\": \"5dc118008e8751b0d3b7c475\",\n        \"weight\": 106.44,\n        \"height\": 198.52,\n        \"registered\": \"2019-11-05T19:28:16.451Z\",\n        \"box\": \"Crossfit\",\n        \"plan\": {\n            \"customers\": [],\n            \"_id\": \"5dc0b75eb73fc84c308441ef\",\n            \"name\": \"ÉLITE\",\n            \"price\": 10.95,\n            \"index\": 1,\n            \"icon\": \"elite.svg\",\n            \"options\": [\n                {\n                    \"_id\": \"5dc0b6ac63d6814c30992aa6\",\n                    \"option\": \"Acceso a sesión completa\"\n                },\n                {\n                    \"option\": \"Acceso a sesión completa\",\n                    \"_id\": \"5dc0b72863d6814c30992aa7\"\n                },\n                {\n                    \"option\": \"Acceso a sesión completa\",\n                    \"_id\": \"5dc0b73663d6814c30992aa8\"\n                }\n            ]\n        },\n        \"packList\": \"DEFINITION / RUNNING\"\n    }";
+
+    req.setHeader('Content-Length', postData.length);
+
+    req.write(postData);
+
+    req.end();
 
 Example Response    200 OK
 
-[
-  {
-    "customers": [],
-    "_id": "5dc29ca21c9d4400007dd917",
-    "name": "VIP",
-    "price": 0,
-    "index": 0,
-    "icon": "vip.png",
-    "options": [
-      {
-
-POST Post packs
-(0)
-http://localhost:3000/packs/
-
-Crea un nuevo dicumento en la coleccion packs
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "customers": [],
-    "name": "FITNESS",
-    "image": "Pack-Fitness.png",
-    "price": 10.95,
-    "description": "Lorem ipsum Dolor"
-}
-
-Example Request
-Delete packs del usuario
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'DELETE',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-{
-  "name": {
-    "first": "MALINDA",
-    "last": "Booth"
-  },
-  "packs": [],
-  "_id": "5dc11a5903bf2803b71b7fce",
-  "user_id": "d8b6bd04-97e5-4bfb-bce2-8aba10725c72",
-  "index": 1,
-  "isActive": true,
-
-POST Post plans
-(0)
-http://localhost:3000/plans/
-
-Añade un nuevo dccumento a la coleccion plan
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-	{
-        "customers": [],
-        "name": "ONE",
-        "price": 10.95,
-        "index": 6,
-        "icon": "one.png",
-        "options": [
-            {
-                "_id": "5dc0b6ac63d6814c30992aa6",
-                "option": "Acceso a sesión completa"
-            },
-            {
-                "option": "Acceso a sesión completa",
-                "_id": "5dc0b72863d6814c30992aa7"
-            },
-            {
-                "option": "Acceso a sesión completa",
-                "_id": "5dc0b73663d6814c30992aa8"
-            }
-        ]
+    {
+        "name": {
+            "first": "MALINDA",
+            "last": "Booth"
+        },
+        "packs": [],
+        "_id": "5dc11a5903bf2803b71b7fce",
+        "user_id": "d8b6bd04-97e5-4bfb-bce2-8aba10725c72",
+        "index": 1,
+        "isActive": true,
+        "gender": "female",
+        "picture": "https://randomuser.me/api/portraits/med/women/87.jpg",
+        "birth": "2016-12-06T08:40:48 -01:00",
+        "email": "malindabooth@centice.com",
+        "address": "Hondah",
+        "password": "5dc1180055fc0cc39cd8a671",
+        "weight": 94.91,
+        "height": 174.81,
+        "registered": "2019-11-05T23:16:04.693Z",
+        "box": "Crossfit",
+        "plan": {
+            "customers": [],
+            "_id": "5dc0b7a4b73fc84c308441f2",
+            "name": "BASIC",
+            "price": 10.95,
+            "index": 4,
+            "icon": "kettlebell.svg",
+            "options": [
+                {
+                    "_id": "5dc0b6ac63d6814c30992aa6",
+                    "option": "Acceso a sesión completa"
+                },
+                {
+                    "option": "Acceso a sesión completa",
+                    "_id": "5dc0b72863d6814c30992aa7"
+                },
+                {
+                    "option": "Acceso a sesión completa",
+                    "_id": "5dc0b73663d6814c30992aa8"
+                }
+            ]
+        },
+        "packList": ""
     }
-
-Example Request
-Get plans
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/plans/',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "customers": [],
-    "_id": "5dc29ca21c9d4400007dd917",
-    "name": "VIP",
-    "price": 0,
-    "index": 0,
-    "icon": "vip.png",
-    "options": [
-      {
-
-GET Get packs por id
-(0)
-http://localhost:3000/packs/5dc6af79d6c75309570eaec6
-
-Obtiene un documento de la coleccion packs pasandole el parametro id para buscar y listar
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{ }
-
-Example Request
-Get packs
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/packs/',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "customers": [],
-    "_id": "5dc0b2f063d6814c30992aa3",
-    "name": "COMPETITION",
-    "image": "Pack-Competition.png",
-    "price": 10.95,
-    "description": "Lorem ipsum Dolor"
-  },
-  {
-
-GET Get plans por id
-(0)
-http://localhost:3000/plans/5dc29ca21c9d4400007dd917
-
-Obtiene un documento filtrado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-    { }
-
-Example Request
-Get usuarios
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "name": {
-      "first": "MALINDA",
-      "last": "Booth"
-    },
-    "packs": [
-      {
-        "customers": [],
-        "_id": "5dc0b37db73fc84c308441e8",
-
-PUT Put pack por id
-(0)
-http://localhost:3000/packs/5dc6af79d6c75309570eaec6
-
-Actualiza los datos del documento referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "customers": [],
-    "_id": "5dc6af79d6c75309570eaec6",
-    "name": "FITNESS PLUS",
-    "image": "Pack-Fitness.png",
-    "price": 10.95,
-    "description": "Lorem ipsum Dolor",
-    "__v": 0
-}
-
-Example Request
-Delete packs del usuario
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'DELETE',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-{
-  "name": {
-    "first": "MALINDA",
-    "last": "Booth"
-  },
-  "packs": [],
-  "_id": "5dc11a5903bf2803b71b7fce",
-  "user_id": "d8b6bd04-97e5-4bfb-bce2-8aba10725c72",
-  "index": 1,
-  "isActive": true,
-
-PUT Put plan por id
-(0)
-http://localhost:3000/plans/5dc29ca21c9d4400007dd917
-
-Actualiza el documento referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "customers": [],
-    "_id": "5dc29ca21c9d4400007dd917",
-    "name": "VIP PLUS",
-    "price": 0,
-    "index": 0,
-    "icon": "vip.png",
-    "options": [
-        {
-            "_id": "5dc0b6ac63d6814c30992aa6",
-            "option": "Acceso a sesión completa"
-        },
-        {
-            "option": "Acceso a sesión completa",
-            "_id": "5dc0b72863d6814c30992aa7"
-        },
-        {
-            "option": "Acceso a sesión completa",
-            "_id": "5dc0b73663d6814c30992aa8"
-        }
-    ]
-}
-
-Example Request
-Post usuario nuevo
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'POST',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-{
-  "name": {
-    "first": "ELLE",
-    "last": "McPherson"
-  },
-  "packs": [
-    "5dc0b3d3b73fc84c308441eb",
-    "5dc0b37db73fc84c308441e8"
-  ],
-  "_id": "5dc698668fa790727db26774",
-
-DELETE Delete plan por id
-(0)
-http://localhost:3000/plans/5dc29ca21c9d4400007dd917
-
-elimina un documento de la coleccion plan referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "customers": [],
-    "_id": "5dc29ca21c9d4400007dd917",
-    "name": "VIP PLUS",
-    "price": 0,
-    "index": 0,
-    "icon": "vip.png",
-    "options": [
-        {
-            "_id": "5dc0b6ac63d6814c30992aa6",
-            "option": "Acceso a sesión completa"
-        },
-        {
-            "option": "Acceso a sesión completa",
-            "_id": "5dc0b72863d6814c30992aa7"
-        },
-        {
-            "option": "Acceso a sesión completa",
-            "_id": "5dc0b73663d6814c30992aa8"
-        }
-    ]
-}
-
-Example Request
-Delete packs del usuario
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'DELETE',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-{
-  "name": {
-    "first": "MALINDA",
-    "last": "Booth"
-  },
-  "packs": [],
-  "_id": "5dc11a5903bf2803b71b7fce",
-  "user_id": "d8b6bd04-97e5-4bfb-bce2-8aba10725c72",
-  "index": 1,
-  "isActive": true,
-
-DELETE Delete pack por id
-(0)
-http://localhost:3000/packs/5dc6af79d6c75309570eaec6
-
-Elimina un documento de la coleccion packs referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "customers": [],
-    "_id": "5dc6af79d6c75309570eaec6",
-    "name": "FITNESS PLUS",
-    "image": "Pack-Fitness.png",
-    "price": 10.95,
-    "description": "Lorem ipsum Dolor",
-    "__v": 0
-}
-
-Example Request
-Get usuarios
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "name": {
-      "first": "MALINDA",
-      "last": "Booth"
-    },
-    "packs": [
-      {
-        "customers": [],
-        "_id": "5dc0b37db73fc84c308441e8",
-
-GET Get ToDoes
-(0)
-http://localhost:3000/todos/
-
-Obtiene el listado de todos los documentos de la coleccion todo
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{ }
-
-Example Request
-Post usuario nuevo
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'POST',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-{
-  "name": {
-    "first": "ELLE",
-    "last": "McPherson"
-  },
-  "packs": [
-    "5dc0b3d3b73fc84c308441eb",
-    "5dc0b37db73fc84c308441e8"
-  ],
-  "_id": "5dc698668fa790727db26774",
-
-GET Get ToDoes por id
-(0)
-http://localhost:3000/todos/5dc6136322ad4ef1c370193b
-
-Obtiene un documento de la coleccion todo referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{ }
-
-Example Request
-Get usuarios
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "name": {
-      "first": "MALINDA",
-      "last": "Booth"
-    },
-    "packs": [
-      {
-        "customers": [],
-        "_id": "5dc0b37db73fc84c308441e8",
-
-PUT Put ToDo por id
-(0)
-http://localhost:3000/todos/5dc6136322ad4ef1c370193b
-
-Actualiza un documento de la coleccion todo referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "_id": "5dc6136322ad4ef1c370193b",
-    "registerdate": "2019-11-09T01:16:19.650Z",
-    "todotask": [
-        {
-            "registerdate": "2019-11-09T01:16:47.840Z",
-            "_id": "5dc6137f9c4b3d00048d02a9"
-        }
-    ],
-    "task": "AA-updated",
-    "type": 0,
-    "section": 0,
-    "state": "0",
-    "description": "",
-    "disabled": false,
-    "__v": 0
-}
-
-Example Request
-Get plans
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/plans/',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "customers": [],
-    "_id": "5dc29ca21c9d4400007dd917",
-    "name": "VIP",
-    "price": 0,
-    "index": 0,
-    "icon": "vip.png",
-    "options": [
-      {
-
-POST Post ToDo
-(0)
-http://localhost:3000/todos/
-
-Añade documento a la coleccion todo
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{
-    "todotask": [
-        {
-            "registerdate": "2019-11-09T01:16:47.840Z",
-            "_id": "5dc6137f9c4b3d00048d02a9"
-        }
-    ],
-    "task": "NEW",
-    "type": 0,
-    "section": 0,
-    "state": "0",
-    "description": "",
-    "disabled": false,
-    "__v": 0
-}
-
-Example Request
-Get ToDoes
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'GET',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/todos/',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-[
-  {
-    "_id": "5dc5165e910eb8159cbbe4a4",
-    "registerdate": "2019-11-08T07:16:46.100Z",
-    "todotask": [
-      {
-        "registerdate": "2019-11-08T10:47:00.688Z",
-        "_id": "5dc5165e910eb8159cbbe4a4",
-        "todotaskid": "e0037c63-dfe9-447f-9567-d52011c19a85",
-        "task": "añadir contador usuarios",
-
-DELETE Delete ToDo por id
-(0)
-http://localhost:3000/todos/5dc6b790d6c75309570eaed2
-
-elimina documento de la coleccion todo referenciado por id
-Headers
-Content-Type	application/json
-Bodyraw (application/json)
-
-{}
-
-Example Request
-Post usuario nuevo
-
-var http = require('follow-redirects').http;
-var fs = require('fs');
-
-var options = {
-  'method': 'POST',
-  'hostname': 'localhost',
-  'port': 3000,
-  'path': '/customers',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  'maxRedirects': 20
-};
-
-var req = http.request(options, function (res) {
-
-Example Response200 OK
-
-{
-  "name": {
-    "first": "ELLE",
-    "last": "McPherson"
-  },
-  "packs": [
-    "5dc0b3d3b73fc84c308441eb",
-    "5dc0b37db73fc84c308441e8"
-  ],
-  "_id": "5dc698668fa790727db26774",
