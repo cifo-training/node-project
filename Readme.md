@@ -2,9 +2,9 @@
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor® Admin Panel
 
 1. [Introducción](#Introducción)
-2. [Primera_iteración](#Primera iteración)
+2. [Primera iteración](#Primera_iteración)
 3. [Índices](#Índices)
-3. [Postman](#Test Postman)
+3. [Test Postman](#Postman)
 
 ## <a id="Introducción"></a>Introducción ##
 
