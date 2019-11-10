@@ -3,7 +3,7 @@
 
 1. [Introducción](#Introducción)?
 
-### <a id="Introducción"></a>1. Introducción ###
+## <a id="Introducción"></a>1. Introducción ##
 
 ### Cliente: TheTraktor®
 
