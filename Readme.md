@@ -13,12 +13,12 @@ The Traktor® es una plataforma de entrenamiento, es la culminación de toda nue
 
 Son muchos años viviendo en primera persona el CrossFit® al más alto nivel, y tenemos muy claro el trabajo que hay que llevar a cabo, tanto a nivel físico como mental, para optimizar al máximo el rendimiento de este complejo deporte.
 
-- Hemos iniciado el desarrollo de la plataforma de administración de los clientes (Customers) y sus contenidos (Products: Plans y Packs)
-mediante los usuarios administadores (Users).
+- Hemos iniciado el desarrollo de la plataforma de administración de los clientes (customers) y sus contenidos (products: plans y packs)
+mediante los usuarios administadores (users).
 
-**Esta plataforma de administración se vincula con la App de Usuarios, que será descagable para Android y IOs.**
+Esta plataforma de administración se vincula con la **App de Usuarios**, que será descagable para **Android** y **IOs**.
 
-*Desarrollada en Angular - Ionic - Rest Api y MongoDB*
+Desarrollada en *Angular* - *Ionic* - *Rest Api* y *MongoDB*
 
 Desde esta se darán de alta, con sus datos personales, foto y plan. Ocasionalmente el administrador podrá editar su cuenta o subirlo al plan VIP
 
