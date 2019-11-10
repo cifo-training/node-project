@@ -171,6 +171,7 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
         }
 ]
 ```
+
 [Volver a inicio](#Home)
 
 ## <a id="Postman"></a>Test - _Postman_ ##
@@ -182,6 +183,24 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 - [POST Post usuario nuevo](#POST_Post_usuario_nuevo)
 - [GET Get usuario por `id`](#GET_Get_usuario_por_id)
 - [PUT Put usuario por `id`](#PUT_Put_usuario_por_id)
+- [DELETE Delete usuario](#DELETE_Delete_usuario)
+- [GET Get usuario por Plan](#GET_Get_usuario_por_Plan)
+- [DELETE Delete packs del usuario](#DELETE_Delete_packs_del_usuario)
+- [GET Get plans](#GET_Get_plans)
+- [POST Post plans](#POST_Post_plans)
+- [PUT Put plans por `id`](#PUT_Put_plan_por_id)
+- [DELETE Delete plans por `id`](#DELETE_Delete_plan_por_id)
+- [GET Get packs](#GET_Get_packs)
+- [POST Post packs](#POST_Post_packs)
+- [GET Get packs por `id`](#GET_Get_packs_por_id)
+- [PUT Put pack por `id`](#PUT_Put_pack_por_id)
+- [DELETE Delete pack por `id`](#DELETE_Delete_pack_por_id)
+- [GET Get ToDoes](#GET_Get_ToDoes)
+- [GET Get ToDoes por `id`](#GET_Get_ToDoes_por_id)
+- [PUT Put ToDo por `id`](#PUT_Put_ToDo_por_id)
+- [POST Post ToDo](#POST_Post_ToDo)
+- [DELETE Delete ToDo por `id`](#DELETE_Delete_ToDo_por_id)
+
 
 [Volver a inicio](#Home)
 
@@ -920,7 +939,7 @@ Example Response200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## DELETE Delete usuario
+## <a id="DELETE_Delete_usuario"></a>DELETE Delete usuario ##
 
 >http://localhost:3000/customers/5dc6a30ad55a507cc296e223
 
@@ -938,7 +957,7 @@ Example Request
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## GET Get usuario por Plan
+## <a id="GET_Get_usuario_por_Plan"></a>GET Get usuario por Plan ##
 
 >http://localhost:3000/customers/plan/5dc0b64063d6814c30992aa5
 
@@ -1053,11 +1072,11 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## DELETE Delete packs del usuario
+## <a id="GET_Get_usuario_por_Plan"></a>GET Get usuario por Plan ##
 
->http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs
+>http://localhost:3000/customers/plan/5dc0b64063d6814c30992aa5
 
-Elimina los packs del usuario pasandole el paramentro id como parametro de busqueda y actualizacion
+Obtiene el listado de usuarios de un plan en concreto pasandole el parametro id del plan
 
 **Headers**
 
@@ -1168,7 +1187,7 @@ Example response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## DELETE Delete packs del usuario
+## <a id="DELETE_Delete_packs_del_usuario"></a>DELETE Delete packs del usuario ##
 
 >http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs
 
@@ -1271,7 +1290,7 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## GET Get plans
+## <a id="GET_Get_plans"></a>GET Get plans ##
 
 >http://localhost:3000/plans/
 
@@ -1375,7 +1394,7 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## POST Post plans
+## <a id="POST_Post_plans"></a>POST Post plans ##
 
 >http://localhost:3000/plans/
 
@@ -1476,7 +1495,7 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## GET Get plans por id
+## <a id="GET_Get_plans_por_id"></a>GET Get plans por `id` ##
 
 >http://localhost:3000/plans/5dc29ca21c9d4400007dd917
 
@@ -1556,7 +1575,177 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## GET Get packs
+## <a id="PUT_Put_plan_por_id"></a>PUT Put plan por `id` ##
+
+>http://localhost:3000/plans/5dc29ca21c9d4400007dd917
+
+Actualiza el documento referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    {
+        "customers": [],
+        "_id": "5dc29ca21c9d4400007dd917",
+        "name": "VIP PLUS",
+        "price": 0,
+        "index": 0,
+        "icon": "vip.png",
+        "options": [
+            {
+                "_id": "5dc0b6ac63d6814c30992aa6",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "option": "Acceso a sesión completa",
+                "_id": "5dc0b72863d6814c30992aa7"
+            },
+            {
+                "option": "Acceso a sesión completa",
+                "_id": "5dc0b73663d6814c30992aa8"
+            }
+        ]
+    }
+
+Example Request Put plan por `id`
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'PUT',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/plans/5dc29ca21c9d4400007dd917',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{\n    \"customers\": [],\n    \"_id\": \"5dc29ca21c9d4400007dd917\",\n    \"name\": \"VIP PLUS\",\n    \"price\": 0,\n    \"index\": 0,\n    \"icon\": \"vip.png\",\n    \"options\": [\n        {\n            \"_id\": \"5dc0b6ac63d6814c30992aa6\",\n            \"option\": \"Acceso a sesión completa\"\n        },\n        {\n            \"option\": \"Acceso a sesión completa\",\n            \"_id\": \"5dc0b72863d6814c30992aa7\"\n        },\n        {\n            \"option\": \"Acceso a sesión completa\",\n            \"_id\": \"5dc0b73663d6814c30992aa8\"\n        }\n    ]\n}";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response    200 OK
+
+    {
+        "customers": [],
+        "_id": "5dc29ca21c9d4400007dd917",
+        "name": "VIP PLUS",
+        "price": 0,
+        "index": 0,
+        "icon": "vip.png",
+        "options": [
+            {
+                "_id": "5dc0b6ac63d6814c30992aa6",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "_id": "5dc0b72863d6814c30992aa7",
+                "option": "Acceso a sesión completa"
+            },
+            {
+                "_id": "5dc0b73663d6814c30992aa8",
+                "option": "Acceso a sesión completa"
+            }
+        ]
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="DELETE_Delete_plan_por_id"></a>DELETE Delete plan por `id` ##
+
+>http://localhost:3000/plans/5dc29ca21c9d4400007dd917
+
+Elimina un documento de la coleccion plan referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    { }
+
+Example Request
+Delete plan por id
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'DELETE',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/plans/5dc29ca21c9d4400007dd917',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{ }";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response200 OK
+
+{
+  "customers": [],
+  "_id": "5dc29ca21c9d4400007dd917",
+  "name": "VIP PLUS",
+  "price": 0,
+  "index": 0,
+  "icon": "vip.png",
+  "options": [
+    {
+      "_id": "5dc0b6ac63d6814c30992aa6",
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="GET_Get_packs"></a>GET Get packs ##
 
 >http://localhost:3000/packs/
 
@@ -1682,7 +1871,7 @@ Get packs
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## POST Post packs
+## <a id="POST_Post_packs"></a>POST Post packs ##
 
 >http://localhost:3000/packs/
 
@@ -1755,7 +1944,7 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
-## GET Get packs por id
+## <a id="GET_Get_packs_por_id"></a>GET Get packs por `id` ##
 
 >http://localhost:3000/packs/5dc6af79d6c75309570eaec6
 
@@ -1822,6 +2011,573 @@ Example Response    200 OK
 
 [Volver a submenu Test _Postman_](#Postman)
 
+## <a id="PUT_Put_pack_por_id"></a>PUT Put pack por `id` ##
+
+>http://localhost:3000/packs/5dc6af79d6c75309570eaec6
+
+Actualiza los datos del documento referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    {
+        "customers": [],
+        "_id": "5dc6af79d6c75309570eaec6",
+        "name": "FITNESS PLUS",
+        "image": "Pack-Fitness.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor",
+        "__v": 0
+    }
+
+Example Request Put pack por `id`
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'PUT',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/packs/5dc6af79d6c75309570eaec6',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{\n    \"customers\": [],\n    \"_id\": \"5dc6af79d6c75309570eaec6\",\n    \"name\": \"FITNESS PLUS\",\n    \"image\": \"Pack-Fitness.png\",\n    \"price\": 10.95,\n    \"description\": \"Lorem ipsum Dolor\",\n    \"__v\": 0\n}";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response    200 OK
+
+    {
+        "customers": [],
+        "_id": "5dc6af79d6c75309570eaec6",
+        "name": "FITNESS PLUS",
+        "image": "Pack-Fitness.png",
+        "price": 10.95,
+        "description": "Lorem ipsum Dolor",
+        "__v": 0
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="DELETE_Delete_pack_por_id"></a>DELETE Delete pack por `id` ##
+
+>http://localhost:3000/packs/5dc6af79d6c75309570eaec6
+
+Elimina un documento de la coleccion packs referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    { }
+
+Example Request Delete pack por id
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'DELETE',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/packs/5dc6af79d6c75309570eaec6',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{ }";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response200 OK
+
+    {
+    "customers": [],
+    "_id": "5dc6af79d6c75309570eaec6",
+    "name": "FITNESS PLUS",
+    "image": "Pack-Fitness.png",
+    "price": 10.95,
+    "description": "Lorem ipsum Dolor",
+    "__v": 0
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="GET_Get_ToDoes"></a>GET Get ToDoes ##
+
+>http://localhost:3000/todos/
+
+Obtiene el listado de todos los documentos de la coleccion todo
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    { }
+
+Example Request Get ToDoes
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'GET',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/todos/',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{ }";
+
+    req.write(postData);
+
+    req.end();
 
 
+Example Response    200 OK
 
+    [
+    {
+        "_id": "5dc5165e910eb8159cbbe4a4",
+        "registerdate": "2019-11-08T07:16:46.100Z",
+        "todotask": [
+        {
+            "registerdate": "2019-11-08T10:47:00.688Z",
+            "_id": "5dc5165e910eb8159cbbe4a4",
+            "todotaskid": "e0037c63-dfe9-447f-9567-d52011c19a85",
+            "task": "añadir contador usuarios",
+            "state": "0",
+            "disabled": true
+        },
+        {
+            "registerdate": "2019-11-08T07:23:39.217Z",
+            "_id": "5dc5165e910eb8159cbbe4a4",
+            "todotaskid": "2cbdf809-945d-4634-8e33-07c3d47c504f",
+            "task": "jkk55",
+            "state": "0",
+            "disabled": true
+        }
+        ],
+        "task": "Listar usuarios por plan",
+        "type": 0,
+        "section": 0,
+        "state": "0",
+        "description": "",
+        "disabled": true,
+        "__v": 0
+    },
+    {
+        "_id": "5dc518ba0400176f2aa2254f",
+        "registerdate": "2019-11-08T07:26:50.788Z",
+    ...
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="GET_Get_ToDoes_por_id"></a>GET Get ToDoes por `id` ##
+
+>http://localhost:3000/todos/5dc6136322ad4ef1c370193b
+
+Obtiene un documento de la coleccion todo referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    { }
+
+Example Request Get ToDoes por `id`
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'GET',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/todos/5dc6136322ad4ef1c370193b',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{ }";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response    200 OK
+
+    {
+    "_id": "5dc6136322ad4ef1c370193b",
+    "registerdate": "2019-11-09T01:16:19.650Z",
+    "todotask": [
+        {
+        "registerdate": "2019-11-09T01:16:47.840Z",
+        "_id": "5dc6137f9c4b3d00048d02a9"
+        }
+    ],
+    "task": "aa",
+    "type": 0,
+    "section": 0,
+    "state": "0",
+    "description": "",
+    "disabled": false,
+    "__v": 0
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="PUT_Put_ToDo_por_id"></a>PUT Put ToDo por `id` ##
+
+>http://localhost:3000/todos/5dc6136322ad4ef1c370193b
+
+Actualiza un documento de la coleccion todo referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    {
+        "_id": "5dc6136322ad4ef1c370193b",
+        "registerdate": "2019-11-09T01:16:19.650Z",
+        "todotask": [
+            {
+                "registerdate": "2019-11-09T01:16:47.840Z",
+                "_id": "5dc6137f9c4b3d00048d02a9"
+            }
+        ],
+        "task": "AA-updated",
+        "type": 0,
+        "section": 0,
+        "state": "0",
+        "description": "",
+        "disabled": false,
+        "__v": 0
+    }
+
+Example Request Put ToDo por `id`
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'PUT',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/todos/5dc6136322ad4ef1c370193b',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{\n    \"_id\": \"5dc6136322ad4ef1c370193b\",\n    \"registerdate\": \"2019-11-09T01:16:19.650Z\",\n    \"todotask\": [\n        {\n            \"registerdate\": \"2019-11-09T01:16:47.840Z\",\n            \"_id\": \"5dc6137f9c4b3d00048d02a9\"\n        }\n    ],\n    \"task\": \"AA-updated\",\n    \"type\": 0,\n    \"section\": 0,\n    \"state\": \"0\",\n    \"description\": \"\",\n    \"disabled\": false,\n    \"__v\": 0\n}";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response200 OK
+
+    {
+        "_id": "5dc6136322ad4ef1c370193b",
+        "registerdate": "2019-11-09T01:16:19.650Z",
+        "todotask": [
+            {
+                "registerdate": "2019-11-09T01:16:47.840Z",
+                "_id": "5dc6137f9c4b3d00048d02a9"
+            }
+        ],
+        "task": "AA-updated",
+        "type": 0,
+        "section": 0,
+        "state": "0",
+        "description": "",
+        "disabled": false,
+        "__v": 0
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="POST_Post_ToDo"></a>POST Post ToDo ##
+
+>http://localhost:3000/todos/
+
+Añade documento a la coleccion todo
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    {
+        "todotask": [
+            {
+                "registerdate": "2019-11-09T01:16:47.840Z",
+                "_id": "5dc6137f9c4b3d00048d02a9"
+            }
+        ],
+        "task": "NEW",
+        "type": 0,
+        "section": 0,
+        "state": "0",
+        "description": "",
+        "disabled": false,
+        "__v": 0
+    }
+
+Example Request Post ToDo
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'POST',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/todos/',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{\n    \"todotask\": [\n        {\n            \"registerdate\": \"2019-11-09T01:16:47.840Z\",\n            \"_id\": \"5dc6137f9c4b3d00048d02a9\"\n        }\n    ],\n    \"task\": \"NEW\",\n    \"type\": 0,\n    \"section\": 0,\n    \"state\": \"0\",\n    \"description\": \"\",\n    \"disabled\": false,\n    \"__v\": 0\n}";
+
+    req.write(postData);
+
+    req.end();
+
+Example Response    200 OK
+
+    {
+        "_id": "5dc6b790d6c75309570eaed2",
+        "registerdate": "2019-11-09T12:56:48.650Z",
+        "todotask": [
+            {
+                "_id": "5dc6137f9c4b3d00048d02a9",
+                "registerdate": "2019-11-09T01:16:47.840Z"
+            }
+        ],
+        "task": "NEW",
+        "type": 0,
+        "section": 0,
+        "state": "0",
+        "description": "",
+        "disabled": false,
+        "__v": 0
+    }
+
+[Volver a submenu Test _Postman_](#Postman)
+
+## <a id="DELETE_Delete_ToDo_por_id"></a>DELETE Delete ToDo por `id` ##
+
+>http://localhost:3000/todos/5dc6b790d6c75309570eaed2
+
+Elimina documento de la coleccion todo referenciado por id
+
+**Headers**
+
+>Content-Type	application/json
+
+**Body**    raw (application/json)
+
+    {}
+
+Example Request
+Delete ToDo por id
+
+    var http = require('follow-redirects').http;
+    var fs = require('fs');
+
+    var options = {
+    'method': 'DELETE',
+    'hostname': 'localhost',
+    'port': 3000,
+    'path': '/todos/5dc6b790d6c75309570eaed2',
+    'headers': {
+        'Content-Type': 'application/json'
+    },
+    'maxRedirects': 20
+    };
+
+    var req = http.request(options, function (res) {
+    var chunks = [];
+
+    res.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+
+    res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+    });
+
+    res.on("error", function (error) {
+        console.error(error);
+    });
+    });
+
+    var postData =  "{}";
+
+    req.setHeader('Content-Length', postData.length);
+
+    req.write(postData);
+
+    req.end();
+
+
+Example Response    200 OK
+
+{
+    "_id": "5dc6b790d6c75309570eaed2",
+    "registerdate": "2019-11-09T12:56:48.650Z",
+    "todotask": [
+        {
+            "registerdate": "2019-11-09T01:16:47.840Z",
+            "_id": "5dc6137f9c4b3d00048d02a9"
+        }
+    ],
+    "task": "NEW",
+    "type": 0,
+    "section": 0,
+    "state": "0",
+    "description": "",
+    "disabled": false,
+    "__v": 0
+}
+
+[Volver a submenu Test _Postman_](#Postman)
+
+[Volver a inicio](#Home)
