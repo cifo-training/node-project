@@ -116,8 +116,50 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Sección ToDo (Tareas desarrollo - estado)
 
-![Demanda de stock](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
+![To-Do](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
 
+## indices
+
+Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
+
+    db.customers.createIndex({"name.first":"text", "name.last":"text"})
+    db.customers.createIndex({"plan":1})
+
+
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "test.customers"
+	},
+	{
+		"v" : 2,
+		"key" : {
+			"_fts" : "text",
+			"_ftsx" : 1
+		},
+		"name" : "name.first_text_name.last_text",
+		"ns" : "test.customers",
+		"weights" : {
+			"name.first" : 1,
+			"name.last" : 1
+		},
+		"default_language" : "english",
+		"language_override" : "language",
+		"textIndexVersion" : 3
+	},
+	{
+		"v" : 2,
+		"key" : {
+			"plan" : 1
+		},
+		"name" : "plan_1",
+		"ns" : "test.customers"
+	}
+]
 
 ## Posteriores iteraciones
 
