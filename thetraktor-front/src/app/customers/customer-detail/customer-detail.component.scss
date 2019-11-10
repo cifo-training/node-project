@@ -1,0 +1,27 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  mat-card {
+    color: $white-color;
+    background: $darkgrey-color;
+    text-align:center;
+    width:50%
+   }
+
+  .customer-detail{
+    margin: 10px;
+    #picture{
+      border-radius: 50%;
+      height: 120px;
+    }
+    mat-card-content{
+
+      mat-icon{
+        margin-right: 0.5rem;
+      }
+      .infoPlan{text-align:center;margin:0 auto;width: 33px;}
+    }
+    app-customer-packs{
+      text-align:center;width:50%
+    }
+  }
+}

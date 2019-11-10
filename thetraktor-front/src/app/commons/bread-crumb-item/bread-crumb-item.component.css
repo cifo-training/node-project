@@ -1,0 +1,160 @@
+/* Colors */
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* Shapes */
+.btn-gold {
+  border: 1px solid #e7b03c;
+  color: #e7b03c;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.chckr {
+  border: 1px solid #e7b03c;
+  border-radius: 5px;
+}
+
+.chckr.checked {
+  background-color: #e7b03c;
+}
+
+:host {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  outline: none;
+  font-size: 10px;
+  max-height: 2rem;
+}
+
+:host .mat-list-item {
+  display: block;
+  width: auto;
+  font-family: Oswald;
+  color: #e6e6e6;
+  font-size: 12px;
+}
+
+:host .mat-list-item .routeIcon {
+  margin-right: 0.5rem;
+  color: #999999;
+  font-size: 16px;
+  height: 16px;
+}
+
+:host .mat-list-item .expandIcon {
+  color: #fff;
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+:host .mat-list-item span {
+  white-space: nowrap;
+}
+
+:host .mat-list-item.expanded {
+  background: #ffffff25;
+}
+
+:host .mat-list-item.expanded ::ng-deep .mat-list-item-content {
+  padding: 8px;
+}
+
+:host .mat-list-item.active {
+  background-color: #ffffff25;
+  color: white;
+}
+
+:host .mat-list-item.active .routeIcon {
+  color: white;
+}
+
+:host .mat-list-item.active.firstLevel {
+  background-color: #3f51b549;
+}
+
+:host ::ng-deep .mat-list-item-content {
+  width: 100%;
+}
+
+:host #listU:hover, :host #listU:focus {
+  color: white;
+  background-color: #ffffff4d;
+}
+
+:host #listU:hover .routeIcon, :host #listU:focus .routeIcon {
+  color: white;
+}
+/*# sourceMappingURL=bread-crumb-item.component.css.map */

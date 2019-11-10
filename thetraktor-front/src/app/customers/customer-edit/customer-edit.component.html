@@ -1,0 +1,117 @@
+<div class="customer-edit" fxLayout="row" fxLayoutGap="10px">
+  <mat-card fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <img fxFlexAlign="center" id="picture" src="{{ customerData.picture }}" alt="" />
+    <span class="font14 bolder">{{ customer.name.first }} {{ customer.name.last }}</span>
+    <span class="font14">{{ customer.registered | date: "dd/MM/yyyy"}} </span>
+    <mat-slide-toggle class="example-margin" [checked]="customerData.isActive" [(ngModel)]="customerData.isActive">
+      Activ@!
+    </mat-slide-toggle>
+  </mat-card>
+  <mat-card fxFlex fxLayout="column">
+    <div fxFlex fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap.xs="0">
+      <mat-form-field class="add-form-field full-width">
+        <input matInput type="text" placeholder="First Name" [(ngModel)]="customerData.name.first">
+        <button mat-button *ngIf="customerData.name.first" matSuffix mat-icon-button aria-label="Clear"
+          (click)="customerData.name.first=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="add-form-field full-width">
+        <input matInput type="text" placeholder="Last Name" [(ngModel)]="customerData.name.last">
+        <button mat-button *ngIf="customerData.name.last" matSuffix mat-icon-button aria-label="Clear"
+          (click)="customerData.name.last=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap.xs="0">
+      <mat-form-field class="add-form-field full-width">
+        <input matInput type="email" placeholder="Mail" [(ngModel)]="customerData.email">
+        <button mat-button *ngIf="customerData.email" matSuffix mat-icon-button aria-label="Clear"
+          (click)="customerData.email=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="add-form-field full-width">
+        <input matInput type="text" placeholder="Phone" [(ngModel)]="customerData.phone">
+        <button mat-button *ngIf="customerData.phone" matSuffix mat-icon-button aria-label="Clear"
+          (click)="customerData.phone=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap.xs="0">
+      <div class="mainColumn" fxLayout="column">
+        <mat-form-field class="add-form-field full-width">
+          <input matInput type="text" placeholder="Address" [(ngModel)]="customerData.address">
+          <button mat-button *ngIf="customerData.address" matSuffix mat-icon-button aria-label="Clear"
+            (click)="customerData.address=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+          [(ngModel)]="customerData.gender">
+          <mat-radio-button class="example-radio-button" *ngFor="let gen of gendre" [value]="gen.toLowerCase()">
+            {{gen}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field class="add-form-field full-width">
+          <input matInput type="text" placeholder="Weight" [(ngModel)]="customerData.weight">
+          <button mat-button *ngIf="customerData.weight" matSuffix mat-icon-button aria-label="Clear"
+            (click)="customerData.weight=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="add-form-field full-width">
+          <input matInput type="text" placeholder="Height" [(ngModel)]="customerData.height">
+          <button mat-button *ngIf="customerData.height" matSuffix mat-icon-button aria-label="Clear"
+            (click)="customerData.height=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="mainColumn" fxLayout="column">
+        <label class='selectors' for="plans">Plan Contratado</label>
+        <div id="plans" fxLayout="row wrap" fxLayoutGap="32px">
+          <!--           <div>
+            <input type="checkbox" id="choiceVIP" name="choiceVIP" value="VIP">
+            <div>
+              <label for="choiceVIP">VIP</label></div>
+          </div> -->
+
+          <div *ngFor='let plan of plans'>
+            <input type="radio" id="choice{{plan.name}}" name="contact" value="{{plan.name}}"
+              (click)='clickPlan($event,plan)'>
+            <div>
+              <label for="choice{{plan.name}}">{{plan.name}}</label></div>
+          </div>
+        </div>
+        <label class='selectors' for="packs">Packs Contratados</label>
+        <div id="packs" fxLayout="row wrap" fxLayoutGap="32px">
+          <div *ngFor='let pack of packs'>
+            <input type="checkbox" id="packChoice{{pack.name}}" name="pack{{pack.name}}" value="{{pack.name}}"
+              (click)='clickPack($event,pack._id)' [checked]="customerData.packs.indexOf(pack.name) != -1">
+            <div>
+              <label for="packChoice{{pack.name}}">{{pack.name}}</label></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="actionButtons" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+        <button class="execBtn" id="edit-btn" mat-raised-button color="primary"
+          (click)='postCustomer(customerData)'>Save</button>
+        <button class="execBtn" id="cancel-btn"  mat-raised-button color="primary"
+         (click)='goBack()'>Cancel</button>
+      </div>
+      <div>
+        <button class="execBtn" id="erase-btn" mat-raised-button  color="primary"
+          (click)='deleteCustomer(customerData._id)'>Delete</button>
+      </div>
+    </div>
+  </mat-card>
+</div>
+{{customerData|json}}

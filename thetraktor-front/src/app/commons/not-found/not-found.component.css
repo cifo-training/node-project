@@ -1,0 +1,18 @@
+section {
+  color: #6d778a;
+  text-align: center;
+}
+
+section .mainTitle {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+section .subTitle {
+  font-size: 50px;
+}
+
+section .progress {
+  width: 50%;
+}
+/*# sourceMappingURL=not-found.component.css.map */

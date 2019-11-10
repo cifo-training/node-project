@@ -1,0 +1,77 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  width: 100%;
+  .mat-list-item {
+    font-family: Oswald;
+    font-size: 12px;
+    color: darken($white-color, 20%);
+    padding: 0;
+    ::ng-deep .mat-list-item-content {
+      padding: 8px;
+    }
+    .routeIcon {
+      margin-right: 1rem;
+      color: darken($white-color, 40%);
+    }
+  }
+  .mat-list-item.expanded {
+    background: #ffffff25;
+  }
+  .mat-list-item.active {
+    //background-color: rgba(0, 0, 255, 0.5);
+    //border-right: 4px solid darken($red-color,20%);
+    //color:#eee;
+    color: lighten($black-color, 30%);
+    //background-color: #ffffff4d;
+    //background-color: darken($red-color, 15%);
+    background-color: #e7b03c;
+    &:last-child{
+      background-color:blue;
+    }
+    &::after {
+      content: " ";
+      position: relative;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 22px 10px 22px 0;
+      border-color: transparent lighten($grey-color, 45%) transparent
+        transparent !important;
+    }
+    .routeIcon {
+      color: darken($white-color, 10%);
+    }
+  }
+  &:hover,
+  &:focus {
+    > .mat-list-item {
+      &:not(.active) {
+        background-color: darken($white-color, 40%);
+      }
+      &.active {
+        background-color: black;
+        .routeIcon {
+            // color: darken($white-color, 90%);
+            color: lighten($white-color, 30%);
+          }
+      }
+      color: lighten($white-color, 10%);
+      .routeIcon {
+        color: darken($gold-color, 10%);
+      }
+    }
+  }
+  ::ng-deep .mat-list-item-content {
+    width: 100%;
+  }
+}
+
+.mat-list-item {
+  padding: 8px 0;
+  display: block;
+  width: auto;
+}

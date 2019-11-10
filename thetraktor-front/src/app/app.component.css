@@ -1,0 +1,170 @@
+/* Colors */
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* Shapes */
+.btn-gold {
+  border: 1px solid #e7b03c;
+  color: #e7b03c;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.chckr {
+  border: 1px solid #e7b03c;
+  border-radius: 5px;
+}
+
+.chckr.checked {
+  background-color: #e7b03c;
+}
+
+:host mat-sidenav-container,
+:host mat-sidenav-content,
+:host mat-sidenav {
+  height: 100%;
+}
+
+:host #mainContent {
+  width: 100%;
+  max-height: none !important;
+  background: #151515;
+  color: #fff;
+}
+
+:host #mainContent main {
+  overflow-x: auto;
+}
+
+:host #mainContent main > * {
+  width: 100%;
+}
+
+:host #mainContent main router-outlet {
+  width: 0;
+}
+
+:host #mainContent .mat-nav-list {
+  max-width: 200px !important;
+  padding-top: 0;
+  background: #373737;
+}
+
+:host #mainContent .mat-nav-list .dashboard {
+  font-size: 12px;
+  max-height: 2.5rem;
+  border-right: 4px solid #6a6a6a;
+  color: #cccccc;
+  padding: 8px;
+  /*       ::ng-deep .mat-list-item-content {
+        padding: 8px;
+      } */
+}
+
+:host #mainContent .mat-nav-list .dashboard .routeIcon {
+  margin-right: 1rem;
+  color: #999999;
+}
+
+:host #mainContent .mat-nav-list .dashboard:hover, :host #mainContent .mat-nav-list .dashboard:focus {
+  color: white;
+  background-color: #ffffff4d;
+}
+
+:host #mainContent .mat-nav-list .dashboard:hover .routeIcon, :host #mainContent .mat-nav-list .dashboard:focus .routeIcon {
+  color: white;
+}
+
+:host #mainContent .mat-nav-list .dashboard.breadcrumb {
+  background: #ffffff25;
+  max-height: 2rem;
+  color: #e6e6e6;
+}
+
+:host #mainContent .mat-nav-list span {
+  left: 1rem;
+  width: 100%;
+}
+
+:host #mainContent .mat-nav-list span small {
+  color: #b3b3b3;
+  bottom: 0;
+}
+
+:host app-nav-bar {
+  -webkit-box-shadow: 0 3px 5px -1px #0003, 0 6px 10px 0 #0000001a, 0 1px 18px 0 #0000001a;
+          box-shadow: 0 3px 5px -1px #0003, 0 6px 10px 0 #0000001a, 0 1px 18px 0 #0000001a;
+  z-index: 0;
+}
+
+:host mat-sidenav {
+  background: #373737;
+}
+/*# sourceMappingURL=app.component.css.map */

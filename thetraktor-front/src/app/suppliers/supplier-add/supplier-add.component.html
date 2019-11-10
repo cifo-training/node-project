@@ -1,0 +1,10 @@
+<p>supplier-add works!</p>
+<div>
+  <label for="firstName">First Name</label>
+  <input id="firstName" type="text" [(ngModel)]="supplierData.name.first" #firstName="ngModel">
+</div>
+<div>
+  <label for="lastName">Last Name</label>
+  <input id="lastName" type="text" [(ngModel)]="supplierData.name.last" #lastName="ngModel">
+</div>
+<button (click)='addSupplier(supplierData)'>Add</button>

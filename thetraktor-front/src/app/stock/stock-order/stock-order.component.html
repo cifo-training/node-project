@@ -1,0 +1,60 @@
+<div fxLayout="column" class="stock-order">
+
+<!-- Spinner -->
+<div fxLayout fxLayoutAlign="center center" class="spinner-container" *ngIf="isLoading$ | async">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div>
+  <div cdkDropListGroup fxLayout="row" fxLayoutAlign="space-between start" fxLayout.xs="column" fxLayoutGap="0.5rem"
+    fxLayoutAlign.xs="stretch stretch" fxLayoutGap.xs="0.2rem">
+    <mat-card class="stockList">
+      <mat-form-field class="add-form-field half-width">
+        <input matInput type="text" placeholder="Filter Product" [(ngModel)]="pattern">
+        <button mat-button *ngIf="pattern" matSuffix mat-icon-button aria-label="Clear" (click)="pattern=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <h2>Stock</h2>
+
+      <div cdkDropList [cdkDropListData]="dataSource" (cdkDropListDropped)="drop($event)" class='productList'>
+        <div class="example-box" *ngFor="let item of products | productsPipe:'name':pattern; let i = index" cdkDrag>
+          <mat-card>
+            {{ item.name }}
+            <mat-card-subtitle>Quantity: {{item.qty}}</mat-card-subtitle>
+
+          </mat-card>
+
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="stockList">
+      <span *ngIf='order.length-1>0' fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <span>Total products: </span>
+        <h4>{{order.length-1}}</h4>
+
+      </span>
+      <h2>Order</h2>
+
+      <div cdkDropList [cdkDropListData]="order" (cdkDropListDropped)="drop($event)" class='productList'>
+        <div class="example-box" *ngFor="let item of order" cdkDrag>
+          <mat-card *ngIf="item.qty>-1" fxFlex fxLayoutGap="1rem">
+            <span fxFlex fxFlexAlign="center">{{ item.name }}</span>
+            <button mat-stroked-button fxFlexAlign="center" (click)="subtractQty(item)">
+              <mat-icon color="warn">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-form-field class="qtyInput" fxFlex="4rem" fxFlexAlign="center">
+              <input matInput placeholder="Quantity" [(ngModel)]="item.qty">
+            </mat-form-field>
+            <button mat-stroked-button fxFlex="3rem" fxFlexAlign="center" (click)="addQty(item)">
+              <mat-icon class="green">keyboard_arrow_up</mat-icon>
+            </button>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+{{order|json}}
+</div>

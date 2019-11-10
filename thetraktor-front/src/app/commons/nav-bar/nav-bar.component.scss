@@ -1,0 +1,88 @@
+@import "../../shared/styles/projecte-style.scss";
+
+mat-toolbar {
+  //border-radius: 3px;
+  background: $darkgrey-color;
+  font-family: Oswald;
+  color: darken($white-color, 10%);
+  min-height: 55px;
+  #firstBar {
+    height: 55px;
+    .logo{
+      font-family: HighSchool;
+      font-size: 30px;
+      &:nth-child(2){
+        color:$gold-color;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: darken($white-color, 10%);
+      &:hover,
+      &:active {
+        color: lighten($white-color, 15%);
+      }
+    }
+    .material-icons.md-36 {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+    .navigation-items {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .log-items {
+      /* #registerBtn {
+        a {
+          color: #ddd;
+          &:hover {
+            color: lightgray;
+          }
+        }
+      } */
+      a {
+        font-size: medium;
+      }
+      li {
+        line-height: 1;
+      }
+      #logged-label,#log-in-label{
+        //height: 100%;
+        font-size: 12px;
+        color: darken($white-color, 10%);
+      }
+      #log-in-label{
+        &:hover{
+        color: lighten($white-color, 20%);
+      }
+      }
+      mat-icon {
+        &.logged-icon {
+          color: $green-color;
+          cursor: default;
+        }
+        &.login-icon {
+          color: $green-color;
+          &:hover,
+          &:active {
+            color: lighten($green-color, 15%);
+          }
+        }
+        &.logout-icon {
+          color: $red-color;
+          &:hover,
+          &:active {
+            color: lighten($red-color, 15%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* @media (max-width: 959px) {
+  mat-toolbar {
+    border-radius: 0px;
+  }
+} */

@@ -1,0 +1,26 @@
+<mat-nav-list #sidenav>
+  <!--   <a id="dashboard" routerLink="/home" (click)='onSidenavClose()' [ngStyle]="{'height.%': 100}" fxLayout="row"
+    fxLayoutAlign="space-around center ">
+    <mat-icon class="routeIcon material-icons-outlined">home</mat-icon>
+    <span fxFlex="grow">Dashboard</span>
+  </a> -->
+  <app-menu-list-item (sidenavClose)="sidenav.ngOnChanges()" *ngFor="let item of navList" [item]="item">
+  </app-menu-list-item>
+  <div [ngStyle]="{'border': '1px solid #aaa'}">
+  </div>
+  <a mat-list-item *ngIf="!isLogged" class="log in" routerLink="login" (click)="onSidenavClose()" fxLayout="row"
+    fxLayoutAlign="space-around center">
+    <mat-icon class="routeIcon material-icons-outlined">how_to_reg</mat-icon>
+    <span class="nav-caption">Login</span>
+  </a>
+  <a mat-list-item *ngIf="!isLogged" class="log" routerLink="users/register" (click)="onSidenavClose()">Register</a>
+  <mat-label *ngIf="isLogged" id="logged" fxLayout="row" fxLayoutAlign="space-around center">
+    <mat-icon class="routeIcon material-icons-outlined">verified_user</mat-icon>
+    <span>You Logged</span>
+  </mat-label>
+  <a mat-list-item *ngIf="isLogged" class="log out" routerLink="home" (click)="onLogout();onSidenavClose();"
+    fxLayout="row" fxLayoutAlign="space-around center">
+    <mat-icon class="routeIcon material-icons-outlined">power_settings_new</mat-icon>
+    <span class="nav-caption">Logout</span>
+  </a>
+</mat-nav-list>

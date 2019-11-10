@@ -1,0 +1,174 @@
+/* Colors */
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* Shapes */
+.btn-gold {
+  border: 1px solid #e7b03c;
+  color: #e7b03c;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.chckr {
+  border: 1px solid #e7b03c;
+  border-radius: 5px;
+}
+
+.chckr.checked {
+  background-color: #e7b03c;
+}
+
+:host {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  outline: none;
+  width: 100%;
+}
+
+:host .mat-list-item {
+  font-family: Oswald;
+  font-size: 12px;
+  color: #cccccc;
+  padding: 0;
+}
+
+:host .mat-list-item ::ng-deep .mat-list-item-content {
+  padding: 8px;
+}
+
+:host .mat-list-item .routeIcon {
+  margin-right: 1rem;
+  color: #999999;
+}
+
+:host .mat-list-item.expanded {
+  background: #ffffff25;
+}
+
+:host .mat-list-item.active {
+  color: #626262;
+  background-color: #e7b03c;
+}
+
+:host .mat-list-item.active:last-child {
+  background-color: blue;
+}
+
+:host .mat-list-item.active::after {
+  content: " ";
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 22px 10px 22px 0;
+  border-color: transparent #f2f2f2 transparent transparent !important;
+}
+
+:host .mat-list-item.active .routeIcon {
+  color: #e6e6e6;
+}
+
+:host:hover > .mat-list-item, :host:focus > .mat-list-item {
+  color: white;
+}
+
+:host:hover > .mat-list-item:not(.active), :host:focus > .mat-list-item:not(.active) {
+  background-color: #999999;
+}
+
+:host:hover > .mat-list-item.active, :host:focus > .mat-list-item.active {
+  background-color: black;
+}
+
+:host:hover > .mat-list-item.active .routeIcon, :host:focus > .mat-list-item.active .routeIcon {
+  color: white;
+}
+
+:host:hover > .mat-list-item .routeIcon, :host:focus > .mat-list-item .routeIcon {
+  color: #d6991a;
+}
+
+:host ::ng-deep .mat-list-item-content {
+  width: 100%;
+}
+
+.mat-list-item {
+  padding: 8px 0;
+  display: block;
+  width: auto;
+}
+/*# sourceMappingURL=menu-list-item.component.css.map */

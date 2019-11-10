@@ -1,0 +1,18 @@
+<a id="listU" mat-list-item [ngStyle]="{'height.%': 100}"
+(click)="onItemSelected(item)"
+[ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded }"
+*ngIf='expanded || active' class="bread-crumb-item"
+fxLayout="row" fxLayoutAlign="center space-around">
+  <mat-icon class="routeIcon material-icons-outlined">{{item.iconName}}</mat-icon>
+  <span fxFlex="nowrap">{{item.displayName}}</span>
+  <span *ngIf="item.children && item.children.length">
+    <span fxFlex></span>
+    <mat-icon class="expandIcon">
+      keyboard_arrow_right
+    </mat-icon>
+  </span>
+</a>
+<div *ngIf="expanded">
+  <app-bread-crumb-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1">
+  </app-bread-crumb-item>
+</div>

@@ -1,0 +1,99 @@
+<div class="dragDrop">
+  <!-- Spinner -->
+  <div fxFill fxLayout fxLayoutAlign="center center" class="spinner-container" *ngIf="(isLoading$ | async)">
+    <mat-spinner></mat-spinner>
+  </div>
+    <mat-card>
+      <div cdkDropListGroup fxLayout="row" fxLayoutAlign="space-evenly start" fxLayoutGap="5px"
+        fxLayout.lt-md="column"
+        fxLayoutAlign.lt-md="stretch stretch"
+        fxLayoutGap.lt-md="2px">
+        <!-- ToDo List-->
+        <div class="dropLists" id="todoList" fxLayout="column" fxLayoutAlign="stretch stretch">
+            <div id="title" fxLayout="row" fxLayoutAlign="space-between center"><h3>To do</h3></div>
+          <div cdkDropList [cdkDropListData]="todoList" (cdkDropListDropped)="drop($event)" class='dropList todoList'>
+            <div class="drag-box" *ngFor='let item of todoList' cdkDragDisabled="{{item.disabled}}" cdkDrag>
+              <!-- Expansion panel-->
+              <mat-expansion-panel (opened)="item.disabled = true" (closed)="item.disabled = false">
+                <mat-expansion-panel-header matRipple>
+                  {{item.task}}
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <label for="taskEdit">Title:</label>
+                    <div fxLayout="row" fxLayoutAlign="stretch stretch">
+                      <input matInput type="text" id="taskEdit" placeholder="Task" [(ngModel)]="item.task"
+                        (change)="editTodo(item)">
+                      <button id="delete-btn" mat-button (click)='deleteTodo(item,todoList)' [disabled]="" title="Delete to do">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                    <app-panel-content id="taskContent" [todo]="item" [dataList]="'todoList'"></app-panel-content>
+                </ng-template>
+              </mat-expansion-panel>
+            </div>
+          </div>
+          <!-- Add ToDo action-->
+          <mat-form-field class="add-form-field full-width">
+            <input matInput type="text" placeholder="New" [(ngModel)]="todo.task" name="task"
+              (keydown.enter)='insertUpdate()'>
+              <button mat-button *ngIf="todo.task" matSuffix mat-icon-button aria-label="Clear" (click)="todo.task=''">
+                <mat-icon>close</mat-icon>
+              </button>
+              <button mat-button *ngIf="todo.task" matSuffix mat-icon-button aria-label="Add" (click)="insertUpdate()">
+                <mat-icon>done</mat-icon>
+              </button>
+          </mat-form-field>
+        </div>
+        <!-- Doing List-->
+        <div class="dropLists" id="doingList" fxLayout="column" fxLayoutAlign="stretch stretch">
+            <div id="title"><h3>Doing</h3></div>
+          <div cdkDropList [cdkDropListData]="doingList" (cdkDropListDropped)="drop($event)" class='dropList doingList'>
+            <div class="drag-box" *ngFor="let item of doingList" cdkDragDisabled="{{item.disabled}}" cdkDrag>
+              <!-- Expansion panel-->
+              <mat-expansion-panel (opened)="item.disabled = true" (closed)="item.disabled = false"
+                *ngIf="item.state=='1'">
+                <mat-expansion-panel-header matRipple>
+                  {{item.task}}
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                  <label for="taskEdit">Title:</label>
+                  <div fxLayout="row" fxLayoutAlign="stretch stretch">
+                    <input matInput type="text" id="taskEdit" placeholder="Task" [(ngModel)]="item.task"
+                      (change)="editTodo(item)">
+                    <button id="delete-btn" mat-button (click)='deleteTodo(item,doingList)' [disabled]="" title="Delete to do">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                  <app-panel-content id="taskContent" [todo]="item" [dataList]="'doingList'"></app-panel-content>
+                </ng-template>
+              </mat-expansion-panel>
+            </div>
+          </div>
+        </div>
+        <!-- Done List-->
+        <div class="dropLists" id="doneList" fxLayout="column" fxLayoutAlign="stretch stretch">
+          <div id="title"><h3>Done</h3></div>
+
+          <div cdkDropList [cdkDropListData]="doneList" (cdkDropListDropped)="drop($event)" class='dropList doneList'>
+            <div class="drag-box" *ngFor="let item of doneList" cdkDragDisabled="{{item.disabled}}" cdkDrag>
+              <!-- Expansion panel-->
+              <mat-expansion-panel (opened)="item.disabled = true" (closed)="item.disabled = false"
+                *ngIf="item.state=='2'">
+                <mat-expansion-panel-header matRipple>
+                  {{item.task}}
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                  <ul>
+                    <li *ngFor="let item of item.todotask">
+                      {{item.task}}
+                    </li>
+                  </ul>
+                </ng-template>
+                </mat-expansion-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+{{todo|json}}

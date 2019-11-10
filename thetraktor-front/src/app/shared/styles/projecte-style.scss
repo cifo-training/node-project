@@ -1,0 +1,89 @@
+/* Colors */
+$red-color: #bb4430;
+$green-color: #2ecc71;
+$white-color: #fff;
+$gold-color: #e7b03c;
+$black-color: #151515;
+$darkgrey-color: #373737;
+$mildgrey-color: #616161;
+$grey-color: #7f7f7f;
+
+$facebook-color: #3b5999;
+$google-color: #cb2c1c;
+
+$blue-color:#3f50b4;
+$blacknav-color:#201f2b;
+
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+.bolder{
+  font-weight: bold;
+}
+/* Shapes */
+.btn-gold {
+  border: 1px solid $gold-color;
+  color: $gold-color;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+.btn-white {
+  border: 1px solid $white-color;
+  color: $white-color;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+.chckr {
+  border: 1px solid $gold-color;
+  border-radius: 5px;
+}
+.chckr.checked {
+  background-color: $gold-color;
+}

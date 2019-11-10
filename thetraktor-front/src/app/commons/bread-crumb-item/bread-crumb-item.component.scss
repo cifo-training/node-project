@@ -1,0 +1,61 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  font-size: 10px;
+  max-height: 2rem;
+  //width: 100%;
+  .mat-list-item {
+    //padding: 8px 0;
+    display: block;
+    width: auto;
+    font-family: Oswald;
+    color: darken($white-color, 10%);
+    font-size: 12px;
+    .routeIcon {
+      margin-right: 0.5rem;
+      color: darken($white-color, 40%);
+      font-size: 16px;
+      height: 16px;
+    }
+    .expandIcon {
+      color: $white-color;
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+    span {
+      white-space: nowrap;
+    }
+  }
+  .mat-list-item.expanded {
+    background: #ffffff25;
+    ::ng-deep .mat-list-item-content {
+      padding: 8px;
+    }
+  }
+  .mat-list-item.active {
+    background-color: #ffffff25;
+    color: darken($white-color, 0%);
+    .routeIcon {
+      color: lighten($white-color, 10%);
+    }
+    &.firstLevel {
+      //color:rgba(51, 51, 51, 0.9);
+      background-color: #3f51b549;
+    }
+  }
+  ::ng-deep .mat-list-item-content {
+    width: 100%;
+  }
+  #listU {
+    &:hover,
+    &:focus {
+      color: lighten($white-color, 30%);
+      background-color: #ffffff4d;
+      .routeIcon {
+        color: lighten($white-color, 20%);
+      }
+  }
+  }
+}

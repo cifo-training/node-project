@@ -1,0 +1,26 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  .plans-list {
+    .mat-table {
+      background-color: $black-color;
+      color: $white-color;
+      width: 100%;
+      .mat-header-cell {
+        color: $grey-color;
+      }
+      .mat-cell {
+        .planImage {
+          width: 55px;
+          #pictureVIP {
+            width: 55px !important;
+            height: auto;
+          }
+        }
+        color: inherit;
+        a {
+          color: $gold-color;
+        }
+      }
+    }
+  }
+}

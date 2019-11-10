@@ -1,0 +1,224 @@
+/* Colors */
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* Shapes */
+.btn-gold {
+  border: 1px solid #e7b03c;
+  color: #e7b03c;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.chckr {
+  border: 1px solid #e7b03c;
+  border-radius: 5px;
+}
+
+.chckr.checked {
+  background-color: #e7b03c;
+}
+
+:host .customers-list {
+  margin: 10px;
+  /*change color of label*/
+}
+
+:host .customers-list .full-width {
+  width: 100%;
+}
+
+:host .customers-list .width175 {
+  max-width: 175px;
+}
+
+:host .customers-list .spinner-container {
+  position: absolute;
+  height: 80vh;
+  width: 100vw;
+  background-color: #151515;
+  z-index: 1;
+}
+
+:host .customers-list ::ng-deep .mat-select-trigger {
+  font-family: Oswald;
+}
+
+:host .customers-list ::ng-deep .mat-select-value {
+  color: #e7b03c;
+}
+
+:host .customers-list mat-form-field {
+  font-family: inherit;
+}
+
+:host .customers-list table {
+  background-color: #373737;
+  color: #fff;
+  font-family: Oswald;
+  width: 100%;
+}
+
+:host .customers-list table .mat-header-cell {
+  font-size: inherit;
+  color: #7f7f7f;
+}
+
+:host .customers-list table .mat-header-cell ::ng-deep .mat-sort-header-button,
+:host .customers-list table .mat-header-cell ::ng-deep .mat-sort-header-sorted,
+:host .customers-list table .mat-header-cell ::ng-deep .mat-sort-header-arrow,
+:host .customers-list table .mat-header-cell .mat-icon {
+  color: #7f7f7f;
+}
+
+:host .customers-list table .mat-cell {
+  padding: 10px 0px 10px 20px;
+}
+
+:host .customers-list table .mat-cell,
+:host .customers-list table .mat-footer-cell {
+  color: inherit;
+  font-size: 14px;
+}
+
+:host .customers-list table .mat-cell.cdk-column-plan.mat-column-plan {
+  color: #e7b03c;
+}
+
+:host .customers-list table #picture {
+  border-radius: 50%;
+  height: 72px;
+}
+
+:host .customers-list table #accessBtn {
+  padding: 0 32px;
+  border: 2px solid #e7b03c;
+}
+
+:host .customers-list table #accessBtn:hover {
+  background-color: #64480c;
+}
+
+:host .customers-list .mat-paginator {
+  color: #fff;
+  font-family: Oswald;
+  background-color: #373737;
+}
+
+:host .customers-list .mat-paginator ::ng-deep .mat-paginator-page-size .mat-select-trigger {
+  color: #fff;
+}
+
+:host .customers-list .mat-paginator ::ng-deep .mat-paginator-page-size .mat-select-trigger ::ng-deep .mat-select-value,
+:host .customers-list .mat-paginator ::ng-deep .mat-paginator-page-size .mat-select-trigger ::ng-deep .mat-select-arrow {
+  color: #fff;
+}
+
+:host .customers-list .mat-paginator ::ng-deep .mat-icon-button {
+  color: #fff;
+}
+
+:host .customers-list #activity {
+  width: 100%;
+  text-align: end;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+:host .customers-list ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline,
+:host .customers-list ::ng-deep .mat-form-field-ripple {
+  background-color: #d9d9d9;
+}
+
+:host .customers-list ::ng-deep .mat-focused .mat-form-field-label {
+  color: #bf8918;
+}
+
+:host .customers-list ::ng-deep .mat-form-field-label {
+  color: #b3b3b3;
+}
+
+:host .customers-list #addBtn {
+  background-color: #e7b03c;
+  padding: 0 32px;
+}
+
+.mat-select-panel {
+  max-height: 333px;
+}
+
+.panel-override {
+  max-height: 280vh !important;
+}
+
+.panel-override-2 {
+  max-height: 100px !important;
+}
+/*# sourceMappingURL=customers-list.component.css.map */
