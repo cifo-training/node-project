@@ -167,11 +167,11 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 ]
 ```
 
-## <a id="Postman"></a>**Test** - _Postman_ ##
+## <a id="Postman"></a>Test - _Postman_ ##
 
 - [POST Signup](#POST_Signup)
 
-## <a id="POST_Signup"></a>POST Signup ##
+## <a id="POST_Signup"></a><b>POST</b> Signup ##
 
 
 >http://localhost:3000/user/signup
