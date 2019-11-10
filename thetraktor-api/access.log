@@ -4829,3 +4829,4 @@
 ::1 - - [09/Nov/2019:12:56:00 +0000] "PUT /todos/5dc6136322ad4ef1c370193b HTTP/1.1" 200 261 "-" "PostmanRuntime/7.19.0"
 ::1 - - [09/Nov/2019:12:56:48 +0000] "POST /todos/ HTTP/1.1" 200 254 "-" "PostmanRuntime/7.19.0"
 ::1 - - [09/Nov/2019:12:59:05 +0000] "DELETE /todos/5dc6b790d6c75309570eaed2 HTTP/1.1" 200 254 "-" "PostmanRuntime/7.19.0"
+::1 - - [10/Nov/2019:21:18:52 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"

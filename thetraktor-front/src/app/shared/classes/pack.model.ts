@@ -3,5 +3,6 @@ export class Pack {
   pack: string;
   image: string;
   price: number;
+  description: string;
   locked: boolean;
 }

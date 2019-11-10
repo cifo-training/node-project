@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCustomersService } from 'src/app/shared/services/api-customers.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Customer } from 'src/app/shared/classes/customer.model';
 import { ApiPacksService } from 'src/app/shared/services/api-packs.service';
 import { Pack } from 'src/app/shared/classes/pack.model';
@@ -19,7 +20,8 @@ export class CustomerDetailComponent implements OnInit {
     public api: ApiCustomersService,
     public apiPlan: ApiPlansService,
     public apiPacks: ApiPacksService,
-    public route: ActivatedRoute) { }
+    public route: ActivatedRoute,
+    public currentLocation: Location) { }
 
   getCustomer() {
     this.identifier = this.route.snapshot.params.id;
@@ -27,6 +29,9 @@ export class CustomerDetailComponent implements OnInit {
       this.customer = us;
       console.log(`this.customer`, this.customer);
     });
+  }
+  goBack() {
+    this.currentLocation.back();
   }
   ngOnInit() {
     this.getCustomer();

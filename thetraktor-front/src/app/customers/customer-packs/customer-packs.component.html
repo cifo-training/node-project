@@ -1,13 +1,5 @@
 <mat-card fxLayout fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem" fxLayoutGap.xs="0">
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-toolbar>
-        <h3 *ngIf="packs">Packs</h3>
-
-      </mat-toolbar>
-    </mat-expansion-panel-header>
-
-    <ng-template matExpansionPanelContent>
+<h3 *ngIf="packs">Packs</h3>
       <div *ngIf="packs" id='container'>
         <div id="packsItems" fxLayout fxLayout="column" fxLayoutGap="15px">
           <div *ngFor="let pack of packs" fxLayout fxLayout="column" fxLayoutGap="10px">
@@ -15,8 +7,9 @@
             <mat-accordion>
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                 <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    {{pack.name}}
+                  <mat-panel-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+                    <img id='picture{{pack.name}}' src="assets/img/{{pack.image}}" alt="">
+                    <div>{{pack.name}}</div>
                   </mat-panel-title>
                   <mat-panel-description>
 
@@ -24,19 +17,19 @@
                 </mat-expansion-panel-header>
                 <ng-template matExpansionPanelContent>
                   <mat-card-title>
-                    <small fxFlexAlign="left">Order Nº {{pack._id}} </small>
+                    <small fxFlexAlign="left">{{pack.description}} </small>
                   </mat-card-title>
                   <section>
                     <label for="description">
                       <h4>Description</h4>
                     </label>
-                    <p id="description">{{pack.name}} </p>
+                    <p id="description">{{pack.description}} </p>
                   </section>
                   <section id="orderItems">
                     <mat-expansion-panel>
                       <mat-expansion-panel-header>
                         <mat-panel-title>
-                          Items
+                          Marcas
                         </mat-panel-title>
                       </mat-expansion-panel-header>
                       <ng-template matExpansionPanelContent>
@@ -69,7 +62,5 @@
           </div>
         </div>
       </div>
-    </ng-template>
-  </mat-expansion-panel>
 
 </mat-card>

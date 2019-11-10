@@ -1,45 +1,51 @@
 <div class="customer-detail" fxLayout="column">
 
   <div fxLayout fxLayout="row" fxLayoutAlign="center" fxLayoutGap="1rem" fxLayoutGap.xs="0">
-    <mat-card fxLayout fxLayout="column" fxLayoutAlign="left" fxLayoutGap="1rem" fxLayoutGap.xs="0">
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <mat-card-title fxFlexAlign="center" fxLayout="row" fxLayoutGap="1rem" fxLayout.xs="column" fxLayoutGap.xs="0">
-          <img fxFlexAlign="center" id="picture" src="{{ customer.picture }}" alt="" />
-          <h3>{{ customer.name.first }} {{ customer.name.last }}</h3>
-        </mat-card-title>
-        <mat-card-actions fxFlexAlign="end" fxFlexAlign.xs="start" fxLayout="row" fxLayoutAlign="space-evenly center"
-          fxLayout.xs="column" fxLayoutGap.xs="0">
-          <button mat-mini-fab color="primary" [routerLink]="['../../edit-customer/', customer._id]">
-            <mat-icon>edit</mat-icon>
-          </button>
-        </mat-card-actions>
-      </div>
-      <mat-card-content fxFlexAlign="center">
-        <p fxLayout>
-          <mat-icon aria-hidden="false" aria-label="Address" fxFlexAlign="center">home</mat-icon>
-          <span> {{ customer.address }}</span>
-        </p>
-        <p fxLayout>
-          <mat-icon aria-hidden="false" aria-label="e-Mail" fxFlexAlign="center">email</mat-icon><span>
-            {{ customer.email }}</span>
-        </p>
-        <p fxLayout>
-          <mat-icon aria-hidden="false" aria-label="Phone" fxFlexAlign="center">phone</mat-icon><span>
-            {{ customer.phone }}</span>
-        </p>
-      </mat-card-content>
-      <mat-card-content>
-        <mat-label aria-hidden="false" aria-label="About">
-          <h4>Plan</h4>
-          <p class="infoPlan" fxLayout>
-            <span>
-                <div class='planImage' >
-                    <img id='picture{{customer.plan.name}}' src="assets/img/{{customer.plan.icon}}" alt="{{customer.plan.name}}">
-                  </div>
-              {{ customer.plan.name }}</span>
+    <mat-card fxLayout fxLayout="column" fxLayoutAlign="start center" >
+      <div fxLayout="column" fxLayoutGap="1rem">
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <mat-card-title fxFlexAlign="center" fxLayout="row" fxLayoutGap="1rem" fxLayout.xs="column"
+            fxLayoutGap.xs="0">
+            <img fxFlexAlign="center" id="picture" src="{{ customer.picture }}" alt="" />
+            <h3>{{ customer.name.first }} {{ customer.name.last }}</h3>
+          </mat-card-title>
+
+        </div>
+        <mat-card-content fxFlexAlign="start">
+          <p fxLayout>
+            <mat-icon aria-hidden="false" aria-label="Address" fxFlexAlign="center">home</mat-icon>
+            <span> {{ customer.address }}</span>
           </p>
-        </mat-label>
-      </mat-card-content>
+          <p fxLayout>
+            <mat-icon aria-hidden="false" aria-label="e-Mail" fxFlexAlign="center">email</mat-icon><span>
+              {{ customer.email }}</span>
+          </p>
+          <p fxLayout>
+            <mat-icon aria-hidden="false" aria-label="Phone" fxFlexAlign="center">phone</mat-icon><span>
+              {{ customer.phone }}</span>
+          </p>
+        </mat-card-content>
+        <mat-card-content>
+          <mat-label aria-hidden="false" aria-label="About" fxLayout="column" fxLayoutAlign="center center">
+            <h4>Plan</h4>
+            <img id='picture{{customer.plan.name}}' src="assets/img/{{customer.plan.icon}}"
+              alt="{{customer.plan.name}}">
+            <p class="infoPlan" fxLayout>
+              <span> {{ customer.plan.name }}</span>
+            </p>
+          </mat-label>
+        </mat-card-content>
+      </div>
+      <mat-card-actions fxLayout="row" fxFlex="grow" fxLayoutAlign="space-between center">
+        <button class="execButton" id="cancel-btn"  mat-raised-button color="primary"
+         (click)='goBack()'>Volver</button>
+         <button class="execButton" id="edit-btn" mat-raised-button color="primary" [routerLink]="['../../edit-customer/', customer._id]">
+          Editar
+        </button>
+
+      </mat-card-actions>
+
+
     </mat-card>
     <app-customer-packs [packs]="customer.packs" fxLayout fxLayout="column" fxLayoutAlign="right"></app-customer-packs>
   </div>

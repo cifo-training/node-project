@@ -19,6 +19,7 @@ export class ApiPacksService {
       pack: '',
       image: '',
       price: 0,
+      description: '',
       locked: false
     };
     return pack;
