@@ -261,7 +261,7 @@ Example Request _Signup_
 
     req.end();
 
-Example Response200 OK
+Example Response    200 OK
 
     {
         "_id": "5dc696ac8fa790727db26772",
@@ -294,7 +294,7 @@ enviamos mail y password para logarse y obtener token
         "password":"12345678"
     }
 
-Example RequestLogin
+Example Request Login
 
     var http = require('follow-redirects').http;
     var fs = require('fs');
@@ -312,7 +312,7 @@ Example RequestLogin
 
     var req = http.request(options, function (res) {
 
-Example Response200 OK
+Example Response    200 OK
 
     {
       "user": {
@@ -340,7 +340,8 @@ Body raw (application/json)
 
 	{ }
 
-Example RequestGet usuarios
+Example Request Get usuarios
+
 ```
 var http = require('follow-redirects').http;
 var fs = require('fs');
@@ -434,7 +435,7 @@ Example Request Get usuarios inactivos
 
     req.end();
 
-Example Response200 OK
+Example Response    200 OK
 
     [
       {
@@ -887,7 +888,7 @@ Example Request Put usuario por `id`
 
     req.end();
 
-Example Response200 OK
+Example Response    200 OK
 
     {
         "name": {
@@ -952,8 +953,6 @@ Elimina un usuario pasandole el id como parametro de busqueda y destruccion
 **Body** raw (application/json)
 
     { }
-
-Example Request
 
 [Volver a submenu Test _Postman_](#Postman)
 
@@ -1690,8 +1689,7 @@ Elimina un documento de la coleccion plan referenciado por id
 
     { }
 
-Example Request
-Delete plan por id
+Example Request Delete plan por id
 
     var http = require('follow-redirects').http;
     var fs = require('fs');
@@ -1730,7 +1728,7 @@ Delete plan por id
 
     req.end();
 
-Example Response200 OK
+Example Response    200 OK
 
 {
   "customers": [],
@@ -1798,7 +1796,7 @@ Example Request Get packs
 
     req.end();
 
-Example Response 200 OK
+Example Response    200 OK
 
 Get packs
 
@@ -2139,7 +2137,7 @@ Example Request Delete pack por id
 
     req.end();
 
-Example Response200 OK
+Example Response    200 OK
 
     {
     "customers": [],
@@ -2390,7 +2388,7 @@ Example Request Put ToDo por `id`
 
     req.end();
 
-Example Response200 OK
+Example Response    200 OK
 
     {
         "_id": "5dc6136322ad4ef1c370193b",
@@ -2515,8 +2513,7 @@ Elimina documento de la coleccion todo referenciado por id
 
     {}
 
-Example Request
-Delete ToDo por id
+Example Request Delete ToDo por id
 
     var http = require('follow-redirects').http;
     var fs = require('fs');
@@ -2560,23 +2557,23 @@ Delete ToDo por id
 
 Example Response    200 OK
 
-{
-    "_id": "5dc6b790d6c75309570eaed2",
-    "registerdate": "2019-11-09T12:56:48.650Z",
-    "todotask": [
-        {
-            "registerdate": "2019-11-09T01:16:47.840Z",
-            "_id": "5dc6137f9c4b3d00048d02a9"
-        }
-    ],
-    "task": "NEW",
-    "type": 0,
-    "section": 0,
-    "state": "0",
-    "description": "",
-    "disabled": false,
-    "__v": 0
-}
+    {
+        "_id": "5dc6b790d6c75309570eaed2",
+        "registerdate": "2019-11-09T12:56:48.650Z",
+        "todotask": [
+            {
+                "registerdate": "2019-11-09T01:16:47.840Z",
+                "_id": "5dc6137f9c4b3d00048d02a9"
+            }
+        ],
+        "task": "NEW",
+        "type": 0,
+        "section": 0,
+        "state": "0",
+        "description": "",
+        "disabled": false,
+        "__v": 0
+    }
 
 [Volver a submenu Test _Postman_](#Postman)
 
