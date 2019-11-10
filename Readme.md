@@ -170,6 +170,9 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 ## <a id="Postman"></a>Test - _Postman_ ##
 
 - [POST Signup](#POST_Signup)
+- [POST Login](#POST_Login)
+- [GET Get usuarios](#GET_Get_usuarios)
+- [GET Get usuarios inactivos](#GET_Get_usuarios_inactivos)
 
 ## <a id="POST_Signup"></a>POST Signup ##
 
@@ -237,7 +240,9 @@ Example Response200 OK
         "__v": 0
     }
 
-## POST Login
+
+## <a id="POST_Login"></a>POST Login ##
+
 
 >http://localhost:3000/user/login
 
@@ -286,7 +291,7 @@ Example Response200 OK
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzE2ZTQ4YjZhZmRhMWJlYzE0MjM2MCIsImlhdCI6MTU3MzIwNjk1NywiZXhwIjoxNTc1Nzk4OTU3fQ.HvelhvYmrY75NRkTRupvfCuaFqPhu9LarUj2HeNuw0Y"
     }
 
-## GET Get usuarios
+## <a id="GET_Get_usuarios"></a>GET Get usuarios ## 
 
 >http://localhost:3000/customers
 
@@ -340,7 +345,7 @@ req.write(postData);
 req.end();
 ```
 
-## GET Get usuarios inactivos
+## <a id="GET_Get_usuarios_inactivos"></a>GET Get usuarios inactivos ##
 
 >http://localhost:3000/customers/inactive
 
