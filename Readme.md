@@ -75,55 +75,55 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Pagina principal
 
-[![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/Home.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Home.png)
+![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/Home.png)
 
 ### Login Page
 
-[![login](https://github.com/neollob/node-project/blob/master/readme-imgs/Login.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Login.png)
+![login](https://github.com/neollob/node-project/blob/master/readme-imgs/Login.png)
 
-[![loging](https://github.com/neollob/node-project/blob/master/readme-imgs/Logging.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Logging.png)
+![loging](https://github.com/neollob/node-project/blob/master/readme-imgs/Logging.png)
+
 ### Errors Validation Login Page
 
 #### Invalid Email
 
-[![login Invalid Email](https://github.com/neollob/node-project/blob/master/readme-imgs/Invalid-email.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Invalid-email.png)
+![login Invalid Email](https://github.com/neollob/node-project/blob/master/readme-imgs/Invalid-email.png)
 
 #### Unauthorized
 
-[![login Unauthorized](https://github.com/neollob/node-project/blob/master/readme-imgs/Validation-Unauthorized-login.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Validation-Unauthorized-login.png)
+![login Unauthorized](https://github.com/neollob/node-project/blob/master/readme-imgs/Validation-Unauthorized-login.png)
 
 ### Pagina principal Logged
 
-[![Home Logged](https://github.com/neollob/node-project/blob/master/readme-imgs/home-logged.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/home-logged.png)
-
+![Home Logged](https://github.com/neollob/node-project/blob/master/readme-imgs/home-logged.png)
 
 ### Listado de clientes
 
-[![Listado de clientes](https://github.com/neollob/node-project/blob/master/readme-imgs/Customers.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Customers.png)
+![Listado de clientes](https://github.com/neollob/node-project/blob/master/readme-imgs/Customers.png)
 
 ### Detalle de cliente
 
-[![Detalle de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/Customer-detail.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Customer-detail.png)
+![Detalle de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/Customer-detail.png)
 
 ### Edición de cliente
 
-![Edición de cliente](https://github.com/neollob/node-project/raw/master/readme-imgs/edit-customer.png)
+![Edición de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/edit-customer.png)
 
 ### Alta de cliente
 
-[![Alta de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/Create-customer.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Create-customer.png)
+![Alta de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/Create-customer.png)
 
-[![Alta de cliente1](https://github.com/neollob/node-project/blob/master/readme-imgs/creating-customer1.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/creating-customer1.png)
+![Alta de cliente1](https://github.com/neollob/node-project/blob/master/readme-imgs/creating-customer1.png)
 
-[![Alta de cliente2](https://github.com/neollob/node-project/blob/master/readme-imgs/creating-customer2.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/creating-customer2.png)
+![Alta de cliente2](https://github.com/neollob/node-project/blob/master/readme-imgs/creating-customer2.png)
 
 ### Listado de Planes
 
-[![Producto: Planes](https://github.com/neollob/node-project/blob/master/readme-imgs/Products-Plans.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Products-Plans.png)
+![Producto: Planes](https://github.com/neollob/node-project/blob/master/readme-imgs/Products-Plans.png)
 
 ### Sección ToDo (Tareas desarrollo - estado)
 
-[![Demanda de stock](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
+![Demanda de stock](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
 
 
 ## Posteriores iteraciones
