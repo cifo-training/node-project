@@ -167,14 +167,14 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 
 ## GET Get usuarios
 
-	http://localhost:3000/customers
+>http://localhost:3000/customers
 
 lista los usuarios activos
 
 **Headers**
-```
-Content-Type	application/json
-```
+
+>Content-Type	application/json
+
 Body raw (application/json)
 
 	{
