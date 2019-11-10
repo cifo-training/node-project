@@ -36,21 +36,17 @@ El proyecto consiste en crear una API Rest funcional. Esta API expondrá una ser
 
 __Aplicación Angular__: Alojamiento propio: https://admin.thetraktor.com/ (Front-End Responsive)
 
-Github Page: https://armandorodgo.github.io/thetraktor-admin/
-
-Repo Public Github: https://github.com/ArmandoRodGo/thetraktor-admin
-
-
+__Github Page__: https://neollob.github.io/thetraktor-admin/
 
 __API Rest funcional__:  Heroku: https://thetraktor.herokuapp.com/
 
-Region      United States
+	Region      United States
 
-Stack       heroku-18
+	Stack       heroku-18
 
-Framework   Node.js
+	Framework   Node.js
 
-Slug Size   23.2 MiB of 500 MiB
+	Slug Size   23.2 MiB of 500 MiB
 
 
 El objetivo de la aplicación es la de poder administrar vía web el ecosistema de ***TheTraktor®***. 
