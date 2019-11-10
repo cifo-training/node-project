@@ -2,6 +2,9 @@
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor® Admin Panel
 
 1. [Introducción](#Introducción)
+2. [Primera_iteración](#Primera iteración)
+3. [Índices](#Índices)
+3. [Postman](#Test Postman)
 
 ## <a id="Introducción"></a>Introducción ##
 
@@ -56,8 +59,7 @@ La aplicación esta pensada para:
 - Gestión de usuarios administradores: Login y Registro.
 - Gestión de Tareas por realizar: Listado de Tareas y estado.
 
-
-## Primera iteración
+## <a id="Primera_iteración"></a>Primera iteración ##
 
 En una primera fase de desarrollo se ha desarrollado el CRUD completo de los clientes 
 - Clientes
@@ -120,7 +122,7 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
     ![To-Do](https://github.com/neollob/node-project/blob/master/readme-imgs/Todo-section.png)
 
-## indices
+## <a id="Índices"></a>Índices ##
 
 Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 
@@ -164,8 +166,8 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
         }
 ]
 ```
-### <a id="MyHeading"></a>My Heading ###
-## Test - Postman
+
+## <a id="Postman"></a>Test - Postman ##
 
 ## POST Signup
 
