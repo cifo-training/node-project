@@ -36,22 +36,15 @@ Repo Public Github: https://github.com/ArmandoRodGo/thetraktor-admin
 
 
 
-__API Rest funcional__:  Heroku: https://thetraktor-api.herokuapp.com/
+__API Rest funcional__:  Heroku: https://thetraktor.herokuapp.com/
 
-Repo Private Github: https://github.com/ArmandoRodGo/thetraktor-api 
+Region      United States
 
-Region Europe
+Stack       heroku-18
 
-Stack heroku-18
+Framework   Node.js
 
-Framework Node.js
-
-Slug Size
-23.2 MiB of 500 MiB
-
-GitHub Repo  ArmandoRodGo/thetraktor-api
-
-Heroku Git URL https://git.heroku.com/thetraktor-api.git
+Slug Size   23.2 MiB of 500 MiB
 
 
 El objetivo de la aplicación es la de poder administrar vía web el ecosistema de TheTraktor. 
