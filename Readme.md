@@ -107,7 +107,7 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 ### Edición de cliente
 
-[![Edición de cliente](https://github.com/neollob/node-project/blob/master/readme-imgs/edit-customer.png)](https://github.com/neollob/node-project/blob/master/readme-imgs/edit-customer.png)
+![Edición de cliente](https://github.com/neollob/node-project/raw/master/readme-imgs/edit-customer.png)
 
 ### Alta de cliente
 
