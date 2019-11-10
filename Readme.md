@@ -122,10 +122,12 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 
-    db.customers.createIndex({"name.first":"text", "name.last":"text"})
-    db.customers.createIndex({"plan":1})
+>db.customers.createIndex({"name.first":"text", "name.last":"text"})
 
-    [
+>db.customers.createIndex({"plan":1})
+
+```
+[
         {
             "v" : 2,
             "key" : {
@@ -158,12 +160,14 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
             "name" : "plan_1",
             "ns" : "test.customers"
         }
-    ]
+]
+```
 
 ## Test - Postman
 
 
-## <span style="color:red">some **GET** text</span>
+### GitLab Orange Heading
+{: .gitlab-orange}
  Get usuarios
 
 http://localhost:3000/customers
