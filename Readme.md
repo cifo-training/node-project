@@ -241,6 +241,9 @@ Example Response200 OK
     }
 
 
+
+[Test _Postman_](#Postman)
+
 ## <a id="POST_Login"></a>POST Login ##
 
 
@@ -290,6 +293,7 @@ Example Response200 OK
       },
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzE2ZTQ4YjZhZmRhMWJlYzE0MjM2MCIsImlhdCI6MTU3MzIwNjk1NywiZXhwIjoxNTc1Nzk4OTU3fQ.HvelhvYmrY75NRkTRupvfCuaFqPhu9LarUj2HeNuw0Y"
     }
+[Test _Postman_](#Postman)
 
 ## <a id="GET_Get_usuarios"></a>GET Get usuarios ## 
 
@@ -344,6 +348,7 @@ req.write(postData);
 
 req.end();
 ```
+[Test _Postman_](#Postman)
 
 ## <a id="GET_Get_usuarios_inactivos"></a>GET Get usuarios inactivos ##
 
@@ -479,6 +484,7 @@ Example Response200 OK
           {
 
           ...
+[Test _Postman_](#Postman)
 
 ## POST Post usuario nuevo
 
@@ -616,6 +622,7 @@ Example Response    200 OK
       "packList": "DEFINITION / RUNNING",
       "__v": 0
     }
+[Test _Postman_](#Postman)
 
 ## GET Get usuario por `id`
 
