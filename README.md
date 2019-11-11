@@ -1,169 +1,209 @@
-# Proyecto: Application MEAN Full-stack: Back-End
 
-### 1. Introducción
+Proyecto: API-Decision_Helper
 
-En el curso __Mean-Stack 2__, construimos la parte de __Front-End__ de una **aplicación full-stack**. En Mean-Stack 3, construiremos el __Back-End__ utilizando Node.js, Express.js y MongoDB.
-
-El proyecto consiste en crear una __API Rest__ funcional. Esta API expondrá una serie de _end-points_ que podrán ser consumidos por la aplicación de _Front-end_.
-
-### 2. Diseño de la API
-
-Previo al desarrollo toda aplicación debe contar con una fase de diseño. Durante este periodo tendremos en cuenta las entidades que tenemos que modelar y la estrategia con la que abordaremos el desarrollo.
-
-La API de este ejercicio debe contar con, __al menos__, dos modelos principales, uno de ellos será la entidad __User__, a la que añadiremos otra entidad principal.
-
-Partiendo del _Front-end_ que queremos desarrollar (o ya tenemos desarrollado) debemos obtener todas las consultas que se realizarán desde la capa de cliente. Estas consultas irán desde el registro o la conexión del usuario hasta la exposición de listados de datos, actualización de información, etc. En el apartado siguiente se recogen las consultas mínimas que se han de desarrollar:
-
-
-#### 3. Consultas
-
-| Entidad | Acción | Descripción |
-|--------|--------|-------------|
-|User | Register | El usuario se registra desde la aplicación cliente |
-|User | Log in | El usuario se autentica desde la aplicación cliente |
-|Otra | List | El usuario, autenticado, accede a una lista completa de elementos |
-|Otra | List One | El usuario, autenticado, obtiene un elemento |
-|Otra | Create One | El usuario, autenticado, crea un elemento |
-|Otra | Update One | El usuario, autenticado, actualiza un elemento |
-|Otra | Remove One | El usuario, autenticado, elimina un elemento |
-
-Se pueden implementar tantas consultas como se quieran, atendiendo a que todas las que se planifiquen se han de desarrollar y deben ser completamente funcionales.
-
-### 4. Estrategia de desarrollo
-
-Construiremos una API que después deberá ser desplegada en el servidor __Heroku__ y al que conectaremos una base de datos alojada en __Mongo Atlas__.
-
-El código de la aplicación debe mantener el patrón de diseño __MVC__ y se incluirá dentro de un directorio denominado __`src`__. La estructura de la aplicación deberá ser la siguiente:
-
-            Proyecto
-            |_src
-                |_model
-                    |_dao
-                    |_model
-                    |_schema
-                |_controller
-                    |_entity
-                        |_index.mjs
-                        |_controller(1).mjs
-                        |_controller(2).mjs
-                        |_...
-                    |_user
-                        |_index.mjs
-                        |_login.mjs
-                        |_register.mjs
-                    |_ ...
-                |_middleware
-                    |_error-handler
-                    |_auth.mjs
-                    |_...
-                |_Mongo Connection Module
-                |_Others Helper Modules
-                |_app.mjs
-                |_server.mjs
-
-
-Si se incluye cualquier otro tipo de código dentro de la aplicación, servidor Express de páginas estáticas, recursos públicos, etc., entonces se incluirá el código de la API dentro de una carpeta __`api`__ para diferenciarla del resto del código.
-
-### 5. Requisitos del modelo
-
-La capa de persistencia de la aplicación contará con una base de datos desarrollada en MongoDB y configurada dentro del servidor Mongo Atlas.
-
-1. Requisitos de MongoDB:
-
-    - dos colecciones: una será __users__ y otra corresponderá a la otra entidad principal.
-    - las colecciones deben estar indexadas en función de las consultas que reciben.
-
-2. Requisitos de la aplicación:
-
-   - En la aplicación se utilizará el framework __Mongoose.js__ para las consultas obligatorias. Es optativo utilizar la api de MongoDb para otro tipo de consultas: administración, etc. 
   
-   - Se valorará que existan mecanismos de validación implementados en los esquemas.
 
-### 6. Requisitos de los controladores
+# Team Members
 
-Los controladores deben estar separados del fichero de rutas. Los controladores implementarán las llamadas a la capa de persistencia y devolverán la respuesta al cliente. La respuesta debería ser en formato `JSON`.
+### . Carlos Jordan
 
-Existirá un fichero de rutas por cada entidad de la aplicación. Las rutas deben aparecer agrupadas y deberían ser las mínimas imprescindibles.
+### . Roberto Garcia
 
-Dentro de los ficheros de rutas se incorporará la protección de las rutas con middlewares.
+  
 
-### 7. Archivo de Express (app)
+## Tree Structure
 
- Éste es el __entry point__ de la API, contendrá todos los middlewares que sean necesarios para desarrollar la petición: _parsing_ de la request, compresión, cors, etc., menos los de autenticación, que se referirán dentro de las rutas.
+  
 
-### 8. Autenticación
+![](https://imgur.com/O3w0uUO.png)
 
-La autenticación se implementará por reconocimiento de __usuario__ y __password__, y devolución de un __bearer token__ en formato __JWT__.
-Se incorporará dentro de la carpeta __middleware__.
+![](https://imgur.com/rAc3NLf.png)
 
-### 9. readme.md
+  
 
-Fichero de información de la API. Esta información es muy importante y debe ser clara y estructurada. Sigue los siguientes apartados:
+# Objetivos y desarrollo de la API
 
-1. Índice de apartados del documento
-   
-2. Introducción: _Objetivo de la API, tipo de información que devuelve._
+  
 
-3. Utilización
+La API nace bajo el concepto de dotar de servidor y base de datos al Front-End (Decision Maker) realizado en el segundo módulo (Angular) del curso Mean-Stack.
 
-    - API Host    _Incluye aquí la URL de la API_
+  
 
-    - Formato de respuesta de la API    _Indica que tipo de respuesta se obtendrá si la llamada a la API se hace correctamente (Ejemplo) o si devuelve un error. (Ejemplo)_
+. La función de la APP es resolver, de una manera objetiva y matemática, las preguntas que los usuarios puedan realizar.
 
-    - Autenticación de la API        _Describe como obtener un token de acceso válido y como debe ser incorporado en la petición. (Ejemplo formato petición y respuesta).  Indica el tipo de respuesta en caso de token inválido o expirado._
+  
 
-4. Descripción de los endpoints por apartados:
+. La función de la API es la recogida de esos datos, el CRUD de los mismos y su almacenaje en la BD.
 
-    4.1 Obtener un Token _Ejemplo de formato:_
+  
+  
+  
 
-                endpoint: Obtener un token
-                Método: POST
-                uri: /user/login
-                body parameters:
-                    
-                    email
-                        string (required) Example: email@myemail.com
-                        Un email válido
+## UTILIZACIÓN
 
-                    password
-                        string (required) Example: mypassword
-                        Una contraseña válida
-                
-                Respuestas:
-                    200 - Header: Content-Type: application/json
-                        Body: {
-                                "data": {
-                                    "token": "eyJXXXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLm1lbnNhZgghLmRldi92MS9sb2dpbiIsImlhdCI6MTQ2NDM1NDY5OSwiZXhwIjoxNDY0MzU4Mjk5LCJuYmYisfE0NjQzNTQ2OTksImp0aSI6IjIyNDg4Y2IxM2RkNzZlODZjM2NhZWZhZjNhMDBkMjkzIiwic3ViIjoxNH0.F3q4ckNbI8sMg9RX_iRSyrEmGWW3oyO8dMcasKl5xer",
-                                    "expires_in": 60,
-                                    "expires_at": "2016-05-27 14:11:39 GMT"
-                                }
-                        }
+  
 
-                    400 - Header: Content-Type: application/json
-                        Body: {
-                                    "error": {
-                                        "code": "VALIDATION_FAIL",
-                                        "http_code": 400,
-                                        "message": "The email field is required. The password field is required. "
-                                    }
-                                    } 
-                    400 - Header: Content-Type: application/json
-                        Body: {
-                                "error": {
-                                    "code": "WRONG_ARGS",
-                                    "http_code": 400,
-                                    "message": "message can not be null"
-                                }
-                                } 
+### URL'S
 
-5. Incluir los datos de prueba por _end-point_
+  
+
+Url del servidor. Se crea en el documento server.mjs (método *https para localhost) pero con el puerto definido en el doc .env
+
+*Debemos recordar que al subir al nuestra aplicación al servidor HEROKU, el mismo nos crea el https, con lo cual debemos modificar en nuestro documento server.js
+
+  
+
+##### https.createServer(opt, app).listen(process.env.PORT)
+
+por
+
+  
+
+##### http.createServer(app).listen(process.env.PORT)
+
+  
+
+En el documento .env es donde definiremos las rutas de:
+
+  
+------------------
+- Puerto servidor
+
+- localhost
+
+- Heroku (modo producción)
+
+  
+
+- Base de datos
+
+- localhost://27017
+
+- mongo Atlass
+
+---------  
+
+![](https://imgur.com/0Mtrk03.png)
+
+  
+
+## Creación del token
+
+  
+
+Objeto creación token 
+		
+			./api/middleware/jwt_auth.js
+
+  
+
+En el documento jwt_auth definimos la manera en que el token será creado:
+
+  
+
+- Duración del token
+
+- Fecha finalización token
+
+- Codificación token
+
+  
+
+		export default {
+
+		createToken(user) {
+
+		const f1 = moment().unix();
+
+		const f2 = moment().add(14, "days");
+
+		const payload = {sub: user,iat: f1,exp: f2.unix()};
+
+		const salidaToken = {orig: payload,fech: f2,token: jwt.encode(payload, process.env.SECRET_TOKEN)
+
+		};
+
+		return salidaToken;
+
+		},
 
 
-### 10. Requisitos de entrega:
 
-1. Se creará un repositorio en __GitHub__ con el código de la aplicación, estructurado como se ha comentado anteriormente.
-2. Se incorporará un fichero __readme.md__ con la estructura descrita en el apartado [readme.md](#readme.md)
-3. Generar un repositorio en Heroku conectado al repositorio de GitHub que contiene el código.
-4. Hacer un _fork_ de este repositorio __proyecto-node__ y una vez finalizado el ejercicio realizar un pull request que contenga la siguiente información:
-   -  Subject: Nombre del o de los miembros del equipo en la cabecera.
-   -  Mensaje: Dirección git del repositorio, url de la aplicación cliente(si la hubiera), url heroku de la API.
+Pasos para obtener un token válido:
+
+  
+
+- SignUp https://documenter.getpostman.com/view/9175109/SW18waJN
+
+  
+
+![](https://imgur.com/Vbovdsg.png)
+
+  
+
+- SignIn https://documenter.getpostman.com/view/9175109/SW18waDu
+
+  
+
+![](https://imgur.com/0uUe1xh.png)
+
+  
+
+- Enlace postman
+
+  
+
+https://documenter.getpostman.com/view/9175109/SW18waDu
+
+  
+# Endpoints
+
+## Formatos de respuesta
+
+  
+  
+  
+
+### Servidor
+
+  
+
+En la creación del servidor hemos dejado el único console.log de todo el documento, informando de la conexión del servidor al puerto (local o Heroku) seleccionado.
+
+  
+
+![](https://imgur.com/2AH61RE.png)
+
+  
+
+### Base de datos
+
+  
+
+- ÉXITO
+
+  
+
+https://documenter.getpostman.com/view/9175109/SW7T6r2j
+
+- ERRORES
+
+  
+
+https://documenter.getpostman.com/view/9175109/SW18waE4
+
+  
+
+### Error Handlers
+
+  
+
+![](https://imgur.com/OuO9UTq.png)
+
+  
+
+- NotFound
+
+  
+
+https://documenter.getpostman.com/view/9175109/SW18waJL
