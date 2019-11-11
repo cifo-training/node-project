@@ -1,10 +1,17 @@
 # API Thesaurus
 
-## 1. Introducció:
+Sumari
+
+[1. Introducció](#1)<br />
+[2. Utilització](#2)<br />
+[3. Descripció dels ***endpoints*** per apartats:](#3)<br />
+[4. Dades de prova](#4)<br />
+
+##<a name="1">1. Introducció:</a>
 
 La **API Thesaurus** s'ofereix com una eina per tal de repertoriar i localitzar objectes perduts.
 
-## 2. Utilització:
+##<a name="2">2. Utilització:</a>
 
   * <u>API Host</u>: **https://217.61.97.40**
 
@@ -20,7 +27,7 @@ La **API Thesaurus** s'ofereix com una eina per tal de repertoriar i localitzar 
 
     __Nota:__ Tingueu present, a més, que el __token JWT__ no serà operatiu fins que l'administrador de l'API no us validi passant de *false* a *true* el valor del camp ***active*** del vostre registre que teniu com a usuari a la base de dades.
 
-## 3. Descripció dels ***endpoints*** per apartats:
+##<a name="3">3. Descripció dels ***endpoints*** per apartats:</a>
 
 ###3.1. Registre
 
@@ -641,5 +648,29 @@ Body:
 }
 </pre>
 
-## 4. Dades de prova:
+##<a name="4">4. Dades de prova:</a>
+
+1. Exemple d'__Usuari__:
+<pre>
+{
+    "user":{
+        "name":"user1",
+        "password":"pass1",
+        "email":"user1@mail.org"
+    }
+}
+</pre>
+
+2. Exemple d'__Objecte__:
+<pre>
+{
+    "thesaurus":{
+        "object":"Bossa",
+        "description":"Contingut: ulleres, llibreta",
+        "found":"201911111200",
+        "stored":"AA 13-25",
+        "contact":"Oficina B"
+    }
+}
+</pre>
 
