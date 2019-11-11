@@ -206,7 +206,7 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 ## <a id="POST_Signup"></a>POST Signup ##
 
 
->http://localhost:3000/user/signup
+>https://thetraktor.herokuapp.com/user/signup
 
 **Headers**
 
@@ -276,7 +276,7 @@ Example Response    200 OK
 ## <a id="POST_Login"></a>POST Login ##
 
 
->http://localhost:3000/user/login
+>https://thetraktor.herokuapp.com/user/login
 
 enviamos mail y password para logarse y obtener token
 
@@ -326,7 +326,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_usuarios"></a>GET Get usuarios ## 
 
->http://localhost:3000/customers
+>https://thetraktor.herokuapp.com/customers
 
 lista los usuarios activos
 
@@ -382,7 +382,7 @@ req.end();
 
 ## <a id="GET_Get_usuarios_inactivos"></a>GET Get usuarios inactivos ##
 
->http://localhost:3000/customers/inactive
+>https://thetraktor.herokuapp.com/customers/inactive
 
 Listar usuarios inactivos
 
@@ -518,7 +518,7 @@ Example Response    200 OK
 
 ## <a id="POST_Post_usuario_nuevo"></a>POST Post usuario nuevo ##
 
->http://localhost:3000/customers
+>https://thetraktor.herokuapp.com/customers
 
 Inserta un nuevo usuario en la colection customers En el campo plan y packs solo guarda los 'id' de los planes y packs
 
@@ -656,7 +656,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_usuario_por_id"></a>GET Get usuario por `id` ##
 
->http://localhost:3000/customers/5dc11a5903bf2803b71b7fe0
+>https://thetraktor.herokuapp.com/customers/5dc11a5903bf2803b71b7fe0
 
 Obtiene un usuario pasandole el id como parametro de busqueda
 
@@ -775,7 +775,7 @@ Example Response    200 OK
 
 ## <a id="PUT_Put_usuario_por_id"></a>PUT Put usuario por `id` ##
 
->http://localhost:3000/customers/5dc11a5903bf2803b71b7fe0
+>https://thetraktor.herokuapp.com/customers/5dc11a5903bf2803b71b7fe0
 
 Actualiza los datos del documento pasandole el parametro id como indice de busqueda y actualizacion
 
@@ -940,7 +940,7 @@ Example Response    200 OK
 
 ## <a id="DELETE_Delete_usuario"></a>DELETE Delete usuario ##
 
->http://localhost:3000/customers/5dc6a30ad55a507cc296e223
+>https://thetraktor.herokuapp.com/customers/5dc6a30ad55a507cc296e223
 
 Elimina un usuario pasandole el id como parametro de busqueda y destruccion
 
@@ -956,7 +956,7 @@ Elimina un usuario pasandole el id como parametro de busqueda y destruccion
 
 ## <a id="GET_Get_usuario_por_Plan"></a>GET Get usuario por Plan ##
 
->http://localhost:3000/customers/plan/5dc0b64063d6814c30992aa5
+>https://thetraktor.herokuapp.com/customers/plan/5dc0b64063d6814c30992aa5
 
 Obtiene el listado de usuarios de un plan en concreto pasandole el parametro id del plan
 
@@ -1071,7 +1071,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_usuario_por_Plan"></a>GET Get usuario por Plan ##
 
->http://localhost:3000/customers/plan/5dc0b64063d6814c30992aa5
+>https://thetraktor.herokuapp.com/customers/plan/5dc0b64063d6814c30992aa5
 
 Obtiene el listado de usuarios de un plan en concreto pasandole el parametro id del plan
 
@@ -1186,7 +1186,7 @@ Example response    200 OK
 
 ## <a id="DELETE_Delete_packs_del_usuario"></a>DELETE Delete packs del usuario ##
 
->http://localhost:3000/customers/5dc11a5903bf2803b71b7fce/packs
+>https://thetraktor.herokuapp.com/customers/5dc11a5903bf2803b71b7fce/packs
 
 Elimina los packs del usuario pasandole el paramentro id como parametro de busqueda y actualizacion
 
@@ -1289,7 +1289,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_plans"></a>GET Get plans ##
 
->http://localhost:3000/plans/
+>https://thetraktor.herokuapp.com/plans/
 
 Lista los documentos de la coleccion planes
 
@@ -1393,7 +1393,7 @@ Example Response    200 OK
 
 ## <a id="POST_Post_plans"></a>POST Post plans ##
 
->http://localhost:3000/plans/
+>https://thetraktor.herokuapp.com/plans/
 
 Añade un nuevo dccumento a la coleccion plan
 
@@ -1494,7 +1494,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_plans_por_id"></a>GET Get plans por `id` ##
 
->http://localhost:3000/plans/5dc29ca21c9d4400007dd917
+>https://thetraktor.herokuapp.com/plans/5dc29ca21c9d4400007dd917
 
 Obtiene un documento filtrado por id
 
@@ -1574,7 +1574,7 @@ Example Response    200 OK
 
 ## <a id="PUT_Put_plan_por_id"></a>PUT Put plan por `id` ##
 
->http://localhost:3000/plans/5dc29ca21c9d4400007dd917
+>https://thetraktor.herokuapp.com/plans/5dc29ca21c9d4400007dd917
 
 Actualiza el documento referenciado por id
 
@@ -1675,7 +1675,7 @@ Example Response    200 OK
 
 ## <a id="DELETE_Delete_plan_por_id"></a>DELETE Delete plan por `id` ##
 
->http://localhost:3000/plans/5dc29ca21c9d4400007dd917
+>https://thetraktor.herokuapp.com/plans/5dc29ca21c9d4400007dd917
 
 Elimina un documento de la coleccion plan referenciado por id
 
@@ -1743,7 +1743,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_packs"></a>GET Get packs ##
 
->http://localhost:3000/packs/
+>https://thetraktor.herokuapp.com/packs/
 
 Lista los documentos de la coleccion packs
 
@@ -1869,7 +1869,7 @@ Get packs
 
 ## <a id="POST_Post_packs"></a>POST Post packs ##
 
->http://localhost:3000/packs/
+>https://thetraktor.herokuapp.com/packs/
 
 Crea un nuevo dicumento en la coleccion packs
 
@@ -1942,7 +1942,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_packs_por_id"></a>GET Get packs por `id` ##
 
->http://localhost:3000/packs/5dc6af79d6c75309570eaec6
+>https://thetraktor.herokuapp.com/packs/5dc6af79d6c75309570eaec6
 
 Obtiene un documento de la coleccion packs pasandole el parametro id para buscar y listar
 
@@ -2009,7 +2009,7 @@ Example Response    200 OK
 
 ## <a id="PUT_Put_pack_por_id"></a>PUT Put pack por `id` ##
 
->http://localhost:3000/packs/5dc6af79d6c75309570eaec6
+>https://thetraktor.herokuapp.com/packs/5dc6af79d6c75309570eaec6
 
 Actualiza los datos del documento referenciado por id
 
@@ -2084,7 +2084,7 @@ Example Response    200 OK
 
 ## <a id="DELETE_Delete_pack_por_id"></a>DELETE Delete pack por `id` ##
 
->http://localhost:3000/packs/5dc6af79d6c75309570eaec6
+>https://thetraktor.herokuapp.com/packs/5dc6af79d6c75309570eaec6
 
 Elimina un documento de la coleccion packs referenciado por id
 
@@ -2151,7 +2151,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_ToDoes"></a>GET Get ToDoes ##
 
->http://localhost:3000/todos/
+>https://thetraktor.herokuapp.com/todos/
 
 Obtiene el listado de todos los documentos de la coleccion todo
 
@@ -2244,7 +2244,7 @@ Example Response    200 OK
 
 ## <a id="GET_Get_ToDoes_por_id"></a>GET Get ToDoes por `id` ##
 
->http://localhost:3000/todos/5dc6136322ad4ef1c370193b
+>https://thetraktor.herokuapp.com/todos/5dc6136322ad4ef1c370193b
 
 Obtiene un documento de la coleccion todo referenciado por id
 
@@ -2319,7 +2319,7 @@ Example Response    200 OK
 
 ## <a id="PUT_Put_ToDo_por_id"></a>PUT Put ToDo por `id` ##
 
->http://localhost:3000/todos/5dc6136322ad4ef1c370193b
+>https://thetraktor.herokuapp.com/todos/5dc6136322ad4ef1c370193b
 
 Actualiza un documento de la coleccion todo referenciado por id
 
@@ -2410,7 +2410,7 @@ Example Response    200 OK
 
 ## <a id="POST_Post_ToDo"></a>POST Post ToDo ##
 
->http://localhost:3000/todos/
+>https://thetraktor.herokuapp.com/todos/
 
 Añade documento a la coleccion todo
 
@@ -2499,7 +2499,7 @@ Example Response    200 OK
 
 ## <a id="DELETE_Delete_ToDo_por_id"></a>DELETE Delete ToDo por `id` ##
 
->http://localhost:3000/todos/5dc6b790d6c75309570eaed2
+>https://thetraktor.herokuapp.com/todos/5dc6b790d6c75309570eaed2
 
 Elimina documento de la coleccion todo referenciado por id
 
