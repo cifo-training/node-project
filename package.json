@@ -1,0 +1,26 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "Projecte fi de curs Meanstack 3",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node -r esm server.js"
+    },
+    "author": "Toni Reis & Angela Turizo",
+    "license": "MIT",
+    "dependencies": {
+      "bcrypt": "^3.0.6",
+      "dotenv": "^8.2.0",
+      "esm": "^3.2.25",
+      "express": "^4.17.1",
+      "https": "^1.0.0",
+      "jsonwebtoken": "^8.5.1",
+      "moment": "^2.24.0",
+      "mongoose": "^5.7.8"
+    },
+    "devDependencies": {
+      "nodemon": "^1.19.4"
+    }
+  }
+  
