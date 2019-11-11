@@ -2,10 +2,16 @@
 ![Home](https://github.com/neollob/node-project/blob/master/readme-imgs/favicon.ico)
 # Proyecto: Application MEAN Full-stack: Back-End - TheTraktor® Admin Panel
 
-1. [Introducción](#Introducción)
-2. [Primera iteración](#Primera_iteración)
-3. [Índices](#Índices)
-3. [Test _Postman_](#Postman)
+1. [Presentación](#Presentación)
+2. [Introducción](#Introducción)
+3. [Primera iteración](#Primera_iteración)
+4. [Índices](#Índices)
+5. [Test _Postman_](#Postman)
+
+---
+## <a id="Presentación"></a>Presentación ##
+
+https://slides.com/armandrodgo/deck-2/live
 
 ---
 
