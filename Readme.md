@@ -11,22 +11,21 @@
 
 ### Cliente: TheTraktor®
 
-Empresa dedicada a la formación, instrucción e impartición de entrenamientos en la especialidad del Crossfit.
+Empresa dedicada a la formación, instrucción e impartición de entrenamientos en la especialidad del **CrossFit®**.
 
 ## Descripción
 
 ***TheTraktor®*** es una plataforma de entrenamiento, es la culminación de toda nuestra formación y experiencia en el entrenamiento, plasmada sobre una programación, ayudándoos a mejorar como atletas, tanto físico como mentalmente. De esta manera, conseguiremos alcanzar todos aquellos retos personales que os hayáis planteado.
 
-Son muchos años viviendo en primera persona el CrossFit® al más alto nivel, y tenemos muy claro el trabajo que hay que llevar a cabo, tanto a nivel físico como mental, para optimizar al máximo el rendimiento de este complejo deporte.
+Son muchos años viviendo en primera persona el **CrossFit®** al más alto nivel, y tenemos muy claro el trabajo que hay que llevar a cabo, tanto a nivel físico como mental, para optimizar al máximo el rendimiento de este complejo deporte.
 
-- Hemos iniciado el desarrollo de la plataforma de administración de los clientes (customers) y sus contenidos (products: plans y packs)
-mediante los usuarios administadores (users).
+- Hemos iniciado el desarrollo de la plataforma de administración de los clientes (_customers_) y sus contenidos (_products_: _plans_ y _packs_). El acceso a la aplicacion está restringido a los usuarios administadores (_users_).
 
 Esta plataforma de administración se vincula con la **App de Usuarios**, que será descagable para **Android** y **IOs**.
 
 Desarrollada en *Angular* - *Ionic* - *Rest Api* y *MongoDB*
 
-Desde esta se darán de alta, con sus datos personales, foto y plan. Ocasionalmente el administrador podrá editar su cuenta o subirlo al plan VIP
+Desde esta se darán de alta, con sus datos personales, foto y plan. Ocasionalmente el administrador podrá editar su cuenta o subirlo al plan _VIP_.
 
 - En posteriores iteraciones a Products se añadirá Merchandissing, mediante tienda online.
 
@@ -49,8 +48,10 @@ __API Rest funcional__:  Heroku: https://thetraktor.herokuapp.com/
 	Slug Size   23.2 MiB of 500 MiB
 
 
-El objetivo de la aplicación es la de poder administrar vía web el ecosistema de ***TheTraktor®***. 
+El objetivo de la aplicación es la de poder administrar vía web el ecosistema de ***TheTraktor®***.
+
 La aplicación esta pensada para:
+
 - Gestión de clientes: Introducción, edición, listados con filtros (por Nombre, por Plan o Activos - Inactivos.
 - Gestión de productos - planes: Listar planes.
 - Gestión de usuarios administradores: Login y Registro.
@@ -61,6 +62,7 @@ La aplicación esta pensada para:
 ## <a id="Primera_iteración"></a>Primera iteración ##
 
 En una primera fase de desarrollo se ha desarrollado el CRUD completo de los clientes 
+
 - Clientes
     - Listado de clientes
     - Detalle
