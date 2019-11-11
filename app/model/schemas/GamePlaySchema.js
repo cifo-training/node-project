@@ -32,6 +32,9 @@ const GamePlaySchema = Schema({
     }
 });
 
+// INDEXES
+GamePlaySchema.index({ userID: 1, gameID: 1, dateTime: 1 });
+
 // SCHEMA METHODS
 GamePlaySchema.static('findLastMonth', function() {
     const dateLastMonth = moment().startOf('month');

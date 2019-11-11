@@ -13,7 +13,7 @@ class UserDAO {
     }
 
     listAll() {
-        return UserModel.find().exec();
+        return UserModel.getUserList().exec();
     }
 
     findById(id) {

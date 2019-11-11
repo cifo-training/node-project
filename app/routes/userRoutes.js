@@ -9,6 +9,6 @@ router.post('/register', controller.register);
 router.get('/id/:id', controller.getUserById);
 router.delete('/id/:id', controller.deleteUser);
 router.get('/id/:id/score', controller.getUserTotalScore);
-router.get('/me', controller.getCurrent); // TODO
+router.get('/me', controller.getCurrent);
 
 module.exports = router;

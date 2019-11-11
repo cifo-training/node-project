@@ -6,13 +6,22 @@ const encryptPassword = require('../../utils/passwords.js').encryptPassword;
 const UserSchema = mongoose.Schema({
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
+    }, 
+    email: {
+        type: String,
+        required: true,
+        unique: true
     }, 
     password: {
         type: String,
         required: true
     }
 });
+
+// INDEXES
+UserSchema.index({ username: 1 });
 
 // SCHEMA METHODS
 UserSchema.static('findByName', function(username) {
@@ -23,6 +32,9 @@ UserSchema.static('findById', function(id) {
     return this.findOne({ '_id': id });
 });
 
+UserSchema.static('getUserList', function(id) {
+    return this.find({}, {password: 0});
+});
 
 // MIDDLEWARE
 UserSchema.pre('save', async function() {

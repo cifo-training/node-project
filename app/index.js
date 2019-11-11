@@ -14,6 +14,4 @@ app.use(router);
 app.use(errorHandler);
 
 // APP RUN
-app.listen(config.PORT, _ => {
-  
-});
+app.listen(config.PORT, _ => {});

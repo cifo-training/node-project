@@ -25,6 +25,9 @@ const GameSchema = mongoose.Schema({
     }
 });
 
+// INDEXES
+GameSchema.index({ category: 1, name: 1 });
+
 // SCHEMA METHODS
 GameSchema.static('findByCategory', function(category) {
     return this.find({ category });
