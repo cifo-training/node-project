@@ -7,6 +7,8 @@
 3. [Índices](#Índices)
 3. [Test _Postman_](#Postman)
 
+---
+
 ## <a id="Introducción"></a>Introducción ##
 
 ### Cliente: TheTraktor®
@@ -58,6 +60,8 @@ La aplicación esta pensada para:
 - Gestión de Tareas por realizar: Listado de Tareas y estado.
 
 [Volver a inicio](#Home)
+
+---
 
 ## <a id="Primera_iteración"></a>Primera iteración ##
 
@@ -125,6 +129,8 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 
 [Volver a inicio](#Home)
 
+---
+
 ## <a id="Índices"></a>Índices ##
 
 Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
@@ -171,6 +177,8 @@ Indices aplicados sobre la busqueda de usuarios por nombre, apellidos y plan
 ```
 
 [Volver a inicio](#Home)
+
+---
 
 ## <a id="Postman"></a>Test - _Postman_ ##
 
