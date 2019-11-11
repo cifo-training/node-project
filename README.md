@@ -218,7 +218,8 @@ Podemos encontrar la API en :
         Poster : String,
         votos : Number
      
-     Resultado: Crea una nueva película en la página de Ranking, para que pueda ser valorada, sumando o restando votos de 1 en 1 
+     Resultado: Crea una nueva película en la página de Ranking, para que pueda ser valorada, sumando o restando 
+     votos de 1 en 1 
      
 [![logo-proyecto](https://i.imgur.com/avrpsF7.jpg)](https://i.imgur.com/avrpsF7.jpg)
 
@@ -228,7 +229,8 @@ Podemos encontrar la API en :
      Método: POST
      uri: /votos/5dc6b11a4770f08d6add2487
      
-     Resultado: En la página de Ranking, se montrará el incremento de votos. Guardando las votaciones para ir listando las películas más votadas, ordenandolas ascendentemente
+     Resultado: En la página de Ranking, se montrará el incremento de votos. 
+     Guardando las votaciones para ir listando las películas más votadas, ordenandolas ascendentemente.
      
 [![logo-proyecto](https://i.imgur.com/3mAAdfF.jpg)](https://i.imgur.com/3mAAdfF.jpg)
 
