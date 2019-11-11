@@ -1,169 +1,676 @@
-# Proyecto: Application MEAN Full-stack: Back-End
+# API Thesaurus
 
-### 1. Introducción
+Sumari
 
-En el curso __Mean-Stack 2__, construimos la parte de __Front-End__ de una **aplicación full-stack**. En Mean-Stack 3, construiremos el __Back-End__ utilizando Node.js, Express.js y MongoDB.
+[1. Introducció](#1)<br />
+[2. Utilització](#2)<br />
+[3. Descripció dels ***endpoints*** per apartats:](#3)<br />
+[4. Dades de prova](#4)<br />
 
-El proyecto consiste en crear una __API Rest__ funcional. Esta API expondrá una serie de _end-points_ que podrán ser consumidos por la aplicación de _Front-end_.
+##<a name="1">1. Introducció:</a>
 
-### 2. Diseño de la API
+La **API Thesaurus** s'ofereix com una eina per tal de repertoriar i localitzar objectes perduts.
 
-Previo al desarrollo toda aplicación debe contar con una fase de diseño. Durante este periodo tendremos en cuenta las entidades que tenemos que modelar y la estrategia con la que abordaremos el desarrollo.
+##<a name="2">2. Utilització:</a>
 
-La API de este ejercicio debe contar con, __al menos__, dos modelos principales, uno de ellos será la entidad __User__, a la que añadiremos otra entidad principal.
+  * <u>API Host</u>: **https://217.61.97.40**
 
-Partiendo del _Front-end_ que queremos desarrollar (o ya tenemos desarrollado) debemos obtener todas las consultas que se realizarán desde la capa de cliente. Estas consultas irán desde el registro o la conexión del usuario hasta la exposición de listados de datos, actualización de información, etc. En el apartado siguiente se recogen las consultas mínimas que se han de desarrollar:
+  * <u>Format de la resposta</u>: **JSON**
 
+    Tant pel que fa als casos d'èxit, retornant el document sol·licitat; com en cas d'error, apareixent la indicació de les causes de l'error (en anglès) sota el camp "message".
 
-#### 3. Consultas
+    Per exemple, en cas de sol·licitar algun recurs a través d'alguna ruta inexistent (desconeguda, com ara, per exemple: GET /ruta/genial/), obtindrem: {"message": "Unknown route"}
 
-| Entidad | Acción | Descripción |
-|--------|--------|-------------|
-|User | Register | El usuario se registra desde la aplicación cliente |
-|User | Log in | El usuario se autentica desde la aplicación cliente |
-|Otra | List | El usuario, autenticado, accede a una lista completa de elementos |
-|Otra | List One | El usuario, autenticado, obtiene un elemento |
-|Otra | Create One | El usuario, autenticado, crea un elemento |
-|Otra | Update One | El usuario, autenticado, actualiza un elemento |
-|Otra | Remove One | El usuario, autenticado, elimina un elemento |
+  * <u>Autenticació de la API</u>: L' **autenticació** es fa a través del mètode bàsic, assumint que les comunicacions són xifrades i per tant, segures.
 
-Se pueden implementar tantas consultas como se quieran, atendiendo a que todas las que se planifiquen se han de desarrollar y deben ser completamente funcionales.
+    Pel que fa a l'obtenció del __token JWT__ (JSON web token), necessari per tal de poder accedir a la base d'objectes perduts, serà necessari estar registrat prèviament a través d'una petició PUT /user/register (vegeu apartat 3).
 
-### 4. Estrategia de desarrollo
+    __Nota:__ Tingueu present, a més, que el __token JWT__ no serà operatiu fins que l'administrador de l'API no us validi passant de *false* a *true* el valor del camp ***active*** del vostre registre que teniu com a usuari a la base de dades.
 
-Construiremos una API que después deberá ser desplegada en el servidor __Heroku__ y al que conectaremos una base de datos alojada en __Mongo Atlas__.
+##<a name="3">3. Descripció dels ***endpoints*** per apartats:</a>
 
-El código de la aplicación debe mantener el patrón de diseño __MVC__ y se incluirá dentro de un directorio denominado __`src`__. La estructura de la aplicación deberá ser la siguiente:
+###3.1. Registre
 
-            Proyecto
-            |_src
-                |_model
-                    |_dao
-                    |_model
-                    |_schema
-                |_controller
-                    |_entity
-                        |_index.mjs
-                        |_controller(1).mjs
-                        |_controller(2).mjs
-                        |_...
-                    |_user
-                        |_index.mjs
-                        |_login.mjs
-                        |_register.mjs
-                    |_ ...
-                |_middleware
-                    |_error-handler
-                    |_auth.mjs
-                    |_...
-                |_Mongo Connection Module
-                |_Others Helper Modules
-                |_app.mjs
-                |_server.mjs
+* Mètode: POST
+* URI: /user/register
+* Body Parameters:
+<pre>
+    {
+        "user":{
+            "name": Nom d'usuari (cadena, obligatori). Exemple: "user1",
+            "password": Contrasenya (cadena, obligatori). Exemple: "pass1",
+            "email": Correu electrònic (cadena, obligatori). Exemple: "user1@correu.com"
+        }
+    }
+</pre>
+* Respostes:
 
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "active": false,
+    "_id": "5dc7032f618da9139d8da9b4",
+    "name": "user",
+    "email": "user1@correu.com"
+}
+</pre>
 
-Si se incluye cualquier otro tipo de código dentro de la aplicación, servidor Express de páginas estáticas, recursos públicos, etc., entonces se incluirá el código de la API dentro de una carpeta __`api`__ para diferenciarla del resto del código.
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User already exists in BD"
+}
+</pre>
 
-### 5. Requisitos del modelo
-
-La capa de persistencia de la aplicación contará con una base de datos desarrollada en MongoDB y configurada dentro del servidor Mongo Atlas.
-
-1. Requisitos de MongoDB:
-
-    - dos colecciones: una será __users__ y otra corresponderá a la otra entidad principal.
-    - las colecciones deben estar indexadas en función de las consultas que reciben.
-
-2. Requisitos de la aplicación:
-
-   - En la aplicación se utilizará el framework __Mongoose.js__ para las consultas obligatorias. Es optativo utilizar la api de MongoDb para otro tipo de consultas: administración, etc. 
-  
-   - Se valorará que existan mecanismos de validación implementados en los esquemas.
-
-### 6. Requisitos de los controladores
-
-Los controladores deben estar separados del fichero de rutas. Los controladores implementarán las llamadas a la capa de persistencia y devolverán la respuesta al cliente. La respuesta debería ser en formato `JSON`.
-
-Existirá un fichero de rutas por cada entidad de la aplicación. Las rutas deben aparecer agrupadas y deberían ser las mínimas imprescindibles.
-
-Dentro de los ficheros de rutas se incorporará la protección de las rutas con middlewares.
-
-### 7. Archivo de Express (app)
-
- Éste es el __entry point__ de la API, contendrá todos los middlewares que sean necesarios para desarrollar la petición: _parsing_ de la request, compresión, cors, etc., menos los de autenticación, que se referirán dentro de las rutas.
-
-### 8. Autenticación
-
-La autenticación se implementará por reconocimiento de __usuario__ y __password__, y devolución de un __bearer token__ en formato __JWT__.
-Se incorporará dentro de la carpeta __middleware__.
-
-### 9. readme.md
-
-Fichero de información de la API. Esta información es muy importante y debe ser clara y estructurada. Sigue los siguientes apartados:
-
-1. Índice de apartados del documento
-   
-2. Introducción: _Objetivo de la API, tipo de información que devuelve._
-
-3. Utilización
-
-    - API Host    _Incluye aquí la URL de la API_
-
-    - Formato de respuesta de la API    _Indica que tipo de respuesta se obtendrá si la llamada a la API se hace correctamente (Ejemplo) o si devuelve un error. (Ejemplo)_
-
-    - Autenticación de la API        _Describe como obtener un token de acceso válido y como debe ser incorporado en la petición. (Ejemplo formato petición y respuesta).  Indica el tipo de respuesta en caso de token inválido o expirado._
-
-4. Descripción de los endpoints por apartados:
-
-    4.1 Obtener un Token _Ejemplo de formato:_
-
-                endpoint: Obtener un token
-                Método: POST
-                uri: /user/login
-                body parameters:
-                    
-                    email
-                        string (required) Example: email@myemail.com
-                        Un email válido
-
-                    password
-                        string (required) Example: mypassword
-                        Una contraseña válida
-                
-                Respuestas:
-                    200 - Header: Content-Type: application/json
-                        Body: {
-                                "data": {
-                                    "token": "eyJXXXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLm1lbnNhZgghLmRldi92MS9sb2dpbiIsImlhdCI6MTQ2NDM1NDY5OSwiZXhwIjoxNDY0MzU4Mjk5LCJuYmYisfE0NjQzNTQ2OTksImp0aSI6IjIyNDg4Y2IxM2RkNzZlODZjM2NhZWZhZjNhMDBkMjkzIiwic3ViIjoxNH0.F3q4ckNbI8sMg9RX_iRSyrEmGWW3oyO8dMcasKl5xer",
-                                    "expires_in": 60,
-                                    "expires_at": "2016-05-27 14:11:39 GMT"
-                                }
-                        }
-
-                    400 - Header: Content-Type: application/json
-                        Body: {
-                                    "error": {
-                                        "code": "VALIDATION_FAIL",
-                                        "http_code": 400,
-                                        "message": "The email field is required. The password field is required. "
-                                    }
-                                    } 
-                    400 - Header: Content-Type: application/json
-                        Body: {
-                                "error": {
-                                    "code": "WRONG_ARGS",
-                                    "http_code": 400,
-                                    "message": "message can not be null"
-                                }
-                                } 
-
-5. Incluir los datos de prueba por _end-point_
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing fields: name password email"
+}
+</pre>
 
 
-### 10. Requisitos de entrega:
+###3.2. Obtenció del Token JWT
 
-1. Se creará un repositorio en __GitHub__ con el código de la aplicación, estructurado como se ha comentado anteriormente.
-2. Se incorporará un fichero __readme.md__ con la estructura descrita en el apartado [readme.md](#readme.md)
-3. Generar un repositorio en Heroku conectado al repositorio de GitHub que contiene el código.
-4. Hacer un _fork_ de este repositorio __proyecto-node__ y una vez finalizado el ejercicio realizar un pull request que contenga la siguiente información:
-   -  Subject: Nombre del o de los miembros del equipo en la cabecera.
-   -  Mensaje: Dirección git del repositorio, url de la aplicación cliente(si la hubiera), url heroku de la API.
+* Mètode: POST
+* URI: /user/login
+* Header Authorization
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZGM3MDY4NTYxOGRhOTEzOWQ4ZGE5YjUiLCJpYXQiOjE1NzMzMjQ0NDYsImV4cCI6MTU3MzMyNjI0Nn0.WNdVWho_jxAwSV68sBk2V1Qw1Fi5lnG4YMiTUJnYXgw",
+    "active": false
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad credentials"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User does not exist in DB"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Credentials not supplied"
+}
+</pre>
+
+403 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Cannot proceed"
+}
+</pre>
+
+
+###3.3. Operacions reservades a l'administrador
+
+Si qualsevol de les peticions d'aquest sub-apartat no les formula l'administrador, obtenim una resposta 403.
+
+403 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Not enough grants"
+}
+</pre>
+
+###3.3.1. Llistar els usuaris registrats
+
+* Mètode: GET
+* URI: /user
+* Header Authorization: (admin)
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+[
+    {
+        "_id": "5dc70685618da9139d8da9b5",
+        "active": false,
+        "name": "user1",
+        "email": "user1@email.com"
+    },
+    {
+        "_id": "5dc70917618da9139d8da9b6",
+        "active": true,
+        "name": "user2",
+        "email": "user2@mail.com"
+    }
+]
+</pre>
+
+* Mètode: GET
+* URI: /user?active=true
+* Header Authorization: (admin)
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+[
+    {
+        "_id": "5dc70917618da9139d8da9b6",
+        "active": true,
+        "name": "user2",
+        "email": "user2@mail.com"
+    }
+]
+</pre>
+
+* Mètode: GET
+* URI: /user?active=false
+* Header Authorization: (admin)
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+[
+    {
+        "_id": "5dc70685618da9139d8da9b5",
+        "active": false,
+        "name": "user1",
+        "email": "user1@email.com"
+    }
+]
+</pre>
+
+###3.3.2. Bloquejar usuaris registrats
+
+* Mètode: PATCH
+* URI: /user/down/:id
+* Header Authorization: (admin)
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+[
+    {
+        "_id": "5dc70917618da9139d8da9b6",
+        "active": false,
+        "name": "user2",
+        "email": "user2@mail.com"
+    }
+]
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User does not exist in DB"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing parameter"
+}
+</pre>
+
+###3.3.3. Desbloquejar usuaris registrats
+
+* Mètode: PATCH
+* URI: /user/up/:id
+* Header Authorization: (admin)
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+[
+    {
+        "_id": "5dc70685618da9139d8da9b5",
+        "active": true,
+        "name": "user1",
+        "email": "user1@email.com"
+    }
+]
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User does not exist in DB"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing parameter"
+}
+</pre>
+
+###3.3.4. Modificar usuaris registrats
+
+* Mètode: PUT
+* URI: /user/:id
+* Header Authorization: (admin)
+* Body Parameters:
+<pre>
+    {
+        "user":{
+            "name": Nom d'usuari (cadena, obligatori). Exemple: "user1",
+            "password": Contrasenya (cadena, obligatori). Exemple: "pass1",
+            "email": Correu electrònic (cadena, obligatori). Exemple: "user1@correu.com"
+        }
+    }
+</pre>
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "_id": "5dc70685618da9139d8da9b5",
+    "active": true,
+    "name": "user1",
+    "email": "user1@mail.com"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User not found"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing fields"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing parameter"
+}
+</pre>
+
+###3.3.5. Donar de baixa usuaris registrats
+
+* Mètode: DELETE
+* URI: /user/:id
+* Header Authorization: (admin)
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User successfully deleted: user1"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User not found"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing parameter"
+}
+</pre>
+
+###3.4. Operacions reservades a l'usuari autoritzat
+
+Aquestes operacions només podran dur-se terme mitjançant el __token JWT__. Ni tant sols estaran a l'abast de l'administrador, connectat per mètode bàsic (l'Administrador sempre podrà crear-se i autoritzar un usuari registrat).
+
+###3.4.1. Visualització de dades personals
+
+* Mètode: GET
+* URI: /user/me
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "_id": "5dc70917618da9139d8da9b6",
+    "active": true,
+    "name": "user2",
+    "email": "user2@mail.com"
+}
+</pre>
+
+###3.4.2. Modificació de dades personals
+
+* Mètode: PUT
+* URI: /user/:id
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "_id": "5dc70917618da9139d8da9b6",
+    "active": true,
+    "name": "user2",
+    "email": "user2@email.com"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "User not found"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing fields"
+}
+</pre>
+
+###3.4.3. Creació del registre d'objecte perdut
+
+* Mètode: POST
+* URI: /thesaurus
+* Body Parameters:
+<pre>
+    {
+        "thesaurus":{
+            "object": Nom de l'objecte (cadena, obligatori). Exemple: "Bossa",
+            "description": Descripció de l'objecte (cadena). Exemple: "Contingut: ulleres de sol, llibreta",
+            "found": Data de la troballa (cadena, obligatori, format AAAAMMDDHHMM). Exemple: "201911110900",
+            "stored": Referència d'emmagatzematge (cadena, obligatori). Exemple: "5552/41",
+            "weight": Pes (decimal -en gr.). Exemple: "250.0",
+            "height": Alçada (decimal -en cm.). Exemple: "25.0",
+            "length": Longitut (decimal -en cm.). Exemple: "27.0",
+            "weight": Amplitut (decimal -en cm.). Exemple: "1.5",
+            "contact": Responsable de la gestió (cadena, obligatori). Exemple: "Oficina B"
+        }
+    }
+</pre>
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "_id": "5dc8391a5615b50b6a089c33",
+    "object": "Bossa",
+    "description": "Contingut: unes ulleres de sol, una llibreta",
+    "found": "201911110900",
+    "stored": "ABC-123",
+    "weight": "150.5",
+    "contact": "Oficina B"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Missing data"
+}
+</pre>
+
+###3.4.4. Visualització d'objectes perduts
+
+* Mètode: GET
+* URI: /thesaurus
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+[
+    {
+        "_id": "5dc6df44cea0fc0638b51d0e",
+        "object": "Bossa color negre",
+        "found": "201911091600",
+        "stored": "Magatzem B 13/151",
+        "contact": "Oficina A",
+        "description": "Llamborda, 1 paquet de menjar per a gos",
+        "weight": {
+            "$numberDecimal": "13.8"
+        }
+    },
+    {
+        "_id": "5dc6df6bcea0fc0638b51d0f",
+        "object": "Pilota",
+        "found": "201911091610",
+        "stored": "Magatzem B 13/152",
+        "contact": "Oficina A"
+    },
+    {
+        "_id": "5dc8391a5615b50b6a089c33",
+        "object": "Bossa",
+        "description": "Contingut: unes ulleres de sol, una llibreta",
+        "found": "201911110900",
+        "stored": "ABC-123",
+        "weight": {
+            "$numberDecimal": "150.5"
+        },
+        "contact": "Oficina B"
+    }
+]
+</pre>
+
+###3.4.5. Visualització d'un objecte perdut
+
+* Mètode: GET
+* URI: /thesaurus/:id
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "_id": "5dc8391a5615b50b6a089c33",
+    "object": "Bossa",
+    "description": "Contingut: unes ulleres de sol, una llibreta",
+    "found": "201911110900",
+    "stored": "ABC-123",
+    "weight": "150.5",
+    "contact": "Oficina B"
+}
+</pre>
+
+404 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Object not found"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+###3.4.6. Modificació del registre d'objecte perdut
+
+* Mètode: PUT
+* URI: /thesaurus/:id
+* Body Parameters:
+<pre>
+    {
+        "thesaurus":{
+            "object": Nom de l'objecte (cadena, obligatori). Exemple: "Bossa",
+            "description": Descripció de l'objecte (cadena). Exemple: "Contingut: ulleres de sol, llibreta",
+            "found": Data de la troballa (cadena, obligatori, format AAAAMMDDHHMM). Exemple: "201911110900",
+            "stored": Referència d'emmagatzematge (cadena, obligatori). Exemple: "5552/41",
+            "weight": Pes (decimal -en gr.). Exemple: "250.0",
+            "height": Alçada (decimal -en cm.). Exemple: "25.0",
+            "length": Longitut (decimal -en cm.). Exemple: "27.0",
+            "weight": Amplitut (decimal -en cm.). Exemple: "1.5",
+            "contact": Responsable de la gestió (cadena, obligatori). Exemple: "Oficina B"
+        }
+    }
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "_id": "5dc8391a5615b50b6a089c33",
+    "object": "Bossa",
+    "description": "Contingut: unes ulleres de sol, una llibreta",
+    "found": "201911110900",
+    "stored": "ABC-123",
+    "weight": "150.5",
+    "contact": "Oficina B"
+}
+</pre>
+
+404 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Object not found"
+}
+</pre>
+
+500 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Nothing to be changed"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+###3.4.7. Esborrat d'un objecte perdut
+
+* Mètode: DELETE
+* URI: /thesaurus/:id
+* Respostes:
+
+200 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Object successfully deleted: Bossa"
+}
+</pre>
+
+400 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Bad parameter"
+}
+</pre>
+
+404 - Header: Content-Type: application/json<br />
+Body:
+<pre>
+{
+    "message": "Object identifier does not exist"
+}
+</pre>
+
+##<a name="4">4. Dades de prova:</a>
+
+1. Exemple d'__Usuari__:
+<pre>
+{
+    "user":{
+        "name":"user1",
+        "password":"pass1",
+        "email":"user1@mail.org"
+    }
+}
+</pre>
+
+2. Exemple d'__Objecte__:
+<pre>
+{
+    "thesaurus":{
+        "object":"Bossa",
+        "description":"Contingut: ulleres, llibreta",
+        "found":"201911111200",
+        "stored":"AA 13-25",
+        "contact":"Oficina B"
+    }
+}
+</pre>
+

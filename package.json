@@ -1,0 +1,39 @@
+{
+  "name": "thesaurus_api",
+  "version": "1.0.0",
+  "description": "Lost Objects Database API",
+  "main": "app.mjs",
+  "scripts": {
+    "start": "nodemon --experimental-modules server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgasacas7/node-project.git"
+  },
+  "keywords": [
+    "thesaurus",
+    "terms"
+  ],
+  "author": "David Gasa i Castell",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/dgasacas7/node-project/issues"
+  },
+  "homepage": "https://github.com/dgasacas7/node-project#readme",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http-errors": "^1.7.3",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
