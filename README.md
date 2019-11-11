@@ -170,7 +170,7 @@ Podemos encontrar la API en :
      
     Resultado: La entrada de un nuevo documento en la colección Films
     
-[![logo-proyecto](https://i.imgur.com/avrpsF7.jpg)](https://i.imgur.com/avrpsF7.jpg)
+[![logo-proyecto](https://i.imgur.com/P3vNzJe.jpg)](https://i.imgur.com/P3vNzJe.jpg)
 
 **Films | Update One | El usuario, autenticado, actualiza un campo de una película**
 
@@ -196,8 +196,6 @@ Podemos encontrar la API en :
      
     Resultado: Actualiza el valor necesario dentro del documento
 
-[![logo-proyecto](https://i.imgur.com/avrpsF7.jpg)](https://i.imgur.com/avrpsF7.jpg)
-
 **Films | Remove One | El usuario, autenticado, elimina una película**
 
     endpoint: Remove
@@ -206,7 +204,7 @@ Podemos encontrar la API en :
      
     Resultado: Elimina por completo el documento de la película, buscada por _id
 
-[![logo-proyecto](https://i.imgur.com/avrpsF7.jpg)](https://i.imgur.com/avrpsF7.jpg)
+[![logo-proyecto](https://i.imgur.com/yoUpMXC.jpg)](https://i.imgur.com/yoUpMXC.jpg)
 
 #### Votos :
 
@@ -232,7 +230,7 @@ Podemos encontrar la API en :
      
      Resultado: En la página de Ranking, se montrará el incremento de votos. Guardando las votaciones para ir listando las películas más votadas, ordenandolas ascendentemente
      
-[![logo-proyecto](https://i.imgur.com/avrpsF7.jpg)](https://i.imgur.com/avrpsF7.jpg)
+[![logo-proyecto](https://i.imgur.com/3mAAdfF.jpg)](https://i.imgur.com/3mAAdfF.jpg)
 
 
                 
