@@ -101,17 +101,17 @@
           }
         }
         &#cancel-btn {
-          background-color: darken($red-color, 20%);
-          border:2px solid $red-color;
-          &:hover {
-            background-color: darken($red-color, 35%);
-          }
-        }
-        &#erase-btn {
           background-color: darken($grey-color, 20%);
           border:2px solid $grey-color;
           &:hover {
             background-color: darken($grey-color, 35%);
+          }
+        }
+        &#erase-btn {
+          background-color: darken($red-color, 20%);
+          border:2px solid $red-color;
+          &:hover {
+            background-color: darken($red-color, 35%);
           }
         }
       }
