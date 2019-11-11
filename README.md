@@ -1,169 +1,238 @@
-# Proyecto: Application MEAN Full-stack: Back-End
+[![logo-proyecto](https://i.imgur.com/bbISOvdm.png)](https://i.imgur.com/bbISOvdm.png)
 
-### 1. Introducción
+# Proyecto: Application MEAN Full-stack: Back-End 
 
-En el curso __Mean-Stack 2__, construimos la parte de __Front-End__ de una **aplicación full-stack**. En Mean-Stack 3, construiremos el __Back-End__ utilizando Node.js, Express.js y MongoDB.
+> Por Toni Reis & Angela Turizo
 
-El proyecto consiste en crear una __API Rest__ funcional. Esta API expondrá una serie de _end-points_ que podrán ser consumidos por la aplicación de _Front-end_.
+### Objetivo
 
-### 2. Diseño de la API
+- Crear una aplicación funcional en la que se presenta una selección de películas con la posibilidad de ver el detalle de cada una con información como:
 
-Previo al desarrollo toda aplicación debe contar con una fase de diseño. Durante este periodo tendremos en cuenta las entidades que tenemos que modelar y la estrategia con la que abordaremos el desarrollo.
+    • Título
 
-La API de este ejercicio debe contar con, __al menos__, dos modelos principales, uno de ellos será la entidad __User__, a la que añadiremos otra entidad principal.
+    • Año de estreno
 
-Partiendo del _Front-end_ que queremos desarrollar (o ya tenemos desarrollado) debemos obtener todas las consultas que se realizarán desde la capa de cliente. Estas consultas irán desde el registro o la conexión del usuario hasta la exposición de listados de datos, actualización de información, etc. En el apartado siguiente se recogen las consultas mínimas que se han de desarrollar:
+    • Cartel
 
+    • Y sobretodo con la clasificación que tienen las películas en la imdb
 
-#### 3. Consultas
+- Usando la clasificación de la imdb hacer un sistema propio de votos para que las 5 más votadas sean proyectadas en una sala de cine. La votación se podrá realizar una vez el usuario este logueado.
 
-| Entidad | Acción | Descripción |
-|--------|--------|-------------|
-|User | Register | El usuario se registra desde la aplicación cliente |
-|User | Log in | El usuario se autentica desde la aplicación cliente |
-|Otra | List | El usuario, autenticado, accede a una lista completa de elementos |
-|Otra | List One | El usuario, autenticado, obtiene un elemento |
-|Otra | Create One | El usuario, autenticado, crea un elemento |
-|Otra | Update One | El usuario, autenticado, actualiza un elemento |
-|Otra | Remove One | El usuario, autenticado, elimina un elemento |
+- Desde el modelo anterior en el Back-End de la aplicación el objetivo es incluir unos end-points que se usarán en el front-end para la interacción con el cliente.
 
-Se pueden implementar tantas consultas como se quieran, atendiendo a que todas las que se planifiquen se han de desarrollar y deben ser completamente funcionales.
+Para el desarrollo del back-end hemos utilizando **Node.js**, **Express**, **MongoDB(_Mongo Atlas_)** y **Mongoose**. 
 
-### 4. Estrategia de desarrollo
+- Las consultas que se han implementado están separadas en tres controladores :
 
-Construiremos una API que después deberá ser desplegada en el servidor __Heroku__ y al que conectaremos una base de datos alojada en __Mongo Atlas__.
+    • Films 
+    
+    • Usuarios 
+    
+    • Votos
 
-El código de la aplicación debe mantener el patrón de diseño __MVC__ y se incluirá dentro de un directorio denominado __`src`__. La estructura de la aplicación deberá ser la siguiente:
-
-            Proyecto
-            |_src
-                |_model
-                    |_dao
-                    |_model
-                    |_schema
-                |_controller
-                    |_entity
-                        |_index.mjs
-                        |_controller(1).mjs
-                        |_controller(2).mjs
-                        |_...
-                    |_user
-                        |_index.mjs
-                        |_login.mjs
-                        |_register.mjs
-                    |_ ...
+         Proyecto Film Vote
+            |_api
+                |_controllers
+                    |_films
+                        |_create.js
+                        |_index.js
+                        |_list.js
+                        |_listOne.js
+                        |_remove.js
+                        |_update.js
+                    |_usuarios
+                        |_index.js
+                        |_login.js
+                        |_register.js
+                    |_votos
+                        |_create.js
+                        |_index.js
+                        |_list.js
+                        |_listOne.js
+                        |_remove.js
+                        |_update.js
                 |_middleware
-                    |_error-handler
-                    |_auth.mjs
-                    |_...
+                    |_auth.js
+                    |_error-handler.js
+                |_models
+                    |_films
+                        |_dao.js
+                        |_model.js
+                    |_usuarios
+                        |_dao.js
+                        |_model.js
+                    |_votos
+                        |_dao.js
+                        |_model.js
+                    |_user
+                        |_dao.js
+                        |_model.js
+                        |_register.js
                 |_Mongo Connection Module
-                |_Others Helper Modules
-                |_app.mjs
-                |_server.mjs
+                    |_mongoManager.js
+                |_services
+                    |_index.js
+                |_.env
+                |_app.js
+                |_server.js
 
 
-Si se incluye cualquier otro tipo de código dentro de la aplicación, servidor Express de páginas estáticas, recursos públicos, etc., entonces se incluirá el código de la API dentro de una carpeta __`api`__ para diferenciarla del resto del código.
+Podemos encontrar la API en :
 
-### 5. Requisitos del modelo
+**API Host :**
+(https://filmvote-api.herokuapp.com/film)
 
-La capa de persistencia de la aplicación contará con una base de datos desarrollada en MongoDB y configurada dentro del servidor Mongo Atlas.
+**Repositorio GitHub :** (https://github.com/kifka81/api)
 
-1. Requisitos de MongoDB:
+### Endpoints por apartados
 
-    - dos colecciones: una será __users__ y otra corresponderá a la otra entidad principal.
-    - las colecciones deben estar indexadas en función de las consultas que reciben.
+#### Usuarios :
 
-2. Requisitos de la aplicación:
+**Usuario | Register | El usuario se registra desde la aplicación cliente**
 
-   - En la aplicación se utilizará el framework __Mongoose.js__ para las consultas obligatorias. Es optativo utilizar la api de MongoDb para otro tipo de consultas: administración, etc. 
-  
-   - Se valorará que existan mecanismos de validación implementados en los esquemas.
+    endpoint: Registro de Usuario
+    Método: POST
+    uri: /usuarios/register
+    body parameters:
+        nombre
+        string
+        email
+        string (required) 
+        Ejemplo:  angela@gmail.com
+                        
+        password
+        string (required) 
+        Example: 123456      
+        
+        Resultado: Registro de nuevo usuario, creación del TOKEN
+                        
+[![logo-proyecto](https://i.imgur.com/RvYkG5B.jpg)](https://i.imgur.com/RvYkG5B.jpg)
 
-### 6. Requisitos de los controladores
+**Usuario | Login | El usuario se autentica desde la aplicación cliente**
 
-Los controladores deben estar separados del fichero de rutas. Los controladores implementarán las llamadas a la capa de persistencia y devolverán la respuesta al cliente. La respuesta debería ser en formato `JSON`.
+     endpoint: Login de Usuario
+     Método: POST
+     uri: /usuarios/login
+     body parameters:
+        email
+        string (required) 
+        Ejemplo:  toni@gmail.com
+                        
+        password
+        string (required) 
+        Ejemplo: 123456
+        
+        Resultado: Login de entrada de un usuario ya registrado, creación del TOKEN 
 
-Existirá un fichero de rutas por cada entidad de la aplicación. Las rutas deben aparecer agrupadas y deberían ser las mínimas imprescindibles.
+[![logo-proyecto](https://i.imgur.com/5XpSuXG.jpg)](https://i.imgur.com/5XpSuXG.jpg)
 
-Dentro de los ficheros de rutas se incorporará la protección de las rutas con middlewares.
+#### Films :
 
-### 7. Archivo de Express (app)
+**Films | List | El usuario, autenticado, accede a ver el listado completo de películas**
 
- Éste es el __entry point__ de la API, contendrá todos los middlewares que sean necesarios para desarrollar la petición: _parsing_ de la request, compresión, cors, etc., menos los de autenticación, que se referirán dentro de las rutas.
+     endpoint: List
+     Método: GET
+     uri: /film
+     
+     Resultado: Listado en json de todas las películas
 
-### 8. Autenticación
+**Films | List One | El usuario, autenticado, obtiene un elemento**
 
-La autenticación se implementará por reconocimiento de __usuario__ y __password__, y devolución de un __bearer token__ en formato __JWT__.
-Se incorporará dentro de la carpeta __middleware__.
+    endpoint: List One
+    Método: GET
+    uri: /film/5dc6931d8e3242fd911a8f17
+     
+    Resultado: Muestra la película buscada por la _id
 
-### 9. readme.md
+[![logo-proyecto](https://i.imgur.com/zSJr6Xp.jpg)](https://i.imgur.com/zSJr6Xp.jpg)
 
-Fichero de información de la API. Esta información es muy importante y debe ser clara y estructurada. Sigue los siguientes apartados:
+**Films | Create One | El usuario, autenticado, crea un nuevo documento**
 
-1. Índice de apartados del documento
-   
-2. Introducción: _Objetivo de la API, tipo de información que devuelve._
+    endpoint: Create
+    Método: POST
+    uri: /film
+    body parameters:
+      id: Number,
+      Title : String,
+      Year : String,
+      Released : String,
+      Runtime : String,
+      Genre : String,
+      Director : String,
+      Actors : String,
+      Plot : String,
+      Language : String,
+      Country : String,
+      Awards : String,
+      Poster : String,
+      imdbRating : String,
+      votos : Number
+     
+    Resultado: La entrada de un nuevo documento en la colección Films
+    
+[![logo-proyecto](https://i.imgur.com/P3vNzJe.jpg)](https://i.imgur.com/P3vNzJe.jpg)
 
-3. Utilización
+**Films | Update One | El usuario, autenticado, actualiza un campo de una película**
 
-    - API Host    _Incluye aquí la URL de la API_
+    endpoint: upDate
+    Método: PUT
+    uri: /film/5dc6931d8e3242fd911a8f17
+    body parameters:
+      id: Number,
+      Title : String,
+      Year : String,
+      Released : String,
+      Runtime : String,
+      Genre : String,
+      Director : String,
+      Actors : String,
+      Plot : String,
+      Language : String,
+      Country : String,
+      Awards : String,
+      Poster : String,
+      imdbRating : String,
+      votos : Number
+     
+    Resultado: Actualiza el valor necesario dentro del documento
 
-    - Formato de respuesta de la API    _Indica que tipo de respuesta se obtendrá si la llamada a la API se hace correctamente (Ejemplo) o si devuelve un error. (Ejemplo)_
+**Films | Remove One | El usuario, autenticado, elimina una película**
 
-    - Autenticación de la API        _Describe como obtener un token de acceso válido y como debe ser incorporado en la petición. (Ejemplo formato petición y respuesta).  Indica el tipo de respuesta en caso de token inválido o expirado._
+    endpoint: Remove
+    Método: DELETE
+    uri: /film/5dc6931d8e3242fd911a8f17
+     
+    Resultado: Elimina por completo el documento de la película, buscada por _id
 
-4. Descripción de los endpoints por apartados:
+[![logo-proyecto](https://i.imgur.com/yoUpMXC.jpg)](https://i.imgur.com/yoUpMXC.jpg)
 
-    4.1 Obtener un Token _Ejemplo de formato:_
+#### Votos :
 
-                endpoint: Obtener un token
-                Método: POST
-                uri: /user/login
-                body parameters:
-                    
-                    email
-                        string (required) Example: email@myemail.com
-                        Un email válido
+**Votos | Create One | El usuario, autenticado, crea una nueva película para ser votada**
 
-                    password
-                        string (required) Example: mypassword
-                        Una contraseña válida
+     endpoint: Listado en la página Ranking
+     Método: GET
+     uri: /votos
+     body parameters:
+        Title : String,
+        Poster : String,
+        votos : Number
+     
+     Resultado: Crea una nueva película en la página de Ranking, para que pueda ser valorada, sumando o restando 
+     votos de 1 en 1 
+     
+[![logo-proyecto](https://i.imgur.com/avrpsF7.jpg)](https://i.imgur.com/avrpsF7.jpg)
+
+**Films | Update One | El usuario, autenticado, graba el voto generado en el front-end**
+
+     endpoint: List
+     Método: POST
+     uri: /votos/5dc6b11a4770f08d6add2487
+     
+     Resultado: En la página de Ranking, se montrará el incremento de votos. 
+     Guardando las votaciones para ir listando las películas más votadas, ordenandolas ascendentemente.
+     
+[![logo-proyecto](https://i.imgur.com/3mAAdfF.jpg)](https://i.imgur.com/3mAAdfF.jpg)
+
+
                 
-                Respuestas:
-                    200 - Header: Content-Type: application/json
-                        Body: {
-                                "data": {
-                                    "token": "eyJXXXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLm1lbnNhZgghLmRldi92MS9sb2dpbiIsImlhdCI6MTQ2NDM1NDY5OSwiZXhwIjoxNDY0MzU4Mjk5LCJuYmYisfE0NjQzNTQ2OTksImp0aSI6IjIyNDg4Y2IxM2RkNzZlODZjM2NhZWZhZjNhMDBkMjkzIiwic3ViIjoxNH0.F3q4ckNbI8sMg9RX_iRSyrEmGWW3oyO8dMcasKl5xer",
-                                    "expires_in": 60,
-                                    "expires_at": "2016-05-27 14:11:39 GMT"
-                                }
-                        }
-
-                    400 - Header: Content-Type: application/json
-                        Body: {
-                                    "error": {
-                                        "code": "VALIDATION_FAIL",
-                                        "http_code": 400,
-                                        "message": "The email field is required. The password field is required. "
-                                    }
-                                    } 
-                    400 - Header: Content-Type: application/json
-                        Body: {
-                                "error": {
-                                    "code": "WRONG_ARGS",
-                                    "http_code": 400,
-                                    "message": "message can not be null"
-                                }
-                                } 
-
-5. Incluir los datos de prueba por _end-point_
-
-
-### 10. Requisitos de entrega:
-
-1. Se creará un repositorio en __GitHub__ con el código de la aplicación, estructurado como se ha comentado anteriormente.
-2. Se incorporará un fichero __readme.md__ con la estructura descrita en el apartado [readme.md](#readme.md)
-3. Generar un repositorio en Heroku conectado al repositorio de GitHub que contiene el código.
-4. Hacer un _fork_ de este repositorio __proyecto-node__ y una vez finalizado el ejercicio realizar un pull request que contenga la siguiente información:
-   -  Subject: Nombre del o de los miembros del equipo en la cabecera.
-   -  Mensaje: Dirección git del repositorio, url de la aplicación cliente(si la hubiera), url heroku de la API.
