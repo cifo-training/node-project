@@ -235,8 +235,7 @@ Example Request _Signup_
 
     var options = {
       'method': 'POST',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/user/signup',
       'headers': {
         'Content-Type': 'application/json'
@@ -307,8 +306,7 @@ Example Request Login
 
     var options = {
       'method': 'POST',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/user/login',
       'headers': {
         'Content-Type': 'application/json'
@@ -409,8 +407,7 @@ Example Request Get usuarios inactivos
 
     var options = {
       'method': 'GET',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers/inactive',
       'headers': {
         'Content-Type': 'application/json'
@@ -604,8 +601,7 @@ Example Request Post usuario nuevo
 
     var options = {
       'method': 'POST',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers',
       'headers': {
         'Content-Type': 'application/json'
@@ -683,8 +679,7 @@ Example Request Get usuario por `id`
 
     var options = {
       'method': 'GET',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers/5dc11a5903bf2803b71b7fe0',
       'headers': {
         'Content-Type': 'application/json'
@@ -862,8 +857,7 @@ Example Request Put usuario por `id`
 
     var options = {
       'method': 'PUT',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers/5dc11a5903bf2803b71b7fe0',
       'headers': {
         'Content-Type': 'application/json'
@@ -983,8 +977,7 @@ Example Request Get usuario por `plan`
 
     var options = {
       'method': 'GET',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers/plan/5dc0b64063d6814c30992aa5',
       'headers': {
         'Content-Type': 'application/json'
@@ -1097,8 +1090,7 @@ Get usuario por plan
 
     var options = {
       'method': 'GET',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers/plan/5dc0b64063d6814c30992aa5',
       'headers': {
         'Content-Type': 'application/json'
@@ -1213,8 +1205,7 @@ Example Request Delete packs del usuario
 
     var options = {
       'method': 'DELETE',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/customers/5dc11a5903bf2803b71b7fce/packs',
       'headers': {
         'Content-Type': 'application/json'
@@ -1316,8 +1307,7 @@ Example Request Get plans
 
     var options = {
       'method': 'GET',
-      'hostname': 'localhost',
-      'port': 3000,
+      'hostname': 'thetraktor.herokuapp.com',
       'path': '/plans/',
       'headers': {
         'Content-Type': 'application/json'
