@@ -1,0 +1,48 @@
+{
+	"nombre": "Tempest MS100 Paladin Ratón Gaming 1600DPI",
+	"precioUnitario": 4.99,
+	"cantidad": 5,
+    "categoria": "5dbeacc2929b120644888d50",
+    "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/21/214249/ms100-4.jpg"
+}
+
+
+{
+	"nombre" : "MSI Clutch GM10 Ratón Gaming 2400 DPI Negro",
+	"precioUnitario": 16.34,
+	"cantidad": 12,
+    "categoria": "5dbeacc2929b120644888d50",
+    "imagen":"https://thumb.pccomponentes.com/w-530-530/articles/14/148017/msi-mm-mouse-gm10-2d1.jpg",
+    "oferta":{"descuento":10,
+    			"expires": "2020-04-09"}
+}
+
+
+{
+	"nombre" : "Tacens Mars Gaming MRM0 Ratón Gaming 4000DPI",
+	"precioUnitario": 9.99,
+	"cantidad": 9,
+    "categoria": "5dbeacc2929b120644888d50",
+    "imagen":"https://thumb.pccomponentes.com/w-530-530/articles/15/150143/d2.jpg",
+    "promocion":{"promocion":"invierno",
+                    "expires": "2020-04-09"}
+}
+
+{
+	"nombre": "Genesis RX55 Pro Gaming Keyboard",
+	"precioUnitario": 22.99,
+	"cantidad": 7,
+    "categoria": "5dbeaeea10eb8f2850d0fd12",
+    "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/5/53941/natec-genesis-rx55-pro-gaming-keyboard-1.jpg"
+}
+
+
+{
+	"nombre": "Owlotech Black Altavoces 2.1 16W RMS",
+	"precioUnitario": 21,
+	"cantidad": 10,
+    "categoria": "5dc7f1571de8f22fec0cfe7b",
+    "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/12/127502/1.jpg"
+}
+
+
