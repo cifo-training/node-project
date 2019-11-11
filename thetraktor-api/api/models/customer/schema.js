@@ -32,7 +32,7 @@ customerSchema.post('findOneAndRemove', { document: true }, (doc) => {
 // HOOK per posar en majuscules el nom al guardar
 customerSchema.pre('save', async function (next) {
   //console.log('this.name.first', this.name.first);
-  this.gender=await this.gender.toLowerCase();
+  this.gender = await this.gender.toLowerCase();
   var oldName = this.name.first;
   if (this.isModified('name')) {
     this.name.first = await oldName.toUpperCase();
@@ -42,12 +42,12 @@ customerSchema.pre('save', async function (next) {
 });
 // HOOK per posar en majuscules el nom al actualitzar
 customerSchema.pre('findOneAndUpdate', async function (next) {
-  if (this._update.name!=undefined){
-var oldName = this._update.name.first;
-this._update.name.first = await oldName.toUpperCase();
-  console.log("%s has changed their name to %s", oldName, this._update.name.first);
-}
-next();
+  if (this._update.name != undefined) {
+    var oldName = this._update.name.first;
+    this._update.name.first = await oldName.toUpperCase();
+    console.log("%s has changed their name to %s", oldName, this._update.name.first);
+  }
+  next();
 });
 // hook valid per a totes les consultes find()
 customerSchema.post('init', function (doc) {
