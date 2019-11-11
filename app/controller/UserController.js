@@ -13,13 +13,17 @@ class UserController {
 
             userDAO.findByUsername(username)
                 .then(user => {
-                    if (user && comparePasswords(password, user.password)) {
-                        const token = createToken(user);
-                        response.status(200).json({
-                            "result": "success",
-                            "message": "Logged in",
-                            token 
-                        });
+                    if (user) {
+                        comparePasswords(password, user.password)
+                            .then(result => {
+                                const token = createToken(user._id);
+                                response.status(200).json({
+                                    "result": "success",
+                                    "message": "Logged in",
+                                    token 
+                                });
+                            })
+                            .catch(error => next(error));
                     } else {
                         response.sendStatus(401).json({
                             "result": "error",
@@ -44,11 +48,11 @@ class UserController {
 
     async register(request, response, next) {
 
-        const { username, password, retypePassword } = request.body;
+        const { username, password, retypePassword, email} = request.body;
         // Check passwords
-        if (username && password && retypePassword && password === retypePassword) {
+        if (username && password && retypePassword && password === retypePassword && email) {
             const data = {
-                username, password
+                username, password, email
             };
             userDAO.create(data)
                 .then(_ => response.status(200).json({

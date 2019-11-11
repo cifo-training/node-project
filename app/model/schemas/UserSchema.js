@@ -4,20 +4,20 @@ const encryptPassword = require('../../utils/passwords.js').encryptPassword;
 
 // CREATE SCHEMA
 const UserSchema = mongoose.Schema({
-    username: {
+    "username": {
         type: String,
         required: true,
         unique: true
     }, 
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    }, 
-    password: {
+    "password": {
         type: String,
         required: true
-    }
+    },
+    "email": {
+        type: String,
+        required: true,
+        unique: true
+    } 
 });
 
 // INDEXES
