@@ -26,7 +26,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use(function(req, res, next) { //tratar CORS error en Angular
-    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     res.header("Access-Control-Allow-Origin", "https://neollob.github.io/thetraktor-admin");
     res.header("Access-Control-Allow-Origin", "https://armandorodgo.github.io/thetraktor-admin");
