@@ -1005,7 +1005,7 @@ Respuestas:
 endpoint: El usuario, autenticado accede a su ShoppingCart o el usuario es Administrador.
 Método: GET
 uri: /cart/:id
-    params :id: id de un shopping cart
+    params :id: id de un usuario
 
 Respuestas:
     
