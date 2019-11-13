@@ -34,7 +34,6 @@ export class TodoComponent implements OnInit {
     this.apiTodo.getTodoes$().subscribe({
       next: arg => {
         this.todoesRows = arg;
-        console.log('todo:', arg);
         this.todoesRows.map((e) => {
           e.disabled = false;
           switch (e.state.toString()) {
@@ -69,24 +68,24 @@ export class TodoComponent implements OnInit {
       }
     });
   }
-/**  getTodotasks(todoid, todo) {
-    // Spinner on
-    // this.isLoading$.next(true);
-    this.apiTodoTask.getTodotasks$(todoid).subscribe({
-      next: arg => {
-        const todotaskssRows: any  = arg;
-        console.log(todotaskssRows);
-        todo.tasks = todotaskssRows.rows;
-        console.log(todo.tasks);
-        // Spinner off
-        // this.isLoading$.next(false);
-      },
-      error: err => console.error('Observer got an error: ' + err),
-      complete: () => {
-        // console.log('Observer got a complete notification');
-      }
-    });
-  } */
+  /**  getTodotasks(todoid, todo) {
+      // Spinner on
+      // this.isLoading$.next(true);
+      this.apiTodoTask.getTodotasks$(todoid).subscribe({
+        next: arg => {
+          const todotaskssRows: any  = arg;
+          console.log(todotaskssRows);
+          todo.tasks = todotaskssRows.rows;
+          console.log(todo.tasks);
+          // Spinner off
+          // this.isLoading$.next(false);
+        },
+        error: err => console.error('Observer got an error: ' + err),
+        complete: () => {
+          // console.log('Observer got a complete notification');
+        }
+      });
+    } */
   insertUpdate() {
     if (this.todo.task !== '') {
       if (this.todo.todoid !== '') {
@@ -95,7 +94,6 @@ export class TodoComponent implements OnInit {
     }
   }
   editTodo(item) {
-    console.log(item);
     this.apiTodo.editTodo$(item).subscribe(
       res => {
         this.openSnackBar('Good job!, You edited the "todo" successfully!',
@@ -116,8 +114,8 @@ export class TodoComponent implements OnInit {
       cancelButtonText: 'No, keep it'
     }).then((result) => {
       if (result.value) {
-        console.log(item.id);
-        this.apiTodo.deleteTodo$(item.id).subscribe(res => {
+        console.log(item._id);
+        this.apiTodo.deleteTodo$(item._id).subscribe(res => {
           this.openSnackBar(
             'Deleted!, Your TO-DO has been deleted.',
             'deleted'
@@ -168,14 +166,14 @@ export class TodoComponent implements OnInit {
     );
   }
   deleteParentTodo(item, dataList) {
-    this.position = this.getItemIndex(item.todoid, dataList);
-    dataList.splice(this.position, 1);
+    this.position = this.getItemIndex(item._id, dataList);
+    if (this.position >= 0){
+      dataList.splice(this.position, 1);
+    }
   }
-  getItemIndex(name, items) {
-    console.log(items);
-    console.log(name);
+  getItemIndex(id, items) {
     for (let i = 0; i < items.length; i += 1) {
-      if (items[i].todoid == name) {
+      if (items[i]._id == id) {
         return i;
       }
     }

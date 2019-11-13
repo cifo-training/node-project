@@ -92,14 +92,14 @@ export class TodotaskComponent implements AfterViewInit, OnInit {
     });
   }
   addTodotask() {
-    this.todotask._id = this.todo._id;
+    //this.todotask._id = this.todo._id;
     if (this.todo.todotask) {
       this.todo.todotask.splice(0, 0, this.todotask);
     } else {
       this.todo.todotask = [this.apiTodo.initTodotask()];
       this.todo.todotask.push(this.todotask);
     }
-    this.todoList = this.todo.todotask;
+    this.todoList = JSON.parse( JSON.stringify( this.todo.todotask ) );
     //this.todotask = this.apiTodo.initTodotask();
     this.editTodo(this.todo);
   }
