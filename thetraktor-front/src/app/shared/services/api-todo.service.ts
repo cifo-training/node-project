@@ -25,8 +25,7 @@ export class ApiTodoService {
       registerdate: new Date(),
       state: '0',
       description: '',
-      disabled: false,
-      todotask: [new Todotask]
+      disabled: false
     };
     return todo;
   }

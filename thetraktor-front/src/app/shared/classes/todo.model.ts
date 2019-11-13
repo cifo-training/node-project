@@ -8,7 +8,7 @@ export class Todo {
   state: string;
   description: string;
   disabled: boolean;
-  todotask: [{
+  todotask?: [{
     _id: string;
     todotaskid: string;
     task: string;

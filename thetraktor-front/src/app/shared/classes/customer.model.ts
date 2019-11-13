@@ -27,7 +27,7 @@ export class Customer {
       }
     ]
   };
-  packs: [
+  packs?: [
     {
       _id: string;
       pack: string;
@@ -36,5 +36,5 @@ export class Customer {
       locked: boolean;
     }
   ];
-  packList: string;
+  packList?: string;
 }
