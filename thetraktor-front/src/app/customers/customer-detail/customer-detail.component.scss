@@ -1,0 +1,52 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  mat-card {
+    color: $white-color;
+    background: $darkgrey-color;
+    text-align: center;
+    width: 50%;
+  }
+
+  .customer-detail {
+    margin: 10px;
+    #picture {
+      border-radius: 50%;
+      height: 120px;
+    }
+    mat-card-content {
+      mat-icon {
+        margin-right: 0.5rem;
+      }
+      .infoPlan {
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+    app-customer-packs {
+      text-align: center;
+      width: 50%;
+    }
+    mat-card-actions {
+      width: 100%;
+      .execButton {
+        width: 137px;
+        height: 40px;
+        //border-radius: 0;
+        &#edit-btn {
+          background-color: darken($green-color, 20%);
+          border: 2px solid $green-color;
+          &:hover {
+            background-color: darken($green-color, 35%);
+          }
+        }
+        &#cancel-btn {
+          background-color: darken($grey-color, 20%);
+          border: 2px solid $grey-color;
+          &:hover {
+            background-color: darken($grey-color, 35%);
+          }
+        }
+      }
+    }
+  }
+}

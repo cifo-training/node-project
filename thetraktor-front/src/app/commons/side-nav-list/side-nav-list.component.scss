@@ -1,0 +1,75 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  mat-nav-list {
+    background: $darkgrey-color;
+    #logged,
+    .log {
+      font-size: 12px;
+      span {
+        width: 100%;
+        padding: 0;
+      }
+    }
+    #logged {
+      max-height: 2.5rem;
+      //background: #ffffff25;
+      color: darken($white-color, 20%);
+      padding: 8px;
+      cursor: default;
+      /*       ::ng-deep .mat-list-item-content {
+      padding: 8px;
+    } */
+      .routeIcon {
+        margin-right: 1rem;
+        color: darken($green-color, 10%);
+      }
+    }
+    .log {
+      color: darken($white-color, 20%);
+      ::ng-deep .mat-list-item-content {
+        width: 100%;
+        padding: 8px;
+      }
+      &.in {
+        .routeIcon {
+          margin-right: 1rem;
+          color: darken($green-color, 20%);
+        }
+        &:hover {
+          background: darken($green-color, 35%);
+          .routeIcon {
+            color: darken($green-color, 10%);
+          }
+        }
+      }
+      &.out {
+        .routeIcon {
+          margin-right: 1rem;
+          color: darken($red-color, 20%);
+        }
+        &:hover {
+          background: darken($red-color, 45%);
+          .routeIcon {
+            color: darken($red-color, 10%);
+          }
+        }
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover,
+  a:active {
+    color: lightgray;
+  }
+  .nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+  }
+}
+.mat-drawer-inner-container {
+  background: $darkgrey-color;
+}

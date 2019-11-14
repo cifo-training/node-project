@@ -1,0 +1,230 @@
+/* Colors */
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* Shapes */
+.btn-gold {
+  border: 1px solid #e7b03c;
+  color: #e7b03c;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.chckr {
+  border: 1px solid #e7b03c;
+  border-radius: 5px;
+}
+
+.chckr.checked {
+  background-color: #e7b03c;
+}
+
+:host mat-card {
+  color: #fff;
+  background: #373737;
+}
+
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #ffffff8a;
+}
+
+:host .customer-edit {
+  margin: 10px;
+}
+
+:host .customer-edit #picture {
+  width: 130px;
+  border-radius: 50%;
+}
+
+:host .customer-edit .full-width {
+  width: 100%;
+}
+
+:host .customer-edit ::ng-deep .mat-slide-toggle-content {
+  font-family: Oswald;
+}
+
+:host .customer-edit ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #7b580f;
+}
+
+:host .customer-edit ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #e7b03c;
+}
+
+:host .customer-edit ::ng-deep .mat-slide-toggle.mat-checked button[mat-raised-button] {
+  margin: 0.25rem 0;
+}
+
+:host .customer-edit mat-radio-group ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #e7b03c;
+}
+
+:host .customer-edit mat-radio-group ::ng-deep
+.mat-radio-button.mat-accent.mat-radio-checked
+.mat-radio-outer-circle {
+  border-color: #e7b03c;
+}
+
+:host .customer-edit mat-radio-group mat-radio-button {
+  padding-bottom: 1.25em;
+  margin-left: 15px;
+}
+
+:host .customer-edit mat-radio-group mat-radio-button:first-child {
+  margin-left: 0px;
+}
+
+:host .customer-edit .mainColumn {
+  width: 50%;
+}
+
+:host .customer-edit .selectors {
+  padding-top: 32px;
+}
+
+:host .customer-edit #plans,
+:host .customer-edit #packs {
+  margin: 0 32px;
+}
+
+:host .customer-edit #plans input,
+:host .customer-edit #packs input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 0px;
+  height: 0px;
+  color: transparent;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+}
+
+:host .customer-edit #plans input + div,
+:host .customer-edit #packs input + div {
+  color: #3f50b4;
+  border: 1px solid #7f7f7f;
+  min-width: 135px;
+  text-align: center;
+}
+
+:host .customer-edit #plans input + div label,
+:host .customer-edit #packs input + div label {
+  padding: 5px 0;
+  width: 100%;
+  display: block;
+}
+
+:host .customer-edit #plans input:checked + div,
+:host .customer-edit #packs input:checked + div {
+  background-color: #3f50b4;
+  color: #fff;
+}
+
+:host .customer-edit #actionButtons {
+  margin-top: 25px;
+}
+
+:host .customer-edit #actionButtons .execBtn {
+  width: 137px;
+  height: 40px;
+}
+
+:host .customer-edit #actionButtons .execBtn#edit-btn {
+  background-color: #1b7943;
+  border: 2px solid #2ecc71;
+}
+
+:host .customer-edit #actionButtons .execBtn#edit-btn:hover {
+  background-color: #0d3a20;
+}
+
+:host .customer-edit #actionButtons .execBtn#cancel-btn {
+  background-color: #6a261b;
+  border: 2px solid #bb4430;
+}
+
+:host .customer-edit #actionButtons .execBtn#cancel-btn:hover {
+  background-color: #2d100c;
+}
+
+:host .customer-edit #actionButtons .execBtn#erase-btn {
+  background-color: #4c4c4c;
+  border: 2px solid #7f7f7f;
+}
+
+:host .customer-edit #actionButtons .execBtn#erase-btn:hover {
+  background-color: #262626;
+}
+/*# sourceMappingURL=customer-edit.component.css.map */

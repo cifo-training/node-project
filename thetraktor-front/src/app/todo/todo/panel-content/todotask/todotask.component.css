@@ -1,0 +1,171 @@
+:host .todoTasks {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:host .todoTasks #todoListGroup {
+  max-height: 15em;
+  min-width: 50%;
+}
+
+:host .todoTasks #todoListGroup .mat-form-field {
+  margin-bottom: -20px;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList {
+  max-height: 11em;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel-header {
+  background-color: #ffa5004d;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel-header:hover {
+  background-color: rgba(128, 83, 0, 0.302);
+}
+
+:host .todoTasks #todoListGroup .dropLists#doneList .dropList {
+  max-height: 14em;
+}
+
+:host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel-header, :host .todoTasks #todoListGroup .dropLists#doneList .dropList mat-card {
+  background-color: rgba(0, 255, 0, 0.302);
+}
+
+:host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel-header:hover, :host .todoTasks #todoListGroup .dropLists#doneList .dropList mat-card:hover {
+  background-color: rgba(0, 128, 0, 0.302);
+}
+
+:host .todoTasks #todoListGroup .dropLists#doneList .dropList mat-card {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList, :host .todoTasks #todoListGroup .dropLists#doneList {
+  width: 100%;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList, :host .todoTasks #todoListGroup .dropLists#doneList .dropList {
+  width: 100%;
+  min-height: 2rem;
+  overflow-y: auto;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel {
+  width: 100%;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel .mat-expansion-panel-header, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel .mat-expansion-panel-header {
+  height: auto !important;
+  min-height: 40px;
+  padding: 0 10px 0 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel .mat-expansion-panel-header ::ng-deep .mat-expansion-indicator, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel .mat-expansion-panel-header ::ng-deep .mat-expansion-indicator {
+  padding: 5px;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel .mat-expansion-panel-header.mat-expanded, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel .mat-expansion-panel-header.mat-expanded {
+  background-color: #9ea7da;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel ::ng-deep .mat-expansion-panel-content, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel ::ng-deep .mat-expansion-panel-content {
+  background-color: #f6fbf5;
+  border: 1px solid #ccc;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel ::ng-deep .mat-expansion-panel-content .mat-expansion-panel-body, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel ::ng-deep .mat-expansion-panel-content .mat-expansion-panel-body {
+  padding: 0 5px 5px;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel [id*="-btn"], :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel [id*="-btn"] {
+  padding: 0;
+  min-width: 0;
+  z-index: 1;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel #edit-btn, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel #edit-btn {
+  color: #00c853;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel #edit-btn:hover, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel #edit-btn:hover {
+  background-color: #00c6522a;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel #delete-btn, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel #delete-btn {
+  color: #f44336c0;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel #delete-btn:hover, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel #delete-btn:hover {
+  background-color: #f443362a;
+}
+
+:host .todoTasks #todoListGroup .dropLists#todoList .dropList .mat-expansion-panel .mat-input-element, :host .todoTasks #todoListGroup .dropLists#doneList .dropList .mat-expansion-panel .mat-input-element {
+  background-color: #fcfcfc;
+  padding: 2px;
+  text-overflow: ellipsis;
+}
+
+.drag-box {
+  color: rgba(0, 0, 0, 0.87);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.drag-box:last-child {
+  border: none;
+}
+
+.drag-box.cdk-drag-placeholder {
+  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  opacity: 0.2;
+}
+
+.drag-box.cdk-drag-placeholder :not([aria-disabled="true"]) {
+  cursor: move;
+}
+
+.drag-box.cdk-drag-preview {
+  opacity: 0.8;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.drag-box.cdk-drag-preview.drag-box {
+  width: content !important;
+  height: unset !important;
+}
+
+.drag-box.cdk-drag-preview .mat-expansion-panel, .drag-box.cdk-drag-preview mat-card {
+  width: 100%;
+  background-color: rgba(63, 81, 181, 0.3);
+}
+
+.drag-box.cdk-drag-animating {
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+/*# sourceMappingURL=todotask.component.css.map */

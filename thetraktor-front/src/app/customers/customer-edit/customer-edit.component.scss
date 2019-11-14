@@ -1,0 +1,121 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  mat-card {
+    color: $white-color;
+    background: $darkgrey-color;
+  }
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: #ffffff8a;
+  }
+  .customer-edit {
+    margin: 10px;
+    #picture {
+      width: 130px;
+      border-radius: 50%;
+    }
+    .full-width {
+      width: 100%;
+    }
+    ::ng-deep .mat-slide-toggle-content {
+      font-family: Oswald;
+    }
+    ::ng-deep .mat-slide-toggle.mat-checked {
+      .mat-slide-toggle-bar {
+        background-color: darken($gold-color, 30%);
+      }
+      .mat-slide-toggle-thumb {
+        background-color: $gold-color;
+      }
+      button[mat-raised-button] {
+        margin: 0.25rem 0;
+      }
+    }
+    mat-radio-group {
+      ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+        background-color: $gold-color;
+      }
+      ::ng-deep
+        .mat-radio-button.mat-accent.mat-radio-checked
+        .mat-radio-outer-circle {
+        border-color: $gold-color;
+      }
+      mat-radio-button {
+        padding-bottom: 1.25em;
+        margin-left: 15px;
+        &:first-child {
+          margin-left: 0px;
+        }
+      }
+    }
+    .mainColumn {
+      width: 50%;
+    }
+    .selectors {
+      padding-top: 32px;
+    }
+    #plans,
+    #packs {
+      //max-height: 180px;
+      margin: 0 32px;
+      input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 0px;
+        height: 0px;
+        color: transparent;
+        transition: 0.2s all linear;
+        margin-right: 5px;
+
+        position: relative;
+        top: 4px;
+      }
+
+      input + div {
+        color: $blue-color;
+        border: 1px solid $grey-color;
+        min-width: 135px;
+        text-align: center;
+        label {
+          padding: 5px 0;
+          width: 100%;
+          display: block;
+        }
+      }
+      input:checked + div {
+        background-color: $blue-color;
+        color: $white-color;
+      }
+    }
+    #actionButtons {
+      margin-top: 25px;
+      .execBtn {
+        width: 137px;
+        height: 40px;
+        //border-radius: 0;
+        &#edit-btn {
+          background-color: darken($green-color, 20%);
+          border:2px solid $green-color;
+          &:hover {
+            background-color: darken($green-color, 35%);
+          }
+        }
+        &#cancel-btn {
+          background-color: darken($grey-color, 20%);
+          border:2px solid $grey-color;
+          &:hover {
+            background-color: darken($grey-color, 35%);
+          }
+        }
+        &#erase-btn {
+          background-color: darken($red-color, 20%);
+          border:2px solid $red-color;
+          &:hover {
+            background-color: darken($red-color, 35%);
+          }
+        }
+      }
+    }
+  }
+}
+

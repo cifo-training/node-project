@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <!-- First Bar-->
+  <mat-toolbar-row id="firstBar" fxLayout="row" fxLayoutAlign="start center ">
+    <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div fxFlex fxFlexAlign="center" fxLayout fxLayoutAlign="first" fxHide.xs>
+        <span class="logo">THE</span>
+        <span class="logo">TRAKTOR</span>
+     <!-- <img width="0px" src="../../../assets/img/LOGO_TRAKTOR.png">  -->
+      </div>
+    <div fxFlex fxFlexAlign="center" fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout="column" fxLayoutAlign="space-around" class="navigation-items log-items">
+        <li *ngIf="!isLogged" id="loginBtn">
+          <a routerLink="login" fxLayout fxLayoutAlign="start center" fxLayoutGap="5px">
+            <span id="log-in-label" fxFlexAlign="center">Login</span>
+            <mat-icon class="login-icon material-icons-outlined" >how_to_reg</mat-icon>
+          </a>
+        </li>
+        <li *ngIf="isLogged" fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5rem">
+          <mat-label id="logged-label">You Logged!</mat-label>
+          <mat-icon class="logged-icon material-icons-outlined" aria-hidden="false" aria-label="User verified icon" title="User logged">verified_user
+          </mat-icon>
+          <a routerLink="home" (click)="onLogout()" fxLayout title="Logout">
+            <mat-icon class="logout-icon material-icons-outlined" fxFlexAlign="end">power_settings_new</mat-icon>
+          </a>
+
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+

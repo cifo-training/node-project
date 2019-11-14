@@ -1,0 +1,26 @@
+.stock-order{
+  margin: 10px;
+  .green{
+    color:green;
+  }
+  .spinner-container{
+    position: absolute;
+    height: 80vh;
+    width: 100vw;
+    background-color: #fafafa;
+    z-index: 1;
+  }
+  .stockList{
+    width: 50%;
+    .productList{
+      min-height: 2rem;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+  }
+  .half-width{
+    min-width: 200px;
+    width: 50%;
+  }
+  .qtyInput{text-align: center;}
+}

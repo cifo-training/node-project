@@ -1,0 +1,66 @@
+<mat-card fxLayout fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem" fxLayoutGap.xs="0">
+<h3 *ngIf="packs">Packs</h3>
+      <div *ngIf="packs" id='container'>
+        <div id="packsItems" fxLayout fxLayout="column" fxLayoutGap="15px">
+          <div *ngFor="let pack of packs" fxLayout fxLayout="column" fxLayoutGap="10px">
+
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+                    <img id='picture{{pack.name}}' src="assets/img/{{pack.image}}" alt="">
+                    <div>{{pack.name}}</div>
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                  <mat-card-title>
+                    <small fxFlexAlign="left">{{pack.description}} </small>
+                  </mat-card-title>
+                  <section>
+                    <label for="description">
+                      <h4>Description</h4>
+                    </label>
+                    <p id="description">{{pack.description}} </p>
+                  </section>
+                  <section id="orderItems">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Marcas
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <ng-template matExpansionPanelContent>
+                        {{pack.description}}
+                        <!--  <div class="orderItems" *ngFor="let item of pack.options" fxFlexAlign="stretch" fxLayout="row"
+                          fxLayoutGap="1rem">
+                          <h5 fxFlexAlign="center">Nº {{item._id}} </h5>
+                          <div fxFlexAlign="center"> </div>
+                        </div> -->
+                      </ng-template>
+                    </mat-expansion-panel>
+                  </section>
+                </ng-template>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+            <!---        <mat-card-title>
+              <small fxFlexAlign="left">Order Nº {{pack.invid}} </small>
+            </mat-card-title>
+            <section>
+              <label for="description"><h4>Description</h4> </label>
+              <p id="description">{{pack.description}} </p>
+            </section>
+            <section id="orderItems">
+            <div class="orderItems" *ngFor="let item of pack.items" fxLayout="row" fxLayoutGap="1rem">
+              <h5 fxFlexAlign="center">Nº {{item.key}} </h5>
+              <div fxFlexAlign="center"> {{item.value}}</div>
+            </div>
+          </section>-->
+          </div>
+        </div>
+      </div>
+
+</mat-card>

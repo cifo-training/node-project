@@ -1,0 +1,50 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  mat-card {
+    color: $white-color;
+    background: $darkgrey-color;
+    mat-card-header,
+    mat-toolbar {
+      background-color: #83b9ff;
+      color: #ffffff;
+    }
+    .mat-expansion-panel{
+    color: $white-color;
+    background-color:$mildgrey-color;
+    .mat-expansion-panel-header {
+      height: auto !important;
+      padding: 5px 10px;
+      .mat-expansion-panel-header-title {
+        color: $white-color;
+    }
+    }
+  }
+     #orderItems {
+       .mat-expansion-panel-header {
+        background-color: $darkgrey-color;
+      }
+    }
+  }
+  #container {
+    //max-height: 20rem;
+    overflow-y: auto;
+  }
+  #invoicesItems {
+    margin: 0 1rem;
+    & > div > div {
+      margin: 0 2rem;
+    }
+  }
+  #orderItems {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    .orderItems {
+      line-height: 0;
+    }
+  }
+  @media (min-width: 959px) {
+    #description {
+      padding-left: 1rem;
+    }
+  }
+}

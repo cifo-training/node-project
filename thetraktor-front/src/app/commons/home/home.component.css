@@ -1,0 +1,8 @@
+p {
+  background-image: url("../../../assets/home-page.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  margin: 0;
+}
+/*# sourceMappingURL=home.component.css.map */

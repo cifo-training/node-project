@@ -1,0 +1,42 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-header fxLayout fxLayoutAlign="center">
+        <mat-card-title>Login Page</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="column">
+        <mat-form-field>
+          <input matInput placeholder="Email" [formControl]="loginForm.get('email')">
+        </mat-form-field>
+        <mat-error *ngIf="(email.invalid)&&(email.dirty || email.touched)">
+          Invalid email
+        </mat-error>
+
+        <mat-form-field>
+          <input type="password" matInput placeholder="password" [formControl]="loginForm.get('password')">
+        </mat-form-field>
+        <mat-error *ngIf="(password.invalid)&&(password.dirty || password.touched)">
+          invalid password
+        </mat-error>
+
+        <mat-card-actions fxLayoutAlign="stretch">
+          <button type="submit" mat-raised-button color="primary">Login</button>
+        </mat-card-actions>
+        <mat-error *ngIf="(email.invalid || password.invalid)&&(email.dirty || email.touched)&& password.touched" fxLayoutAlign="center">
+          Fields don't meet the minimum requirements
+        </mat-error>
+        <mat-error *ngIf="error401" fxLayoutAlign="center">
+          This email/password are wrong so u'r Unauthorized
+        </mat-error>
+      </mat-card-content>
+
+      <mat-label fxLayout="row" fxLayoutAlign="center"> not registered?
+        <a routerLink="/signup"> Create an account</a>
+      </mat-label>
+
+      <div>
+      </div>
+    </mat-card>
+  </form>
+</div>

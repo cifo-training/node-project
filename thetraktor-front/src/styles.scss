@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Oswald';
+  /* font-style: normal; */
+  font-style: normal;
+  font-weight: 400;
+  src: url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-regular.svg#Oswald') format('svg'); /* Legacy iOS */
+}
+/* oswald-light - latin */
+@font-face {
+  font-family: 'OswaldL';
+  /* font-style: normal; */
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-light.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* oswald-Extra-light - latin */
+@font-face {
+  font-family: 'OswaldEL';
+  /* font-style: normal; */
+  font-style: normal;
+  font-weight: 200;
+  src: local(''),
+       url('../src/assets/fonts/oswald-v26-latin/oswald-v26-latin-extraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* oswald-Extra-light - latin */
+@font-face {
+  font-family: 'HighSchool';
+  /* font-style: normal; */
+  font-style: normal;
+  font-weight: 200;
+  src: local(''),
+       url('../src/assets/fonts/high-school/high_school_usa_sans.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+html, body {  margin: 0;  padding: 0; height: 100%; }
+a{text-decoration: none;}
+*{font-family: Oswald, "Helvetica Neue", sans-serif;}

@@ -1,0 +1,139 @@
+:host {
+  .todoTasks {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    #todoListGroup {
+      max-height: 15em;
+      min-width: 50%;
+      //max-width: 48%;
+
+      .mat-form-field {
+        margin-bottom: -20px;
+      }
+      .dropLists {
+        //        max-height: 15em;
+        &#todoList {
+          .dropList {
+            max-height: 11em;
+            .mat-expansion-panel-header {
+              background-color: #ffa5004d;
+              &:hover {
+                background-color: hsla(39, 100%, 25%, 0.302);
+              }
+            }
+          }
+        }
+        &#doneList {
+          .dropList {
+            max-height: 14em;
+            .mat-expansion-panel-header,mat-card {
+              background-color: hsla(120, 100%, 50%, 0.302);
+              &:hover {
+                background-color: hsla(120, 100%, 25%, 0.302);
+              }
+            }
+            mat-card{
+              width: 100%;
+              padding: 5px 10px;
+            }
+          }
+        }
+        &#todoList,
+        &#doneList {
+          width: 100%;
+          .dropList {
+            width: 100%;
+            min-height: 2rem;
+            overflow-y: auto;
+            .mat-expansion-panel {
+              width: 100%;
+              .mat-expansion-panel-header {
+                height: auto !important;
+                min-height: 40px;
+                padding: 0 10px 0 5px;
+                box-sizing: border-box;
+                ::ng-deep .mat-expansion-indicator {
+                  padding: 5px;
+                }
+                &.mat-expanded {
+                  background-color: #9ea7da;
+                }
+              }
+              ::ng-deep .mat-expansion-panel-content {
+                background-color: #f6fbf5;
+                border: 1px solid #ccc;
+                .mat-expansion-panel-body {
+                  padding: 0 5px 5px;
+                }
+              }
+              [id*="-btn"] {
+                padding: 0;
+                min-width: 0;
+                z-index: 1;
+              }
+              #edit-btn {
+                color: #00c853;
+                &:hover {
+                  background-color: #00c6522a;
+                }
+              }
+              #delete-btn {
+                color: #f44336c0;
+                &:hover {
+                  background-color: #f443362a;
+                }
+              }
+              .mat-input-element {
+                background-color: #fcfcfc;
+                padding: 2px;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.drag-box {
+  //padding: 20px 10px;
+  //border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  &:last-child {
+    border: none;
+  }
+  &.cdk-drag-placeholder {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    opacity: 0.2;
+    :not([aria-disabled="true"]) {
+      cursor: move;
+    }
+  }
+  &.cdk-drag-preview {
+    &.drag-box{
+      width: content !important;;
+      height: unset !important;;
+    }
+    .mat-expansion-panel, mat-card {
+      width: 100%;
+      background-color: rgba(63, 81, 181, 0.3);
+    }
+    opacity: 0.8;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  &.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+}

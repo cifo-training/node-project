@@ -1,0 +1,49 @@
+<div class="course">
+
+  <div class="spinner-container" *ngIf="suppliers.loading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <td mat-cell *matCellDef="let supplier"> <a [routerLink]="['supplier_detail',supplier.id]">{{supplier.id}}</a> </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name.first">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let supplier"> <a [routerLink]="['supplier_detail',supplier.id]">
+          {{supplier.name.first}} {{supplier.name.last}}
+        </a> </td>
+    </ng-container>
+
+    <!-- Last name Column -->
+    <ng-container matColumnDef='name.last'>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.name.last}} </td>
+    </ng-container>
+
+    <!-- eMail Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> e-Mail </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.email}} </td>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.age}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<a [routerLink]="['add-supplier']">Add</a>

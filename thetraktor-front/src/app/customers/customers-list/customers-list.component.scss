@@ -1,0 +1,112 @@
+@import "../../shared/styles/projecte-style.scss";
+:host {
+  .customers-list {
+    margin: 10px;
+    .full-width {
+      width: 100%;
+    }
+    .width175 {
+      max-width: 175px;
+    }
+    .spinner-container {
+      position: absolute;
+      height: 80vh;
+      width: 100vw;
+      background-color: $black-color;
+      z-index: 1;
+    }
+    ::ng-deep .mat-select-trigger {
+      font-family: Oswald;
+    }
+    ::ng-deep .mat-select-value {
+      color: $gold-color;
+    }
+
+    mat-form-field {
+      font-family: inherit;
+    }
+    table {
+      background-color: $darkgrey-color;
+      color: $white-color;
+      font-family: Oswald;
+      width: 100%;
+      .mat-header-cell {
+        font-size: inherit;
+        color: $grey-color;
+        ::ng-deep .mat-sort-header-button,
+        ::ng-deep .mat-sort-header-sorted,
+        ::ng-deep .mat-sort-header-arrow,
+        .mat-icon {
+          color: $grey-color;
+        }
+      }
+      .mat-cell{padding: 10px 0px 10px 20px;}
+      .mat-cell,
+      .mat-footer-cell {
+        color: inherit;
+        font-size: 14px;
+      }
+      .mat-cell.cdk-column-plan.mat-column-plan{
+        color: $gold-color;
+      }
+      #picture {
+        border-radius: 50%;
+        height: 72px;
+      }
+      #accessBtn {
+        padding: 0 32px;
+        border:2px solid $gold-color;
+        &:hover {
+          background-color: darken($gold-color, 35%);
+        }
+      }
+    }
+    .mat-paginator {
+      color: $white-color;
+      font-family: Oswald;
+      background-color: $darkgrey-color;
+      ::ng-deep .mat-paginator-page-size .mat-select-trigger {
+        color: $white-color;
+        ::ng-deep .mat-select-value,
+        ::ng-deep .mat-select-arrow {
+          color: $white-color;
+        }
+      }
+      ::ng-deep .mat-icon-button {
+        color: $white-color;
+      }
+    }
+    #activity{
+      width: 100%;
+      text-align: end;
+      margin-top:10px;
+      cursor: pointer;
+    }
+    ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline,
+    ::ng-deep .mat-form-field-ripple {
+      background-color: darken($white-color, 15%);
+    }
+    /*change color of label*/
+    ::ng-deep .mat-focused .mat-form-field-label {
+      color: darken($gold-color, 15%);
+    }
+    ::ng-deep .mat-form-field-label {
+      color: darken($white-color, 30%);
+    }
+    #addBtn {
+      background-color: $gold-color;
+      padding: 0 32px;
+    }
+  }
+}
+.mat-select-panel {
+  //max-height:initial !important;
+  max-height: 333px;
+}
+.panel-override {
+  max-height: 280vh !important;
+}
+
+.panel-override-2 {
+  max-height: 100px !important;
+}

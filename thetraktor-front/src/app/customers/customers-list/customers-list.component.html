@@ -1,0 +1,87 @@
+<div class="customers-list" fxFlex="column">
+  <!-- Spinner -->
+  <div fxLayout fxLayoutAlign="center center" class="spinner-container" *ngIf="isLoading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-container>
+    <!-- Add new user -->
+    <div fxLayout="row" fxLayoutAlign="end end" id="addNew">
+      <button id="addBtn" mat-stroked-button [routerLink]="['edit-customer/0']" title="Add new customer">
+        <div fxLayout="row" fxLayoutAlign="center center"><mat-icon>add</mat-icon><div>NUEVO USUARIO</div></div>
+      </button>
+    </div>
+
+    <!-- Filter -->
+    <div fxLayout="row" fxLayoutGap="24px">
+
+      <mat-form-field class="full-width">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar por Nombre">
+      </mat-form-field>
+
+      <mat-form-field [floatLabel]="'never'" class="width175">
+        <mat-label>Buscar por Plan</mat-label>
+        <mat-select [(ngModel)]="selectedPlan" (selectionChange)="filterPlan(selectedPlan)">
+          <mat-option>Todos</mat-option>
+          <mat-option *ngFor="let plan of plans" [value]="plan">{{plan.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let user"> <a [routerLink]="['customer_detail/',user._id]">{{user._id}}</a> </td>
+      </ng-container>
+
+      <!-- image Column -->
+      <ng-container matColumnDef="picture">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+        <td mat-cell *matCellDef="let user"> <img id='picture' src="{{user.picture}}" alt=""> </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let user">
+          {{user.name.first}} {{user.name.last}}
+        </td>
+      </ng-container>
+
+      <!-- Plan Column -->
+      <ng-container matColumnDef="plan">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Plan </th>
+        <td mat-cell *matCellDef="let user"> {{user.plan.name}} </td>
+      </ng-container>
+
+      <!-- date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Inicio </th>
+        <td mat-cell *matCellDef="let user"> {{user.registered | date : 'dd/MM/yyy' }} </td>
+      </ng-container>
+
+      <!-- Packs Column -->
+      <ng-container matColumnDef="packs">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Packs </th>
+        <td mat-cell *matCellDef="let user"> {{user.packList}} </td>
+      </ng-container>
+      <!-- access Column -->
+      <ng-container matColumnDef="access">
+        <th mat-header-cell *matHeaderCellDef>
+          <!-- <mat-icon>edit</mat-icon> -->
+        </th>
+        <td mat-cell *matCellDef="let user">
+          <button id="accessBtn" mat-stroked-button [routerLink]="['customer_detail/',user._id]">Acceder</button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </ng-container>
+  <div id="activity" fxFlexAlign="end" (click)="getActivity()">Ver inactivos?</div>
+</div>

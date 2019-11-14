@@ -1,0 +1,135 @@
+/* Colors */
+/* Typos */
+.font72 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.font48 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 52px;
+}
+
+.font32 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.font24 {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 28px;
+}
+
+.font21 {
+  font-size: 21px;
+  font-weight: medium;
+  line-height: 24px;
+}
+
+.font18 {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+
+.font14 {
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
+}
+
+.font12 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.font10 {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* Shapes */
+.btn-gold {
+  border: 1px solid #e7b03c;
+  color: #e7b03c;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.btn-white {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 0;
+  width: 97%;
+  position: relative;
+  background-color: transparent;
+  margin: -2px 4px !important;
+}
+
+.chckr {
+  border: 1px solid #e7b03c;
+  border-radius: 5px;
+}
+
+.chckr.checked {
+  background-color: #e7b03c;
+}
+
+:host mat-card {
+  color: #fff;
+  background: #373737;
+}
+
+:host mat-card mat-card-header, :host mat-card mat-toolbar {
+  background-color: #83b9ff;
+  color: #ffffff;
+}
+
+:host mat-card > .mat-expansion-panel:nth-child(1) .mat-expansion-panel-header:nth-child(1) {
+  background-color: #83b9ff7e;
+  color: #ffffff;
+}
+
+:host mat-card > .mat-expansion-panel:nth-child(1) > .mat-expansion-panel-header:nth-child(1) {
+  background-color: #83b9ff;
+}
+
+:host #container {
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+:host #invoicesItems {
+  margin: 0 1rem;
+}
+
+:host #invoicesItems > div > div {
+  margin: 0 2rem;
+}
+
+:host #orderItems {
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+:host #orderItems .orderItems {
+  line-height: 0;
+}
+
+@media (min-width: 959px) {
+  :host #description {
+    padding-left: 1rem;
+  }
+}
+/*# sourceMappingURL=customer-packs.component.css.map */

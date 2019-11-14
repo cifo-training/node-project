@@ -1,0 +1,40 @@
+<div class="plans-list" fxFlex="column">
+  <!-- Spinner -->
+  <div fxLayout fxLayoutAlign="center center" class="spinner-container" *ngIf="isLoading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-container>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let plan"> <a [routerLink]="['customer_detail/',plan._id]">{{plan._id}}</a> </td>
+      </ng-container>
+
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> PLAN </th>
+        <td mat-cell *matCellDef="let plan">
+          <a [routerLink]="['customer_detail/',plan._id]" fxLayout="row" fxLayoutAlign="start center"
+            fxLayoutGap="20px">
+            <div class='planImage'>
+              <img id='picture{{plan.name}}' src="assets/img/{{plan.icon}}" alt="">
+            </div>
+            <span class="font18">{{plan.name}}</span>
+          </a> </td>
+      </ng-container>
+
+      <!-- eMail Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> IMPORTE </th>
+        <td mat-cell *matCellDef="let plan"> {{plan.price}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </ng-container>
+</div>
